@@ -1,13 +1,14 @@
 """m3u 读写与增量合并（平台无关）。
 
-合并规则（沿用 douyin 方案的增量语义，全局统一）：
-  - 本轮抓到的房间按平台/来源顺序置顶；
-  - 旧列表中与「本轮抓到」重复的条目删除（全局去重，key=平台+房间号）；
-  - 本轮未抓到的历史条目：
-      keep_stale=True  的平台（如 douyin，有兜底解析地址）按原顺序保留；
-      keep_stale=False 且本轮已运行 的平台（如 kuaishou，直链下播即失效）
-      直接丢弃；
-      本轮未运行 的平台（单平台刷新）无法判断是否失效，原样保留。
+增量更新原则（全局统一）：
+  1. 先删除重复：同一平台+房间号只保留一条（旧文件按首次出现去重，
+     本轮会重新抓到的以本轮为准）；
+  2. 再将本轮更新的条目全部新增到最前面（本轮内部同样去重）；
+  3. 本轮未抓到的历史条目：
+       keep_stale=True  的平台（如 douyin，有兜底解析地址）按原顺序保留；
+       keep_stale=False 且本轮已运行 的平台（如 kuaishou，直链下播即失效）
+       直接丢弃；
+       本轮未运行 的平台（单平台刷新）无法判断是否失效，原样保留。
 """
 import json
 import os
@@ -76,17 +77,28 @@ def read_existing(path):
 
 def merge(existing, new_rooms, keep_stale, fallback_fn=None):
     """增量合并。
-    existing:      read_existing 的结果
+    existing:      read_existing 的结果（原始顺序，可能含重复条目）
     new_rooms:     本轮 Room 列表（已按平台/来源顺序）
     fallback_fn:   (room) -> url|None，为置顶条目补兜底地址（douyin 用）
     返回 (新条目列表, 统计dict)
     """
+    # 1) 先删除重复：旧文件按「平台+房间号」去重，只保留最先出现的一条
+    seen_old = set()
+    uniq_existing = []
+    for plat, rid, extinf, url in existing:
+        key = (plat, rid)
+        if key in seen_old:
+            continue
+        seen_old.add(key)
+        uniq_existing.append((plat, rid, extinf, url))
+
     new_entries = []
     seen_new = set()
-    old_keys = {(p, r) for p, r, _, _ in existing}
-    stats = {'added': 0, 'refreshed': 0, 'dropped_stale': 0, 'kept_stale': 0}
+    old_keys = {(p, r) for p, r, _, _ in uniq_existing}
+    stats = {'added': 0, 'refreshed': 0, 'dropped_stale': 0,
+             'kept_stale': 0, 'deduped': len(existing) - len(uniq_existing)}
 
-    # 本轮抓到的房间置顶（全局去重）
+    # 2) 本轮更新的条目全部新增到最前面（本轮内部同样去重）
     for r in new_rooms:
         key = (r.platform, r.rid)
         if key in seen_new:
@@ -102,10 +114,10 @@ def merge(existing, new_rooms, keep_stale, fallback_fn=None):
         else:
             stats['added'] += 1
 
-    # 历史条目：本轮已抓到则让位；未抓到按平台策略保留/丢弃。
+    # 3) 历史条目：本轮已抓到则让位；未抓到按平台策略保留/丢弃。
     # 本轮未运行的平台（部分刷新，如 --platform bilibili）无法判断是否
     # 失效，原样保留，避免单平台刷新把其它平台条目全部误删。
-    for plat, rid, extinf, url in existing:
+    for plat, rid, extinf, url in uniq_existing:
         if (plat, rid) in seen_new:
             continue
         if plat not in keep_stale or keep_stale[plat]:

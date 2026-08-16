@@ -103,9 +103,9 @@ def main(argv=None):
 
     counts = {name: len(rooms) for name, rooms in per_platform.items()}
     log().info('抓取统计: %s', counts)
-    log().info('合并统计: 新增=%d 刷新=%d 保留历史=%d 丢弃失效=%d 合计=%d',
-               stats['added'], stats['refreshed'], stats['kept_stale'],
-               stats['dropped_stale'], len(merged))
+    log().info('合并统计: 新增=%d 刷新=%d 去重=%d 保留历史=%d 丢弃失效=%d 合计=%d',
+               stats['added'], stats['refreshed'], stats['deduped'],
+               stats['kept_stale'], stats['dropped_stale'], len(merged))
 
     status = {
         'version': __version__,
