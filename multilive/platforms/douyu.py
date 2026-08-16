@@ -20,7 +20,7 @@
 
   浏览器兜底：纯 HTTP 取参被风控时，跑 tools/douyu_warm.mjs（Patchright
   打开房间页取 did + getEncryption 结果），之后继续纯 HTTP 拉播放地址；
-  结果缓存到 out/douyu_warm.json，未过期不重复开浏览器。
+  结果缓存到 output/douyu_warm.json，未过期不重复开浏览器。
 
 m3u 语义：keep_stale=False（斗鱼直链有签名时效，只留此刻在播）。
 """
@@ -178,7 +178,7 @@ def warm_browser(ctx):
 
 
 def cache_path(ctx):
-    return os.path.join(ctx.project_root, 'out', CACHE_NAME)
+    return os.path.join(ctx.project_root, 'output', CACHE_NAME)
 
 
 def load_cache(ctx):

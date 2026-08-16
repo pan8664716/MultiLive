@@ -2,17 +2,17 @@
 """MultiLive 统一入口：多平台直播 m3u 聚合更新。
 
 用法：
-  python3 multilive.py                   # 按 sources.txt 抓取并写 multilive.m3u
+  python3 multilive.py                   # 按 sources.txt 抓取并写 output/multilive.m3u
   python3 multilive.py --dry-run         # 只打印统计，不写文件
   python3 multilive.py --platform douyin # 只跑指定平台（逗号分隔）
   python3 multilive.py --pages 10        # 限制单来源翻页数（快手/抖音分类）
   python3 multilive.py --verbose         # 控制台输出 DEBUG 日志
 
 输出：
-  multilive.m3u          聚合播放列表（本轮置顶 + 增量去重）
-  <平台>_live.m3u        各平台独立列表（douyin/kuaishou/bilibili/douyu/huya…）
-  out/status.json        每次运行的机器可读摘要
-  out/run.log            运行日志（滚动保留 3 份）
+  output/multilive.m3u   聚合播放列表（本轮置顶 + 增量去重）
+  output/<平台>_live.m3u  各平台独立列表（douyin/kuaishou/bilibili/douyu/huya…）
+  output/status.json     每次运行的机器可读摘要
+  output/run.log         运行日志（滚动保留 3 份，不入库）
 """
 import argparse
 import logging
@@ -30,8 +30,8 @@ from multilive.m3u import merge, read_existing, write_m3u, write_status
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES_PATH = os.path.join(ROOT, 'sources.txt')
-MERGED_PATH = os.path.join(ROOT, 'multilive.m3u')
-OUT_DIR = os.path.join(ROOT, 'out')
+OUT_DIR = os.path.join(ROOT, 'output')
+MERGED_PATH = os.path.join(OUT_DIR, 'multilive.m3u')
 LOG_PATH = os.path.join(OUT_DIR, 'run.log')
 
 
@@ -124,10 +124,10 @@ def main(argv=None):
         return 0
 
     write_m3u(MERGED_PATH, merged, counts)
-    # 每个平台独立的 m3u 文件（项目根目录，供导入/排查）
+    # 每个平台独立的 m3u 文件（output/ 目录，供导入/排查）
     for name in sources:
         plat_entries = [(p, r, e, u) for p, r, e, u in merged if p == name]
-        write_m3u(os.path.join(ROOT, f'{name}_live.m3u'),
+        write_m3u(os.path.join(OUT_DIR, f'{name}_live.m3u'),
                   plat_entries, {name: len(plat_entries)})
     write_status(os.path.join(OUT_DIR, 'status.json'), status)
     log().info('完成: 已写入 %s 与各平台 *_live.m3u（共 %d 条，耗时 %.1fs）',

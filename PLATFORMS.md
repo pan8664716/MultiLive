@@ -70,7 +70,7 @@
   `enc_data/tt/did/auth/cdn/ver=Douyu_new/rate=-1/hevc/fa/ive`，
   响应 `rtmp_url + '/' + rtmp_live` 即 flv 直链（带 wsAuth/token，有时效）。
 - 取参被风控时走 `tools/douyu_warm.mjs`（Patchright 打开房间页取
-  did + getEncryption），之后仍回纯 HTTP；结果缓存 `out/douyu_warm.json`。
+  did + getEncryption），之后仍回纯 HTTP；结果缓存 `output/douyu_warm.json`。
 - `keep_stale=False`
 
 ## 调研结论（后续平台的现成接口情报）
@@ -87,7 +87,7 @@
 ## 调试技巧
 
 1. 先 `python3 multilive.py --platform <新平台> --dry-run`。
-2. `--verbose` 看 DEBUG 日志；`out/run.log` 保留近 3 轮日志。
-3. `out/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
+2. `--verbose` 看 DEBUG 日志；`output/run.log` 保留近 3 轮日志（不入库）。
+3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
 5. 并发规则：平台之间并行，平台内部固定 5 并发（各平台文件顶部常量）。

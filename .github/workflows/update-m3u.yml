@@ -40,12 +40,12 @@ jobs:
 
       - name: 提交并推送更新
         run: |
-          if git diff --quiet -- multilive.m3u '*_live.m3u' out/status.json; then
+          if git diff --quiet -- output/multilive.m3u 'output/*_live.m3u' output/status.json; then
             echo "本轮没有变化，跳过提交"
           else
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add multilive.m3u '*_live.m3u' out/status.json
+            git add output/multilive.m3u 'output/*_live.m3u' output/status.json
             git commit -m "chore: 更新直播 m3u（$(date -u +'%Y-%m-%d %H:%M UTC')）"
             git push
           fi

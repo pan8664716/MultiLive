@@ -1,7 +1,7 @@
 # MultiLive — 多平台直播 m3u 聚合器
 
 把多个直播平台（抖音 / 快手 / B站 / 虎牙 / 斗鱼…）的「在播直播间」
-聚合到一份 `multilive.m3u`，并为**每个平台单独生成一份 m3u**，供 PotPlayer /
+聚合到一份 `output/multilive.m3u`，并为**每个平台单独生成一份 m3u**，供 PotPlayer /
 VLC / mpv / IINA 直接导入播放。
 
 本仓库是 douyin-actions 与 kuaishou 两个方案的合并重构：统一了配置格式、
@@ -16,8 +16,8 @@ VLC / mpv / IINA 直接导入播放。
   **不同平台并行拉取，每个平台内部固定 5 并发**。
 - **增量合并**：本轮在播房间置顶 + 按「平台:房间号」全局去重 + 平台级保留策略
   （douyin 保留历史并用兜底解析地址，其余平台只留此刻在播）。
-- **便于排查**：每次运行输出 `out/status.json`（房间数/耗时/合并统计）与
-  `out/run.log`（滚动日志），并保留各平台独立 m3u。
+- **便于排查**：每次运行输出 `output/status.json`（房间数/耗时/合并统计，入库）
+  与 `output/run.log`（滚动日志，不入库），并保留各平台独立 m3u。
 - **定时更新**：内置 GitHub Actions，每小时（北京时间整点）自动刷新并提交。
 
 ## 快速开始
@@ -29,11 +29,11 @@ python3 multilive.py --dry-run
 # 只跑单个平台（调试用）
 python3 multilive.py --platform douyin --pages 2 --dry-run
 
-# 正式更新（写入 multilive.m3u 与各平台 m3u）
+# 正式更新（写入 output/multilive.m3u 与各平台 m3u）
 python3 multilive.py
 ```
 
-把生成的 `multilive.m3u`（或多平台各自的文件）拖进 PotPlayer / VLC 即可。
+把生成的 `output/multilive.m3u`（或多平台各自的文件）拖进 PotPlayer / VLC 即可。
 
 ## 配置来源（sources.txt）
 
@@ -65,10 +65,11 @@ douyu:https://www.douyu.com/directory/all:10       # 斗鱼全部频道（页数
 
 ## 输出文件
 
-- `multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
-- `douyin_live.m3u` / `kuaishou_live.m3u` / `bilibili_live.m3u` / `huya_live.m3u` / `douyu_live.m3u` — 每个平台单独一份
-- `out/status.json` — 机器可读运行摘要
-- `out/run.log` — 滚动日志（保留 3 份）
+- `output/multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
+- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/huya_live.m3u` / `output/douyu_live.m3u` — 每个平台单独一份
+- `output/status.json` — 机器可读运行摘要（入库）
+- `output/run.log` — 滚动日志（保留 3 份，不入库）
+- `output/douyu_warm.json` — 斗鱼浏览器取参缓存（运行时生成，不入库）
 
 ## 部署到 GitHub（可选）
 
@@ -96,7 +97,7 @@ douyin.py  kuaishou.py bilibili.py huya.py  douyu.py   ← 平台模块：parse(
                              ▼
                  m3u.merge() 增量合并（置顶/去重/保留策略）
                              ▼
-   multilive.m3u + 各平台 *_live.m3u + out/status.json + out/run.log
+   output/multilive.m3u + 各平台 *_live.m3u + output/status.json + output/run.log
 ```
 
 核心模块：
