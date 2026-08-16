@@ -30,10 +30,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 安装 Node（斗鱼/抖音浏览器兜底脚本用，主链路纯 HTTP）
+      - name: 安装 Node（斗鱼/抖音浏览器兜底脚本与 YY 取流用）
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: npm
+
+      - name: 安装浏览器工具依赖（patchright，取流用系统 Chrome）
+        run: npm ci
 
       - name: 生成 m3u（平台并行，纯 HTTP 优先）
         run: python3 multilive.py

@@ -1,0 +1,9 @@
+{
+  "name": "multilive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MultiLive 多平台直播 m3u 聚合器（浏览器兜底工具依赖）",
+  "dependencies": {
+    "patchright": "^1.61.1"
+  }
+}

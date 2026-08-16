@@ -28,6 +28,7 @@ VLC / mpv / IINA 直接导入播放。
 B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
 虎牙: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
 斗鱼: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
+YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/yy_live.m3u
 ```
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
@@ -37,7 +38,9 @@ B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLiv
 
 - **纯 HTTP 优先**：快手 / B站 / 虎牙全部纯 HTTP（仅 Python 3.9+ 标准库）；
   douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
-  主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）。
+  主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）；YY 频道列表
+  纯 HTTP，播放地址因官方 SDK 签名只能浏览器取流（缓存直链，仅刷新新增/
+  过期房间）。
 - **平台插件化 + 并行**：`multilive/platforms/` 每个平台一个模块、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**
   （B站特殊：播放地址无批量接口、必须逐房间请求，为防触发风控降为
@@ -77,6 +80,7 @@ bilibili:https://live.bilibili.com/all:10          # B站整站列表（页数�
 bilibili:https://live.bilibili.com/6               # B站直播间页
 huya:https://www.huya.com/l:10                     # 虎牙全部直播（页数可选，120 房间/页）
 douyu:https://www.douyu.com/directory/all:10       # 斗鱼全部频道（页数可选，120 房间/页）
+yy:https://www.yy.com/music/                            # YY 频道页（SSR 内嵌全部在播房间）
 ```
 
 裸地址自动识别（按平台名排序逐个尝试）；有歧义时请用显式前缀。
