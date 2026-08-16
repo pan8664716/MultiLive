@@ -7,6 +7,32 @@ VLC / mpv / IINA 直接导入播放。
 本仓库是 douyin-actions 与 kuaishou 两个方案的合并重构：统一了配置格式、
 抓取框架、m3u 增量合并与定时更新，**新增平台只需写一个模块**，不碰公共代码。
 
+## 订阅方式（直接导入播放器）
+
+仓库每小时自动刷新一次，m3u 文件直接入库。支持 m3u 订阅的播放器
+（PotPlayer / VLC / mpv / IINA / 电视盒子等）填入下面任一地址即可自动更新。
+以下为国内可直接访问的代理地址（`gh-proxy.org` + raw 地址），
+也可去掉代理前缀使用 GitHub 原始地址。
+
+**全聚合（所有平台一个列表）**
+
+```
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/multilive.m3u
+```
+
+**各平台单独列表**
+
+```
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyin_live.m3u
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/kuaishou_live.m3u
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
+https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
+```
+
+> 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
+> 若网络可直连 GitHub，把前缀 `https://gh-proxy.org/` 去掉即可用 raw 地址。
+
 ## 特性
 
 - **纯 HTTP 优先**：快手 / B站 / 虎牙全部纯 HTTP（仅 Python 3.9+ 标准库）；
