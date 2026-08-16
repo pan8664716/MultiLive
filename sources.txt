@@ -45,7 +45,7 @@ huya:https://www.huya.com/l:10
 # ---- 斗鱼（目录 + 播放地址主链路纯 HTTP；取参被风控时浏览器兜底）----
 douyu:https://www.douyu.com/directory/all:10
 
-# ---- YY（频道页纯 HTTP 列表；播放地址需浏览器取流 tools/yy_live.mjs）----
+# ---- YY（频道页纯 HTTP 列表；播放地址走 douyin-m3u8.pages.dev 动态解析）----
 yy:https://www.yy.com/dancing
 yy:https://www.yy.com/pretty/
 yy:https://www.yy.com/music/

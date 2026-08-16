@@ -100,15 +100,14 @@
 5. 并发规则：平台之间并行，平台内部固定 5 并发（各平台文件顶部常量）。
 
 
-### yy（列表纯 HTTP；播放地址浏览器取流，2026-08 实测可播）
+### yy（列表纯 HTTP；播放地址走 pages.dev 动态解析，2026-08 实测可播）
 - 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面内直接
   内嵌全部在播房间（`data-url="/{sid}/{ssid}"` + `data-title`/`intro` 昵称/
   `data-original` 封面），纯 HTTP 一次抓全；实测 music=28 / dancing=21 /
   pretty=100 左右，无分页。
-- 播放地址经官方播放器 SDK `stream-manager.yy.com/v3/channel/streams`
-  （SDK 签名+浏览器指纹，纯 HTTP 复现统一返回 `result:2`），最终
-  `*-flv-web.yy.com` FLV 直链只能浏览器网络层捕获；
-  实现 `tools/yy_live.mjs`（Patchright 打开房间页抓 FLV 请求），结果缓存
-  `output/yy_warm.json`（30 分钟 TTL），只对新增/过期房间重新开浏览器，
-  列表本身仍为零风险纯 HTTP。
+- 播放地址不逐个取流（避免风控），m3u 条目直接写
+  `https://douyin-m3u8.pages.dev/yy/<房间号>`：Cloudflare Worker 在点播时
+  通过 `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
+  无 cookie/签名，gear=4 蓝光最高画质）实时解析 FLV 直链并 302，
+  看哪个解析哪个。列表抓取全程零风险纯 HTTP。
 - `keep_stale=False`
