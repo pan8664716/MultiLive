@@ -43,5 +43,5 @@ bilibili:https://live.bilibili.com/6
 # ---- 虎牙（纯 HTTP：列表接口 + 房间页内嵌 CDN 直链）----
 huya:https://www.huya.com/l:10
 
-# ---- 斗鱼（目录纯 HTTP；播放地址需 Node 签名解析，当前站点鉴权暂不可用）----
+# ---- 斗鱼（目录 + 播放地址主链路纯 HTTP；取参被风控时浏览器兜底）----
 douyu:https://www.douyu.com/directory/all:10

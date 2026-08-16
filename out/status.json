@@ -1,20 +1,20 @@
 {
   "version": "1.0.0",
-  "time": "2026-08-16 15:40:57",
-  "elapsed_sec": 68.4,
+  "time": "2026-08-16 16:08:36",
+  "elapsed_sec": 68.3,
   "platform_rooms": {
     "bilibili": 499,
-    "douyin": 2971,
-    "douyu": 0,
-    "huya": 1170,
-    "kuaishou": 2121
+    "douyin": 2993,
+    "douyu": 1169,
+    "huya": 1071,
+    "kuaishou": 2136
   },
   "merge": {
-    "added": 3526,
-    "refreshed": 2960,
-    "dropped_stale": 753,
-    "kept_stale": 1018
+    "added": 1645,
+    "refreshed": 5920,
+    "dropped_stale": 618,
+    "kept_stale": 2410
   },
-  "total": 7504,
+  "total": 9975,
   "sources_file": "/Users/star/Downloads/MultiLive/sources.txt"
 }

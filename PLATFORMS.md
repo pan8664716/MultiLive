@@ -57,15 +57,20 @@
   实测直接 200 + FLV 头，无需再算签名。
 - `keep_stale=False`（只留此刻在播）
 
-### douyu（目录纯 HTTP；播放地址当前被站点锁死）
+### douyu（主链路纯 HTTP；浏览器仅兜底取参）
 - 目录：`www.douyu.com/gapi/rkc/directory/0_0/<page>`（120 房间/页，
   含 `nn` 昵称 / `rn` 房间名 / `c2name` 分类 / `rs16` 封面）
-- 播放（2026-08 实测）：`betard` 不再下发 `rtmp_url`；`getH5Play` 需要
-  `homeH5Enc` 动态下发的 42KB 混淆 JS 签名——Node 可执行签名 JS 并产出 sign，
-  但接回 `getH5Play` 仍 403「鉴权失败」，说明还差播放器请求中的会话标识。
-  当前实现：目录纯 HTTP 拉取元数据 + `tools/douyu_play.mjs` 尝试解析，
-  解析不到的房间直接跳过（不会整体失败）。站点策略松动后在
-  `tools/douyu_play.mjs` / `douyu.py` 内跟进即可。
+- 播放（2026-08 实测逆向，参考抖音「先取参数、再纯 HTTP」思路）：
+  新协议走 `lapi/live/getH5PlayV1/<rid>`（POST 表单，替代已失效的
+  `getH5Play`）。先取 `did`（passport did 接口或随机 32 位 hex），再取
+  `wgapi/livenc/liveweb/websec/getEncryption?did=<did>` 下发的
+  `enc_data`（base64 JSON，内含服务端签名 `sign` 与 `op{ip,ts,ua,did}`）
+  及 `key/rand_str/enc_time/is_special`；本地算
+  `auth = MD5(MD5^n(rand_str+key) + key + rid + ts)`，表单提交
+  `enc_data/tt/did/auth/cdn/ver=Douyu_new/rate=-1/hevc/fa/ive`，
+  响应 `rtmp_url + '/' + rtmp_live` 即 flv 直链（带 wsAuth/token，有时效）。
+- 取参被风控时走 `tools/douyu_warm.mjs`（Patchright 打开房间页取
+  did + getEncryption），之后仍回纯 HTTP；结果缓存 `out/douyu_warm.json`。
 - `keep_stale=False`
 
 ## 调研结论（后续平台的现成接口情报）

@@ -56,7 +56,12 @@ class Session:
             hdr['Referer'] = referer
         if headers:
             hdr.update(headers)
-        body = json.dumps(data).encode() if data is not None else None
+        if isinstance(data, str):
+            body = data.encode()          # 调用方已拼好 body（如表单编码）
+        elif data is not None:
+            body = json.dumps(data).encode()
+        else:
+            body = None
         if body is not None and 'Content-Type' not in hdr:
             hdr['Content-Type'] = 'application/json'
         req = urllib.request.Request(url, data=body, headers=hdr)

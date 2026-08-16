@@ -30,7 +30,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 安装 Node（斗鱼签名解析用，无需浏览器）
+      - name: 安装 Node（斗鱼/抖音浏览器兜底脚本用，主链路纯 HTTP）
         uses: actions/setup-node@v4
         with:
           node-version: '20'

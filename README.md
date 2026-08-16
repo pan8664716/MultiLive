@@ -10,8 +10,8 @@ VLC / mpv / IINA 直接导入播放。
 ## 特性
 
 - **纯 HTTP 优先**：快手 / B站 / 虎牙全部纯 HTTP（仅 Python 3.9+ 标准库）；
-  douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录纯 HTTP，
-  播放地址需 Node 执行站点签名 JS（CI 已内置 Node，无需浏览器）。
+  douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
+  主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）。
 - **平台插件化 + 并行**：`multilive/platforms/` 每个平台一个模块、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**。
 - **增量合并**：本轮在播房间置顶 + 按「平台:房间号」全局去重 + 平台级保留策略
@@ -76,8 +76,8 @@ douyu:https://www.douyu.com/directory/all:10       # 斗鱼全部频道（页数
 2. 仓库页 → **Actions** → **多平台直播 m3u 更新** → **Run workflow** 手动触发一次。
 3. 之后每小时自动运行；更新后的 m3u 会直接提交回仓库。
 
-> CI 内置 Node（仅用于斗鱼签名），无需安装浏览器；douyin 浏览器兜底不启用，
-> 接口被风控时自动落到「页面解析」兜底。
+> CI 内置 Node（仅用于斗鱼浏览器取参兜底，主链路纯 HTTP 不需要），无需
+> 安装浏览器；douyin 浏览器兜底不启用，接口被风控时自动落到「页面解析」兜底。
 
 ## 架构总览
 
@@ -109,7 +109,7 @@ douyin.py  kuaishou.py bilibili.py huya.py  douyu.py   ← 平台模块：parse(
 | `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
 | `multilive/platforms/*` | 平台实现（见 PLATFORMS.md） |
 | `tools/browser_fetch_douyin.mjs` | douyin 浏览器兜底（可选，Patchright） |
-| `tools/douyu_play.mjs` | 斗鱼播放地址解析（Node 执行站点签名 JS） |
+| `tools/douyu_warm.mjs` | 斗鱼浏览器取参兜底（Patchright，可选） |
 
 ## 接入新平台（30 秒版）
 
