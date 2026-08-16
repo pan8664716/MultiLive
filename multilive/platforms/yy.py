@@ -1,8 +1,10 @@
 """YY 直播。
 
 抓取策略：
-  列表：频道页纯 HTTP（SSR 页面内嵌全部在播房间，平台房间不多，
-    一次抓全；已实测 music=28 / dancing=21 / pretty=100 左右）。
+  列表：频道页纯 HTTP 分页补齐。SSR 只内嵌第一页（dance 24/页、
+    sing 30/页、pretty 60/页），页面 pageInfo 里有 totalCount/moduleId/
+    biz，再用 /more/page.action 分页接口（pageSize=200）把剩余房间
+    全部抓齐；实测 dancing≈170 / music≈400 / pretty≈150。
   播放地址：不逐个取流（避免风控）。m3u 里的地址直接写成
     https://douyin-m3u8.pages.dev/yy/<房间号> —— Cloudflare Worker
     侧在点播时实时解析出最高画质 FLV 直链并 302，看哪个解析哪个。
@@ -20,6 +22,8 @@ keep_stale = False
 
 BASE = 'https://www.yy.com/{}'
 PLAYER_BASE = 'https://douyin-m3u8.pages.dev/yy/{}'
+CAT_API = 'https://www.yy.com/more/page.action'
+PAGE_SIZE = 200
 LIST_WORKERS = 3
 
 GROUP_MAP = {
@@ -38,9 +42,20 @@ def parse(line):
     return []
 
 
+def _grab(bar, key):
+    m = re.search(key + r'\s*:\s*(\d+)', bar)
+    return int(m.group(1)) if m else 0
+
+
+def _grab_str(bar, key):
+    m = re.search(key + r"\s*:\s*'([^']*)'", bar)
+    return m.group(1) if m else ''
+
+
 def fetch_category(sess, cat):
-    """SSR 页面 -> {sid: {sid, ssid, title, nickname, group}}。"""
+    """SSR 第一页（含房间标题）+ 分页接口补齐 -> rooms dict。"""
     rooms = {}
+    html = ''
     try:
         _st, html, _ = sess.get_text(BASE.format(cat),
                                      referer='https://www.yy.com/')
@@ -49,13 +64,14 @@ def fetch_category(sess, cat):
         return rooms
     gm = re.search(r'data-stat-name="([^"]+)"', html)
     group = GROUP_MAP.get(cat) or (gm.group(1).strip() if gm else cat)
+    # SSR 第一页（data-title 是真正的房间标题）
     for block in re.split(r'<li\b', html):
         m = re.search(r'data-url="/(\d+)/(\d+)\?(?:[^"]*?tempId=\d+[^"]*?)?"'
                       r'[^>]*?data-title="([^"]*)"', block)
         if not m:
             continue
         sid, ssid, title = m.groups()
-        title = (title or '').strip()
+        title = re.sub(r'\s*正在直播$', '', (title or '').strip())
         nm = re.search(r'<span class="intro">([^<]*)</span>', block)
         nick = (nm.group(1) if nm else '').strip()
         am = re.search(r'data-original="([^"]+)"', block)
@@ -65,9 +81,43 @@ def fetch_category(sess, cat):
         rooms[sid] = {
             'sid': sid, 'ssid': ssid or sid,
             'title': title, 'nickname': nick or title,
-            'group': group,
-            'avatar': avatar,
+            'group': group, 'avatar': avatar,
         }
+    # 分页接口补齐剩余房间（SSR 只含第一页，接口 JSON 无房间标题）
+    pm = re.search(r'pageBar\s*:\s*\{([^}]*)\}', html)
+    if pm:
+        bar = pm.group(1)
+        module_id = _grab(bar, 'moduleId')
+        total = _grab(bar, 'totalCount')
+        biz = _grab_str(bar, 'biz')
+        sub = _grab_str(bar, 'subBiz')
+        if biz and module_id and total:
+            pages = max(1, (total + PAGE_SIZE - 1) // PAGE_SIZE)
+            for page in range(1, pages + 1):
+                api = (f'{CAT_API}?biz={biz}&subBiz={sub}&page={page}'
+                       f'&moduleId={module_id}&pageSize={PAGE_SIZE}')
+                try:
+                    _st, j, _ = sess.get_json(api,
+                                              referer=BASE.format(cat))
+                except Exception as e:
+                    log().info('  [频道] %s 第%d页失败: %s', cat, page,
+                               fmt_exc(e))
+                    continue
+                for it in ((j.get('data') or {}).get('data') or []):
+                    sid = str(it.get('sid') or '')
+                    if not sid or sid in rooms:
+                        continue
+                    name = (it.get('name') or '').strip()
+                    desc = (it.get('desc') or '').strip()
+                    rooms[sid] = {
+                        'sid': sid,
+                        'ssid': str(it.get('ssid') or sid),
+                        'title': re.sub(r'\s*正在直播$', '', desc),
+                        'nickname': name or desc,
+                        'group': group,
+                        'avatar': (it.get('thumb2')
+                                   or it.get('avatar') or '').strip(),
+                    }
     log().info('  [频道] %s: %d 个在播房间', cat, len(rooms))
     return rooms
 

@@ -101,10 +101,11 @@
 
 
 ### yy（列表纯 HTTP；播放地址走 pages.dev 动态解析，2026-08 实测可播）
-- 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面内直接
-  内嵌全部在播房间（`data-url="/{sid}/{ssid}"` + `data-title`/`intro` 昵称/
-  `data-original` 封面），纯 HTTP 一次抓全；实测 music=28 / dancing=21 /
-  pretty=100 左右，无分页。
+- 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面只内嵌
+  第一页在播房间（`data-url="/{sid}/{ssid}"` + `data-title` 房间标题）；
+  页面 `pageInfo` 给出 totalCount/moduleId/biz，再用
+  `www.yy.com/more/page.action?biz=…&moduleId=…&pageSize=200` 分页补齐
+  全部房间；实测 dancing≈164 / music≈391 / pretty≈142。
 - 播放地址不逐个取流（避免风控），m3u 条目直接写
   `https://douyin-m3u8.pages.dev/yy/<房间号>`：Cloudflare Worker 在点播时
   通过 `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
