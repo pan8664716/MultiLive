@@ -1,0 +1,51 @@
+name: 多平台直播 m3u 更新
+
+on:
+  # 每小时运行一次（cron 为 UTC，即北京时间每个整点）
+  schedule:
+    - cron: '0 * * * *'
+  # 支持手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-m3u
+  cancel-in-progress: false
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 安装 Node（斗鱼签名解析用，无需浏览器）
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 生成 m3u（平台并行，纯 HTTP 优先）
+        run: python3 multilive.py
+
+      - name: 提交并推送更新
+        run: |
+          if git diff --quiet -- multilive.m3u '*_live.m3u' out/status.json; then
+            echo "本轮没有变化，跳过提交"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add multilive.m3u '*_live.m3u' out/status.json
+            git commit -m "chore: 更新直播 m3u（$(date -u +'%Y-%m-%d %H:%M UTC')）"
+            git push
+          fi

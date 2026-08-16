@@ -1,0 +1,47 @@
+# ============================================================
+# MultiLive 来源配置：每行一个来源，以 # 开头的是注释。
+#
+# 推荐写法（显式平台前缀，无歧义）：
+#   douyin:https://live.douyin.com/categorynew/4_105    # 抖音分类页
+#   douyin:https://live.douyin.com/745350622378         # 抖音直播间页
+#   douyin:745350622378                                 # 抖音纯房间号
+#   kuaishou:HOT:50                                     # 快手热门页抓 50 页
+#   bilibili:https://live.bilibili.com/6                # B站直播间页
+#   bilibili:https://live.bilibili.com/all:5            # B站整站列表（页数可选）
+#   huya:https://www.huya.com/l:10                      # 虎牙全部直播（页数可选）
+#   douyu:https://www.douyu.com/directory/all:10        # 斗鱼全部频道（页数可选）
+#
+# 裸地址也可自动识别（建议只在无歧义时使用）。后续平台
+# 请参考 PLATFORMS.md 与 multilive/platforms/_template.py 接入。
+# ============================================================
+
+# ---- 抖音（纯 HTTP 接口优先，可加浏览器兜底）----
+douyin:https://live.douyin.com/categorynew/4_103_1_3
+douyin:https://live.douyin.com/categorynew/4_103_1_1
+douyin:https://live.douyin.com/categorynew/4_103_1_2
+douyin:https://live.douyin.com/categorynew/4_103_1_2_1_1010014
+douyin:https://live.douyin.com/categorynew/4_103_1_2_1_1010045
+douyin:https://live.douyin.com/categorynew/4_103_1_2_1_1010055
+douyin:https://live.douyin.com/categorynew/4_103_1_2_1_1010350
+douyin:https://live.douyin.com/categorynew/4_103_1_1_1_1010032
+douyin:https://live.douyin.com/categorynew/4_103_1_1_1_1011032
+douyin:https://live.douyin.com/categorynew/4_103_1_6_1_1010092
+douyin:https://live.douyin.com/categorynew/4_105
+douyin:https://live.douyin.com/categorynew/4_106
+douyin:https://live.douyin.com/categorynew/4_107
+douyin:https://live.douyin.com/categorynew/4_108
+douyin:https://live.douyin.com/categorynew/4_102
+douyin:https://live.douyin.com/categorynew/4_104
+
+# ---- 快手（纯 HTTP，热门页下拉同款接口）----
+kuaishou:HOT:50
+
+# ---- B站（纯 HTTP，整站列表 + 单直播间）----
+bilibili:https://live.bilibili.com/all:5
+bilibili:https://live.bilibili.com/6
+
+# ---- 虎牙（纯 HTTP：列表接口 + 房间页内嵌 CDN 直链）----
+huya:https://www.huya.com/l:10
+
+# ---- 斗鱼（目录纯 HTTP；播放地址需 Node 签名解析，当前站点鉴权暂不可用）----
+douyu:https://www.douyu.com/directory/all:10
