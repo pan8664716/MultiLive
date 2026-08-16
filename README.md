@@ -17,17 +17,17 @@ VLC / mpv / IINA 直接导入播放。
 **全聚合（所有平台一个列表）**
 
 ```
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/multilive.m3u
+全平台: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/multilive.m3u
 ```
 
 **各平台单独列表**
 
 ```
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyin_live.m3u
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/kuaishou_live.m3u
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
-https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
+抖音: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyin_live.m3u
+快手: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/kuaishou_live.m3u
+B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
+虎牙: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
+斗鱼: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
 ```
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
