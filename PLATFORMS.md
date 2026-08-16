@@ -40,12 +40,16 @@
 - 免登录免签名，每页 50 房间 + 4 档 CDN 直链（取最高 `level`）
 - `keep_stale=False`：只保留此刻在播
 
-### bilibili（纯 HTTP，单房间）
 ### bilibili（纯 HTTP，整站列表 + 单房间）
 - 整站列表：`api.live.bilibili.com/room/v1/room/get_user_recommend?page=N&page_size=100`
-  （`live.bilibili.com/all` 同款；旧接口 `second/getList` 匿名被风控 -352）
+  （`live.bilibili.com/all` 同款；旧接口 `second/getList` 匿名被风控 -352）。
+  该接口不带分区字段，列表房间用批量接口
+  `xlive/web-room/v1/index/getRoomBaseInfo?req_biz=web_room_componet&uids=…`
+  一次性补一级分区名（`area_name`），不逐房间取信息。
 - 单房间信息：`api.live.bilibili.com/room/v1/room/get_info?room_id=`
 - 播放：`api.live.bilibili.com/room/v1/Room/playUrl?cid=<room_id>&quality=0&platform=web`
+  （整站列表无批量播放地址接口，播放地址需逐房间请求；已限 3 并发 +
+   每请求 0.15s 节流 + 412/403 退避重试，避免触发风控）
 - `keep_stale=False`
 
 ### huya（纯 HTTP，2026-08 实测可播）
@@ -55,6 +59,9 @@
   `gameLiveInfo`（昵称/房间名/游戏）+ `gameStreamInfoList[0]`；
   地址 = `sFlvUrl + '/' + sStreamName + '.' + sFlvUrlSuffix + '?' + sFlvAntiCode`，
   实测直接 200 + FLV 头，无需再算签名。
+- 清晰度（2026-08 实测）：页面内嵌流为站点默认档（恒为 1920x1080、
+  实测 `videodatarate≈8000`，即蓝光8M）；房间最高原画(20M/30M)需播放器
+  SDK 的 ws RPC（`getCdnTokenInfoEx`）换 token，纯 HTTP 拿不到，暂取默认档。
 - `keep_stale=False`（只留此刻在播）
 
 ### douyu（主链路纯 HTTP；浏览器仅兜底取参）

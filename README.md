@@ -39,7 +39,10 @@ B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLiv
   douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
   主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）。
 - **平台插件化 + 并行**：`multilive/platforms/` 每个平台一个模块、自动注册；
-  **不同平台并行拉取，每个平台内部固定 5 并发**。
+  **不同平台并行拉取，每个平台内部固定 5 并发**
+  （B站特殊：播放地址无批量接口、必须逐房间请求，为防触发风控降为
+    3 并发 + 每请求 0.15s 节流 + 412/403 退避重试；信息类数据全部走
+    批量接口/页面内嵌数据，绝不逐房间调 API 取信息）。
 - **增量合并**：本轮在播房间置顶 + 按「平台:房间号」全局去重 + 平台级保留策略
   （douyin 保留历史并用兜底解析地址，其余平台只留此刻在播）。
 - **便于排查**：每次运行输出 `output/status.json`（房间数/耗时/合并统计，入库）
@@ -70,7 +73,7 @@ douyin:https://live.douyin.com/categorynew/4_105   # 抖音分类页（一整类
 douyin:https://live.douyin.com/745350622378        # 抖音直播间页
 douyin:745350622378                                # 抖音纯房间号
 kuaishou:HOT:50                                    # 快手热门页，抓 50 页（约 2000 房间）
-bilibili:https://live.bilibili.com/all:5           # B站整站列表（页数可选，100 房间/页）
+bilibili:https://live.bilibili.com/all:10          # B站整站列表（页数可选，100 房间/页）
 bilibili:https://live.bilibili.com/6               # B站直播间页
 huya:https://www.huya.com/l:10                     # 虎牙全部直播（页数可选，120 房间/页）
 douyu:https://www.douyu.com/directory/all:10       # 斗鱼全部频道（页数可选，120 房间/页）
