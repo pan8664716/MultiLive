@@ -52,7 +52,7 @@
    每请求 0.15s 节流 + 412/403 退避重试，避免触发风控）
 - `keep_stale=False`
 
-### huya（纯 HTTP，2026-08 实测可播）
+### huya（纯 HTTP，2026-08 实测可播；**已暂时下线**，见 `multilive.py` 的 `DISABLED`）
 - 列表：`www.huya.com/cache.php?m=LiveList&do=getLiveListByPage&tagAll=0&page=N`
   （120 房间/页；条目里 `profileRoom` 才是房间号，`uid` 不是）
 - 播放：逐房间页 `www.huya.com/<房间号>` 解析内嵌 `stream: {...}` JSON：

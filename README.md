@@ -1,6 +1,6 @@
 # MultiLive — 多平台直播 m3u 聚合器
 
-把多个直播平台（抖音 / 快手 / B站 / 虎牙 / 斗鱼…）的「在播直播间」
+把多个直播平台（抖音 / 快手 / B站 / 斗鱼 / YY…）的「在播直播间」
 聚合到一份 `output/multilive.m3u`，并为**每个平台单独生成一份 m3u**，供 PotPlayer /
 VLC / mpv / IINA 直接导入播放。
 
@@ -26,17 +26,19 @@ VLC / mpv / IINA 直接导入播放。
 抖音: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyin_live.m3u
 快手: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/kuaishou_live.m3u
 B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
-虎牙: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
 斗鱼: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
 YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/yy_live.m3u
 ```
+
+> 说明：虎牙已暂时下线（`multilive.py` 中 `DISABLED`），恢复后订阅地址不变：
+> `https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u`
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
 > 若网络可直连 GitHub，把前缀 `https://gh-proxy.org/` 去掉即可用 raw 地址。
 
 ## 特性
 
-- **纯 HTTP 优先**：快手 / B站 / 虎牙全部纯 HTTP（仅 Python 3.9+ 标准库）；
+- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY 纯 HTTP（仅 Python 3.9+ 标准库）；
   douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
   主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）；YY 频道列表
   纯 HTTP，播放地址因官方 SDK 签名只能浏览器取流（缓存直链，仅刷新新增/
@@ -99,7 +101,7 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 内
 ## 输出文件
 
 - `output/multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
-- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/huya_live.m3u` / `output/douyu_live.m3u` — 每个平台单独一份
+- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` — 每个平台单独一份（虎牙已暂下线，`huya_live.m3u` 为空列表）
 - `output/status.json` — 机器可读运行摘要（入库）
 - `output/run.log` — 滚动日志（保留 3 份，不入库）
 - `output/douyu_warm.json` — 斗鱼浏览器取参缓存（运行时生成，不入库）

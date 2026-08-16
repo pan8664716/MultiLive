@@ -39,8 +39,8 @@ kuaishou:HOT:50
 # ---- B站（纯 HTTP，整站列表 + 单直播间）----
 bilibili:https://live.bilibili.com/all:10
 
-# ---- 虎牙（纯 HTTP：列表接口 + 房间页内嵌 CDN 直链）----
-huya:https://www.huya.com/l:10
+# ---- 虎牙（暂时下线：见 multilive.py DISABLED；恢复时取消下面注释并移除 DISABLED 中的 huya）----
+#huya:https://www.huya.com/l:10
 
 # ---- 斗鱼（目录 + 播放地址主链路纯 HTTP；取参被风控时浏览器兜底）----
 douyu:https://www.douyu.com/directory/all:10

@@ -30,6 +30,10 @@ from multilive.m3u import merge, read_existing, write_m3u, write_status
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES_PATH = os.path.join(ROOT, 'sources.txt')
+
+# 暂时下线的平台：不抓取、输出清空（每轮自动把历史条目剔除）；恢复时
+# 从集合移除名字，并恢复 sources.txt 里对应来源即可。
+DISABLED = {'huya'}
 OUT_DIR = os.path.join(ROOT, 'output')
 MERGED_PATH = os.path.join(OUT_DIR, 'multilive.m3u')
 LOG_PATH = os.path.join(OUT_DIR, 'run.log')
@@ -76,6 +80,12 @@ def main(argv=None):
     sources = load_sources(args.sources, only_platforms=only)
     if not sources:
         raise SystemExit('sources.txt 没有可用的来源，请先配置（见 README）')
+    if DISABLED:
+        for name in sorted(DISABLED):
+            log().info('[%s] 已暂时下线（DISABLED），本轮不抓取、输出清空', name)
+        sources = {k: v for k, v in sources.items() if k not in DISABLED}
+        if not sources:
+            raise SystemExit('所有平台均已下线（DISABLED），无可抓取来源')
     platforms = discover_platforms()
     ctx = SimpleNamespace(project_root=ROOT, pages_cap=args.pages or 0)
 
@@ -98,8 +108,10 @@ def main(argv=None):
     keep_stale = {name: getattr(platforms[name], 'keep_stale', False)
                   for name in sources}
     fallback_fn = getattr(platforms.get('douyin'), 'fallback_url', None)
-    existing = read_existing(MERGED_PATH)
+    existing = [e for e in read_existing(MERGED_PATH) if e[0] not in DISABLED]
     merged, stats = merge(existing, new_rooms, keep_stale, fallback_fn)
+    if DISABLED:
+        merged = [e for e in merged if e[0] not in DISABLED]
 
     counts = {name: len(rooms) for name, rooms in per_platform.items()}
     log().info('抓取统计: %s', counts)
@@ -125,7 +137,7 @@ def main(argv=None):
 
     write_m3u(MERGED_PATH, merged, counts)
     # 每个平台独立的 m3u 文件（output/ 目录，供导入/排查）
-    for name in sources:
+    for name in list(sources) + sorted(DISABLED):
         plat_entries = [(p, r, e, u) for p, r, e, u in merged if p == name]
         write_m3u(os.path.join(OUT_DIR, f'{name}_live.m3u'),
                   plat_entries, {name: len(plat_entries)})
