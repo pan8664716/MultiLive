@@ -1,8 +1,8 @@
 #EXTM3U
-# 生成时间: 2026-08-17 00:18:35
+# 生成时间: 2026-08-16 16:32:17
 # 房间数: 149
 # 各平台: yy=149
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/1faac9ee2d6345bca5031e53569944c6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:22490906", 燃舞蹈-小舒包-燃舞女神热舞不断
+#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:22490906", 燃舞微甜-燃舞女神热舞不断
 https://douyin-m3u8.pages.dev/yy/22490906
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1383545408", 婉伊依-挑战30天不停播
 https://douyin-m3u8.pages.dev/yy/1383545408
@@ -34,8 +34,6 @@ https://douyin-m3u8.pages.dev/yy/1382700801
 https://douyin-m3u8.pages.dev/yy/1455660464
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:24204631", 睿廷韩雨-想你的风吹到了@8582
 https://douyin-m3u8.pages.dev/yy/24204631
-#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:98228309", 燃舞蹈-黛西-奇领黛西 正在直播
-https://douyin-m3u8.pages.dev/yy/98228309
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4oN1xIMPeHgpuXz2c5nzbw.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383546170", 希悅165-希悅爱跳舞
 https://douyin-m3u8.pages.dev/yy/1383546170
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1dftofwdUBLrSUZ7bMszce.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383543880", 沈薇薇-燃舞小薇薇
@@ -44,62 +42,64 @@ https://douyin-m3u8.pages.dev/yy/1383543880
 https://douyin-m3u8.pages.dev/yy/1355554030
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1354871831", 天晓嫚嫚-气质佳人嫚児~
 https://douyin-m3u8.pages.dev/yy/1354871831
+#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1457258826", Yx妤柔-Yx妤柔 正在直播
+https://douyin-m3u8.pages.dev/yy/1457258826
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:54880976", 1708小柒妹-别偷看了，我已经满十八了
 https://douyin-m3u8.pages.dev/yy/54880976
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:68314686", 徐梦尧-徐梦尧 正在直播
 https://douyin-m3u8.pages.dev/yy/68314686
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:139673", 睿廷大脸-睿廷大脸 正在直播
 https://douyin-m3u8.pages.dev/yy/139673
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:87208093", 雪儿7156-这个主播在唱歌 正在直播
-https://douyin-m3u8.pages.dev/yy/87208093
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:10287387", 星妹妹m-梦中佳人星妹妹
 https://douyin-m3u8.pages.dev/yy/10287387
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:85026130", 奇领蔚蓝-清澈嗓音蔚蓝
-https://douyin-m3u8.pages.dev/yy/85026130
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:84580108", 禾星武月-奶音唱将武月
 https://douyin-m3u8.pages.dev/yy/84580108
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1351182241", 睿廷颜可-你知道我在等你吗
-https://douyin-m3u8.pages.dev/yy/1351182241
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:87208093", 雪儿7156-这个主播在唱歌 正在直播
+https://douyin-m3u8.pages.dev/yy/87208093
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:85026130", 奇领蔚蓝-清澈嗓音蔚蓝
+https://douyin-m3u8.pages.dev/yy/85026130
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4c86b08f2baf4730848e2177ab31f3cd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:40600827", 夏予心-安静唱歌 夏予心
+https://douyin-m3u8.pages.dev/yy/40600827
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:37917649", 辉煌莎莎-实力女神莎莎 正在直
 https://douyin-m3u8.pages.dev/yy/37917649
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1349251804", 晨一李夏梦-晨一李夏梦 正在直播
-https://douyin-m3u8.pages.dev/yy/1349251804
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a665693021fb432c9cf6aa78010b1f4b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:79223606", 951龙儿-南方小土豆
-https://douyin-m3u8.pages.dev/yy/79223606
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:52850303", 951九妹-劲爆萝莉姐妹
+https://douyin-m3u8.pages.dev/yy/52850303
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/FljSQsvCPOyKuCG265JMb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:78511069", 晨一东月-晨一东月正在直播
 https://douyin-m3u8.pages.dev/yy/78511069
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:26990968", 晨一橙歌（我爱上班）-祝你被爱祝你发财
-https://douyin-m3u8.pages.dev/yy/26990968
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:30181862", 刘亦菲之杭州分菲-这女孩好乖
-https://douyin-m3u8.pages.dev/yy/30181862
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8efd84b718874ad191f6514b4b86ed8a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:84540060", 刘祉萱-刘祉萱 正在直播
 https://douyin-m3u8.pages.dev/yy/84540060
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:65690741", 宋沁-她不一样
-https://douyin-m3u8.pages.dev/yy/65690741
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:26990968", 晨一橙歌（我爱上班）-祝你被爱祝你发财
+https://douyin-m3u8.pages.dev/yy/26990968
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1456592681", 布丁豆丁：即将到期❤文徒-清纯动人布丁豆丁
 https://douyin-m3u8.pages.dev/yy/1456592681
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1351918949", 7038汐汐-7038xixi正在直播
-https://douyin-m3u8.pages.dev/yy/1351918949
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1383544162", 创艺崽仔-在吗偷只小猪
-https://douyin-m3u8.pages.dev/yy/1383544162
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:30181862", 刘亦菲之杭州分菲-这女孩好乖
+https://douyin-m3u8.pages.dev/yy/30181862
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/e08ef5bb0afd47cc884b915e68d37952.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543791", 小柚子-嗨 来听歌啦
+https://douyin-m3u8.pages.dev/yy/1383543791
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a665693021fb432c9cf6aa78010b1f4b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:79223606", 951龙儿-南方小土豆
+https://douyin-m3u8.pages.dev/yy/79223606
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1351182241", 睿廷颜可-你知道我在等你吗
+https://douyin-m3u8.pages.dev/yy/1351182241
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f26d5d5cd89644519926e89297c2efcf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414777839", 忆星十安-乖一点就抱你
+https://douyin-m3u8.pages.dev/yy/1414777839
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1355382643", 晨一嗨嗨-大四在校学生
 https://douyin-m3u8.pages.dev/yy/1355382643
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1355357766", 禾星芊芊-禾星芊芊正在直播
 https://douyin-m3u8.pages.dev/yy/1355357766
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1JzbIF6PBpNAkqhYgoj7Fr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:34704291", 创艺华莎-海口逗比妹一华
 https://douyin-m3u8.pages.dev/yy/34704291
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:17569885", 天晓小敏-等风也等你
-https://douyin-m3u8.pages.dev/yy/17569885
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1349251804", 晨一李夏梦-晨一李夏梦 正在直播
+https://douyin-m3u8.pages.dev/yy/1349251804
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:85570068", 洛阳宠溺-还有会听歌的人吗
 https://douyin-m3u8.pages.dev/yy/85570068
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1382878404", 李梦尹-小李小李 歌里有你~~~
-https://douyin-m3u8.pages.dev/yy/1382878404
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:67423166", 虎娱沁柠-今天也是你的心尖女孩吗
-https://douyin-m3u8.pages.dev/yy/67423166
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1348917453", 辉煌云朵-极品小腰精云朵
-https://douyin-m3u8.pages.dev/yy/1348917453
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f26d5d5cd89644519926e89297c2efcf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414777839", 忆星十安-乖一点就抱你
-https://douyin-m3u8.pages.dev/yy/1414777839
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/9347de3f87e448eb8ded86c798cd02c1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354878918", Yx小绵羊-新主播第一天
+https://douyin-m3u8.pages.dev/yy/1354878918
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:68018222", 龙系妍儿-江苏宋好运陪伴换您好心情
+https://douyin-m3u8.pages.dev/yy/68018222
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:71320968", 喵小咪-先把你骗进来
+https://douyin-m3u8.pages.dev/yy/71320968
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1355234440", 诗韵-简简单单的弹琴
+https://douyin-m3u8.pages.dev/yy/1355234440
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355284063", Yx紫-唱点粤语歌
 https://douyin-m3u8.pages.dev/yy/1355284063
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2QrBwNoPB0CGBSLHDfNZ5X.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:25416685", 祥盛司茵-我大哥呢？
@@ -142,8 +142,6 @@ https://douyin-m3u8.pages.dev/yy/1382869128
 https://douyin-m3u8.pages.dev/yy/22998167
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1353940359", 招财倩倩-距离你0.01~
 https://douyin-m3u8.pages.dev/yy/1353940359
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355636922", 平聚安儿-在
-https://douyin-m3u8.pages.dev/yy/1355636922
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5pzgOrUtvtRxke5KXErheR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1458282232", 天晓安彩-一切都恰逢其时
 https://douyin-m3u8.pages.dev/yy/1458282232
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1463358520", 安徽钱多多-甜美御姐钱多多
@@ -160,6 +158,8 @@ https://douyin-m3u8.pages.dev/yy/1352051553
 https://douyin-m3u8.pages.dev/yy/63985272
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2a8079899bd94f0bbe699396ae2fb521.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:35712386", Yx小伊-新主播，求照顾
 https://douyin-m3u8.pages.dev/yy/35712386
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414790035", 乐恒-小欲-星耀营-停止观望吧
+https://douyin-m3u8.pages.dev/yy/1414790035
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1353042457", 辉煌安琪儿-我的强在哪里，很急
 https://douyin-m3u8.pages.dev/yy/1353042457
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1353415516", 到期妍梦露-愿你一切安好顺遂
@@ -168,16 +168,12 @@ https://douyin-m3u8.pages.dev/yy/1353415516
 https://douyin-m3u8.pages.dev/yy/1355352905
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1343280348", 禾星凤儿-性感美丽大长腿
 https://douyin-m3u8.pages.dev/yy/1343280348
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1382622581", 禾星兔兔-禾星兔兔 正在直播
-https://douyin-m3u8.pages.dev/yy/1382622581
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1343564091", 森宁随随子-全村的希望
 https://douyin-m3u8.pages.dev/yy/1343564091
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1353442163", 暖暖-俊美暖暖 正在直播
 https://douyin-m3u8.pages.dev/yy/1353442163
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354553300", 阿莹-嗯~
 https://douyin-m3u8.pages.dev/yy/1354553300
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383550029", 江西幸运七-江西幸运七正在直播
-https://douyin-m3u8.pages.dev/yy/1383550029
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414821368", 峰品浅小柠🍋～等待惊喜-开心就好
 https://douyin-m3u8.pages.dev/yy/1414821368
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/2282557730_1653358587.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1355472042", 【ZD】]水蜜桃-新主播没大哥
@@ -206,8 +202,6 @@ https://douyin-m3u8.pages.dev/yy/23801933
 https://douyin-m3u8.pages.dev/yy/1339059284
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355521076", 虎娱小馋猫-等一个人
 https://douyin-m3u8.pages.dev/yy/1355521076
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383545931", 【ZM】小猫-新主播求个守护
-https://douyin-m3u8.pages.dev/yy/1383545931
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414792471", 小小王-白白
 https://douyin-m3u8.pages.dev/yy/1414792471
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1352984681", 尚古栗饱饱-心软的神在哪里阿~
@@ -240,8 +234,6 @@ https://douyin-m3u8.pages.dev/yy/1383546127
 https://douyin-m3u8.pages.dev/yy/27762006
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1382689130", 安柒柒-安柒柒 正在直播
 https://douyin-m3u8.pages.dev/yy/1382689130
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d9ad9ce7223e46e8b2a5e67beb0553a0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1355194871", 禾星雨饱-播500元秒下班
-https://douyin-m3u8.pages.dev/yy/1355194871
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1351382298", 桃子-爱桃你就来~
 https://douyin-m3u8.pages.dev/yy/1351382298
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8a22013f072245c69778b7d36229d890.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:38954562", 梦之音文静-好運常在~
@@ -276,8 +268,6 @@ https://douyin-m3u8.pages.dev/yy/1414817282
 https://douyin-m3u8.pages.dev/yy/1414840690
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/abb41cb17d9d4193a0833dddc3acf9d3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1450098282", 小雅-你刷过礼物的播间
 https://douyin-m3u8.pages.dev/yy/1450098282
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a1f17e5115ea48158d42906777de8cb6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1459404716", 【聚義】柒柒.-就等你了还不来
-https://douyin-m3u8.pages.dev/yy/1459404716
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/0df885bdb4064fe3bf9f425914ec6f5a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414798765", 江西小渝-眼里有星河
 https://douyin-m3u8.pages.dev/yy/1414798765
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354682691", 沐淇淇-是你的心动女友
@@ -300,3 +290,13 @@ https://douyin-m3u8.pages.dev/yy/26744898
 https://douyin-m3u8.pages.dev/yy/1355266259
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b14755c844a84fb9b6b25a1c5127702b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:29755572", 奶心橙-离你1公里
 https://douyin-m3u8.pages.dev/yy/29755572
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354594934", 辉煌安安-憨厚可人小安安
+https://douyin-m3u8.pages.dev/yy/1354594934
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355266713", 晴天-挣够一百就下播~
+https://douyin-m3u8.pages.dev/yy/1355266713
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354553615", 六合奶茶-六合奶茶 正在直播
+https://douyin-m3u8.pages.dev/yy/1354553615
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414890026", 夏遇-宇宙的终极浪漫是什么
+https://douyin-m3u8.pages.dev/yy/1414890026
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/1adc55cc948543e591cb7e3218abe720.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1382846254", 宥锦汐-多饱饱嘎嘎白
+https://douyin-m3u8.pages.dev/yy/1382846254
