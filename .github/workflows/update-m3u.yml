@@ -33,7 +33,7 @@ jobs:
       - name: 安装 Node（斗鱼/抖音浏览器兜底脚本与 YY 取流用）
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: npm
 
       - name: 安装浏览器工具依赖（patchright，取流用系统 Chrome）
