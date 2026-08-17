@@ -33,7 +33,7 @@ SOURCES_PATH = os.path.join(ROOT, 'sources.txt')
 
 # 暂时下线的平台：不抓取、输出清空（每轮自动把历史条目剔除）；恢复时
 # 从集合移除名字，并恢复 sources.txt 里对应来源即可。
-DISABLED = {'huya'}
+DISABLED = set()
 OUT_DIR = os.path.join(ROOT, 'output')
 MERGED_PATH = os.path.join(OUT_DIR, 'multilive.m3u')
 LOG_PATH = os.path.join(OUT_DIR, 'run.log')

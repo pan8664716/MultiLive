@@ -4,10 +4,11 @@
 
 1. **绝不逐房间调 API 获取信息/播放地址**（批量会触发风控）。列表与信息只用
    批量接口/SSR 页面内嵌数据；播放地址优先写
-   `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析
-   （看哪个解析哪个）。
-2. **不逐房间取播放地址**（包括 bilibili，`Room/playUrl` 已废弃不用），
-   一律写 Worker 解析地址。
+   `https://astar.cc.cd/<平台>/<房间号>`（虎牙写
+   `http://107.173.156.246:81/live/huya/<房间号>`），由 Worker/代理点播时
+   实时解析（看哪个解析哪个）。
+2. **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、
+   虎牙逐房间页均已废弃不用），一律写 Worker/代理解析地址。
 3. 平台下线用 `multilive.py` 的 `DISABLED` 集合，不删模块。
 4. 播放地址拿不到的房间直接跳过；单来源失败打印日志后继续，不整体崩溃。
 
@@ -80,42 +81,29 @@
   不再调 `Room/playUrl`。
 - `keep_stale=False`
 
-### huya（列表纯 HTTP 可用；播放直链 2026-08-17 js-reverse 实测**不可长播**；**已暂时下线**，见 `multilive/cli.py` 的 `DISABLED`）
+### huya（列表纯 HTTP；播放地址走自建代理动态解析，2026-08 恢复）
 - 列表：`www.huya.com/cache.php?m=LiveList&do=getLiveListByPage&tagAll=0&page=N`
   （120 房间/页；条目里 `profileRoom` 才是房间号，`uid` 不是）
-- 播放（2026-08-17 浏览器抓包 + 逐项实测）：
+- 播放：不逐房间取流；m3u 条目统一写
+  `http://107.173.156.246:81/live/huya/<房间号>`，由代理点播时实时解析，
+  看哪个解析哪个。
+- 背景（2026-08-17 js-reverse 逆向实测，为什么不能直接写直链）：
   - 官方网页播放器全程走 **P2P slice 私有协议**（`p2p.huya.com/huyalive/{SN}_505_2_66.slice`
     或 `/websocket/` 长连接形态），浏览器不发任何 FLV/HLS 直播请求；token 由 ws RPC
     （`getCdnTokenInfoEx`/`getP2PStreamTokenInfoEx`）每 4 分钟续一次。
-  - 页面内嵌 `sFlvUrl/.flv`：302 到阿里 TBCache 边缘，但只吐 ~1MB 窗口就
-    `Connection: close`，且同 URL 一会 200 一会 403（实测连续 3 次 403 后一次 200、
-    浏览器页面内 fetch 亦 403），标准播放器无法长播。
-  - 页面内嵌 `sHlsUrl/.m3u8`：403（Bytedance NSS auth 拒绝），已死。
-  - P2P slice（页面内嵌 `sP2pAntiCode` 直接可用，无需 ws）：
-    - 能**连续**拉流（实测 60s 线性增长 ~50KB/s，`505` 后缀≈流畅档）；
-    - antiCode 的 `wsTime` 声明 5 分钟过期，但 CDN 不硬卡：实测签发 30+ 分钟、
-      声明过期 27+ 分钟仍返回 200 持续流数据；
-    - 但容器为私有分片（16B 头 + 长度前缀 H.264 NAL 等），PotPlayer/VLC/mpv
-      无法直接解码。
-  - 结论：**拿不到「标准播放器可直接长播」的直链**；若未来要接入只能走 CF Worker
-    按需解析 + slice→FLV 转封装（≈重写虎牙拉流端，且 CF IP 有被 huya 风控风险），
-    维持 `DISABLED`。
+  - 页面内嵌 `sFlvUrl/.flv`：302 到阿里 TBCache 边缘，只吐 ~1MB 窗口就
+    `Connection: close` 且一会 200 一会 403；`sHlsUrl/.m3u8` 403 已死。
+  - P2P slice（页面内嵌 `sP2pAntiCode` 可用）能连续拉流（wsTime 过期 30+ 分钟
+    仍 200），但容器是私有分片格式，PotPlayer/VLC/mpv 无法直接解码。
 - `keep_stale=False`（只留此刻在播）
 
-### douyu（主链路纯 HTTP；浏览器仅兜底取参）
+### douyu（目录纯 HTTP；播放地址走 Worker 动态解析，2026-08 实测）
 - 目录：`www.douyu.com/gapi/rkc/directory/0_0/<page>`（120 房间/页，
   含 `nn` 昵称 / `rn` 房间名 / `c2name` 分类 / `rs16` 封面）
-- 播放（2026-08 实测逆向，参考抖音「先取参数、再纯 HTTP」思路）：
-  新协议走 `lapi/live/getH5PlayV1/<rid>`（POST 表单，替代已失效的
-  `getH5Play`）。先取 `did`（passport did 接口或随机 32 位 hex），再取
-  `wgapi/livenc/liveweb/websec/getEncryption?did=<did>` 下发的
-  `enc_data`（base64 JSON，内含服务端签名 `sign` 与 `op{ip,ts,ua,did}`）
-  及 `key/rand_str/enc_time/is_special`；本地算
-  `auth = MD5(MD5^n(rand_str+key) + key + rid + ts)`，表单提交
-  `enc_data/tt/did/auth/cdn/ver=Douyu_new/rate=-1/hevc/fa/ive`，
-  响应 `rtmp_url + '/' + rtmp_live` 即 flv 直链（带 wsAuth/token，有时效）。
-- 取参被风控时走 `tools/douyu_warm.mjs`（Patchright 打开房间页取
-  did + getEncryption），之后仍回纯 HTTP；结果缓存 `output/douyu_warm.json`。
+- 播放：不逐房间调 `getH5PlayV1` 取流（2026-08 实测：直链带 wsAuth/token
+  有签名时效，签发几分钟后 CDN 只吐 1-2s 缓冲窗口就断开，无法支撑 m3u
+  长期播放）。m3u 条目直接写 `https://astar.cc.cd/douyu/<房间号>`，
+  Worker 点播时实时解析新签名直链，看哪个解析哪个。
 - `keep_stale=False`
 
 

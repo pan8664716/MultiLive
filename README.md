@@ -31,21 +31,18 @@ B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLiv
 YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/yy_live.m3u
 ```
 
-> 说明：虎牙已暂时下线（`multilive.py` 中 `DISABLED`），恢复后订阅地址不变：
-> `https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u`
+> 虎牙订阅：`https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u`
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
 > 若网络可直连 GitHub，把前缀 `https://gh-proxy.org/` 去掉即可用 raw 地址。
 
 ## 特性
 
-- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY 纯 HTTP（仅 Python 3.9+ 标准库）；
-  douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
-  主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）；YY 频道列表
-  纯 HTTP（SSR 第一页 + `/more/page.action` 分页补齐），播放地址**不逐个取流**，
-  m3u 直接写 `https://astar.cc.cd/yy/<房间号>`（B站为
-  `https://astar.cc.cd/bilibili/<房间号>`），由 Worker 点播时实时解析最高画质
-  FLV（看哪个解析哪个，零风控风险）。
+- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 列表纯 HTTP（仅 Python 3.9+
+  标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级。YY/B站/斗鱼
+  播放地址**不逐个取流**，m3u 直接写 `https://astar.cc.cd/<平台>/<房间号>`，
+  虎牙写 `http://107.173.156.246:81/live/huya/<房间号>`，由 Worker/代理点播时
+  实时解析最高画质流（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
   统一继承 `Platform` 基类、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**
@@ -105,10 +102,10 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 第
 ## 输出文件
 
 - `output/multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
-- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` — 每个平台单独一份（虎牙已暂下线，`huya_live.m3u` 为空列表）
+- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` / `output/huya_live.m3u` — 每个平台单独一份
 - `output/status.json` — 机器可读运行摘要（入库）
 - `output/run.log` — 滚动日志（保留 3 份，不入库）
-- `output/douyu_warm.json` — 斗鱼浏览器取参缓存（运行时生成，不入库）
+- `output/douyu_warm.json` — 旧的斗鱼取参缓存（已不再生成，可忽略）
 
 ## 部署到 GitHub（可选）
 
