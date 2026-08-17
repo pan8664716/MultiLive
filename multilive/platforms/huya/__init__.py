@@ -6,8 +6,8 @@
 
 播放地址：不逐房间解析（页面内嵌 FLV/HLS 直链 2026-08 实测已失效，
   P2P slice 为私有格式，标准播放器无法直接解码，详见 PLATFORMS.md）。
-  m3u 条目统一写 http://107.173.156.246:81/live/huya/<房间号> ——
-  代理点播时实时解析，看哪个解析哪个。
+  m3u 条目统一写 https://astar.cc.cd/huya/<房间号> ——
+  Worker 点播时实时解析出完整签名直链，看哪个解析哪个。
 
 m3u 语义：keep_stale=False，只保留此刻在播。
 """
@@ -21,7 +21,7 @@ NAME = 'huya'
 keep_stale = False
 
 LIVE_LIST_API = 'https://www.huya.com/cache.php'
-PLAYER_BASE = 'http://107.173.156.246:81/live/huya/{}'
+PLAYER_BASE = 'https://astar.cc.cd/huya/{}'
 DEFAULT_PAGES = 10        # 默认扫 10 页列表（1200 房间）
 MAX_PAGES = 79
 LIST_WORKERS = 5

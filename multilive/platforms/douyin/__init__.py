@@ -7,8 +7,8 @@
      接口被 IP 风控时滚动加载+拦截签名接口
   ③ HTTP 页面解析：内嵌 RSC 数据（self.__pace_f.push），约 15 个置顶房间
 
-m3u 语义：keep_stale=True——旧房间保留并用 pages.dev 动态地址兜底，
-本轮在播房间写 CDN 直链并置顶。
+m3u 语义：keep_stale=True——旧房间保留并继续使用动态代理地址，
+本轮在播房间统一写 https://astar.cc.cd/douyin/<房间号> 并置顶。
 """
 import json
 import os
@@ -25,6 +25,8 @@ from multilive.platforms.base import Platform
 
 NAME = 'douyin'
 keep_stale = True
+
+PLAYER_BASE = 'https://astar.cc.cd/douyin/{}'
 
 MAX_PAGES = 14           # 每分类最多 14 页（15/页 ≈ 210 房间）
 PAGE_SLEEP = 1.2         # 分页请求间隔，避免触发风控
@@ -116,7 +118,7 @@ def parse_category_item(it):
             'title': (room.get('title') or '').strip(),
             'nickname': (owner.get('nickname') or owner.get('nick_name') or '').strip(),
             'avatar': avatar,
-            'url': extract_cdn_url(room)}
+            'url': ''}
 
 
 def http_fetch_category(sess, path, pages_limit=MAX_PAGES):
@@ -181,7 +183,7 @@ def http_fetch_room(sess, rid):
              'title': (d.get('title') or '').strip(),
              'nickname': (user.get('nickname') or user.get('nick_name') or '').strip(),
              'avatar': avatar,
-             'url': extract_cdn_url(d)}]
+             'url': ''}]
 
 
 def extract_category_names(blob):
@@ -296,7 +298,7 @@ def parse_page_html(html):
                       'title': (rm.get('title') or '').strip(),
                       'nickname': (owner.get('nickname') or owner.get('nick_name') or '').strip(),
                       'avatar': avatar,
-                      'url': extract_cdn_url(rm)})
+                      'url': ''})
         seen.add(rid)
     return rooms, extract_category_names(blob)
 
@@ -386,7 +388,7 @@ def _warm_session():
 
 
 class DouyinPlatform(Platform):
-    """抖音平台：接口/浏览器/页面三级降级，历史房间用 pages.dev 兜底。"""
+    """抖音平台：接口/浏览器/页面三级降级，播放地址统一写 astar 动态代理。"""
     name = NAME
     keep_stale = keep_stale
     max_workers = MAX_WORKERS
@@ -453,12 +455,12 @@ class DouyinPlatform(Platform):
             for r in rooms:
                 out.append(Room(platform=self.name, rid=r['rid'], title=r['title'],
                                 nickname=r['nickname'], avatar=r['avatar'],
-                                url=r['url'] or '', group=group))
+                                url=PLAYER_BASE.format(r['rid']), group=group))
         log().info('[douyin] 完成: %d/%d 来源成功, %d 房间', oks, len(sources), len(out))
         return out
 
     def fallback_url(self, room):
-        return f'https://douyin-m3u8.pages.dev/room/{room.rid}'
+        return PLAYER_BASE.format(room.rid)
 
 
 platform = DouyinPlatform()

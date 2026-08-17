@@ -41,7 +41,7 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
 - **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 列表纯 HTTP（仅 Python 3.9+
   标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级。YY/B站/斗鱼
   播放地址**不逐个取流**，m3u 直接写 `https://astar.cc.cd/<平台>/<房间号>`，
-  虎牙写 `http://107.173.156.246:81/live/huya/<房间号>`，由 Worker/代理点播时
+  全部平台统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker/代理点播时
   实时解析最高画质流（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
   统一继承 `Platform` 基类、自动注册；

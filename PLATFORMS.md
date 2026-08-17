@@ -5,7 +5,7 @@
 1. **绝不逐房间调 API 获取信息/播放地址**（批量会触发风控）。列表与信息只用
    批量接口/SSR 页面内嵌数据；播放地址优先写
    `https://astar.cc.cd/<平台>/<房间号>`（虎牙写
-   `http://107.173.156.246:81/live/huya/<房间号>`），由 Worker/代理点播时
+   `https://astar.cc.cd/<平台>/<房间号>`），由 Worker/代理点播时
    实时解析（看哪个解析哪个）。
 2. **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、
    虎牙逐房间页均已废弃不用），一律写 Worker/代理解析地址。
@@ -85,7 +85,7 @@
 - 列表：`www.huya.com/cache.php?m=LiveList&do=getLiveListByPage&tagAll=0&page=N`
   （120 房间/页；条目里 `profileRoom` 才是房间号，`uid` 不是）
 - 播放：不逐房间取流；m3u 条目统一写
-  `http://107.173.156.246:81/live/huya/<房间号>`，由代理点播时实时解析，
+  `https://astar.cc.cd/<平台>/<房间号>`，由代理点播时实时解析，
   看哪个解析哪个。
 - 背景（2026-08-17 js-reverse 逆向实测，为什么不能直接写直链）：
   - 官方网页播放器全程走 **P2P slice 私有协议**（`p2p.huya.com/huyalive/{SN}_505_2_66.slice`

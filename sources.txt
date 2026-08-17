@@ -39,7 +39,7 @@ kuaishou:HOT:50
 # ---- B站（纯 HTTP 列表；播放地址走 astar.cc.cd 动态解析）----
 bilibili:https://live.bilibili.com/all:10
 
-# ---- 虎牙（纯 HTTP 列表；播放地址走 107.173.156.246:81 代理动态解析）----
+# ---- 虎牙（纯 HTTP 列表；播放地址走 astar.cc.cd 动态解析）----
 huya:https://www.huya.com/l:10
 
 # ---- 斗鱼（目录纯 HTTP 列表；播放地址走 astar.cc.cd 动态解析）----

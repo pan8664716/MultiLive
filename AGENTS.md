@@ -6,7 +6,7 @@
 
 - 用户侧产物：`output/multilive.m3u`（全聚合）+ `output/<平台>_live.m3u`（单平台），订阅地址见 README（走 `gh-proxy.org` 代理前缀）
 - 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每小时自动跑 `python3 multilive.py` 并提交
-- 播放地址形态：抖音/快手 为直链；**YY/B站/斗鱼 不取直链**，m3u 里写 `https://astar.cc.cd/yy/<房间号>` / `https://astar.cc.cd/bilibili/<房间号>` / `https://astar.cc.cd/douyu/<房间号>`；**虎牙** 写 `http://107.173.156.246:81/live/huya/<房间号>`，均由 Worker/代理点播时实时解析（看哪个解析哪个）
+- 播放地址形态：**全部平台不写直链**，m3u 统一写 `https://astar.cc.cd/<平台>/<房间号>`（douyin/yy/bilibili/douyu/huya/kuaishou），由 Worker 点播时实时解析（看哪个解析哪个）
 
 ## 快速开始
 
@@ -51,7 +51,7 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 1. **绝不逐房间调 API 获取信息或播放地址**（批量请求会触发风控）。只能：
    - 列表/信息：批量接口、SSR 页面内嵌数据（如 B站 `getRoomBaseInfo?uids=…` 50个/请求）；
-   - 播放地址：优先写 `https://astar.cc.cd/<平台>/<房间号>`（虎牙写 `http://107.173.156.246:81/live/huya/<房间号>`），由 Worker/代理点播时解析；
+   - 播放地址：统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时解析；
    - **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、虎牙逐房间页均已废弃不用）。
 2. 平台暂时下线：改 `multilive/cli.py` 顶部 `DISABLED = set()`（当前无平台下线），把平台名加进集合（不抓取 + 每轮清空该平台输出），**不要删平台文件夹**；恢复 = 移出集合 + `sources.txt` 取消注释。
 3. 增量合并规则（`m3u.merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keep_stale=False` 的平台本轮运行后丢弃下播房间。
@@ -76,5 +76,5 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 ## 关联项目
 
 - **Cloudflare Pages Worker**（YY/B站/抖音/斗鱼等点播解析，域名 `astar.cc.cd`）：`/Users/star/Downloads/douyin/douyin-m3u8-cf`，单文件 `_worker.js`。注意：该仓库本地**无 git remote** 且有未提交改动，涉及它时不要直接 push，先与用户确认。
-- **虎牙代理解析服务**：`http://107.173.156.246:81/live/huya/<房间号>`（自建服务器，点播时实时解析虎牙直链）。
+- **统一动态解析**：`https://astar.cc.cd/<平台>/<房间号>`，点播时实时解析各平台完整签名直链。
 - douyin-actions / kuaishou：本项目前身，合并后已废弃，仅作接口情报参考。
