@@ -1,22 +1,22 @@
 {
   "version": "2.0.0",
-  "time": "2026-08-17 20:39:43",
-  "elapsed_sec": 76.2,
+  "time": "2026-08-17 12:52:23",
+  "elapsed_sec": 137.9,
   "platform_rooms": {
     "bilibili": 1000,
-    "douyin": 3053,
-    "douyu": 1199,
+    "douyin": 3193,
+    "douyu": 1200,
     "huya": 1191,
-    "kuaishou": 2149,
-    "yy": 834
+    "kuaishou": 2096,
+    "yy": 869
   },
   "merge": {
-    "added": 9132,
-    "refreshed": 0,
-    "dropped_stale": 0,
-    "kept_stale": 0,
+    "added": 1732,
+    "refreshed": 7442,
+    "dropped_stale": 829,
+    "kept_stale": 861,
     "deduped": 0
   },
-  "total": 9132,
-  "sources_file": "/Users/star/Documents/code/MultiLive/sources.txt"
+  "total": 10035,
+  "sources_file": "/home/runner/work/MultiLive/MultiLive/sources.txt"
 }
