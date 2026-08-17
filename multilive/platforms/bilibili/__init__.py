@@ -1,10 +1,13 @@
-"""B站直播（纯 HTTP，免登录免签名）。
+"""B站直播（纯 HTTP，免登录免签名；播放地址不逐房间取流）。
 
 来源：
   - 整站列表 https://live.bilibili.com/all（目录同款）
       room/v1/room/get_user_recommend 匿名可用，100 房间/页
   - 单个直播间 https://live.bilibili.com/6 或 6
-      room/v1/room/get_info + room/v1/Room/playUrl
+      room/v1/room/get_info（仅元数据：判断在播、取标题昵称）
+
+播放地址：不逐房间调 playUrl（避免风控），m3u 里直接写
+  https://astar.cc.cd/bilibili/<房间号> —— Worker 点播时实时解析。
 
 m3u 语义：keep_stale=False，只保留在播房间。
 """
@@ -19,8 +22,8 @@ from multilive.platforms.base import Platform
 NAME = 'bilibili'
 keep_stale = False
 
+PLAYER_BASE = 'https://astar.cc.cd/bilibili/{}'
 INFO_API = 'https://api.live.bilibili.com/room/v1/room/get_info'
-PLAY_API = 'https://api.live.bilibili.com/room/v1/Room/playUrl'
 REC_API = 'https://api.live.bilibili.com/room/v1/room/get_user_recommend'
 AREA_API = ('https://api.live.bilibili.com/xlive/web-room/v1/index/'
             'getRoomBaseInfo')
@@ -29,7 +32,6 @@ DEFAULT_LIST_PAGES = 5
 MAX_LIST_PAGES = 20
 RETRY_CODES = (403, 412, 429)
 RETRY_SLEEP = (2.0, 6.0)   # 首次重试/二次重试退避秒数
-PLAY_PACE = 0.15           # 播放地址逐房间请求的节流间隔（秒）
 
 
 def get_json(sess, url, referer=None):
@@ -54,22 +56,22 @@ def get_json(sess, url, referer=None):
 
 
 def fetch_room(sess, short_id):
-    """返回 Room；不在播或解析失败返回 None。"""
+    """单个来源房间 -> Room；不在播或解析失败返回 (None, 原因)。
+
+    只取元数据（get_info），不再逐房间调播放地址接口；播放地址统一写
+    Worker 解析地址，点播时由 Worker 侧实时解析。
+    """
     try:
         j = get_json(sess, f'{INFO_API}?room_id={short_id}')
         info = j.get('data') or {}
         if not info.get('room_id') or info.get('live_status') != 1:
             return None, '未在播'
         rid = str(info['room_id'])
-        pj = get_json(sess, f'{PLAY_API}?cid={rid}&quality=0&platform=web')
-        durl = ((pj.get('data') or {}).get('durl')) or []
-        if not durl or not durl[0].get('url'):
-            return None, '无播放地址'
         return Room(
             platform=NAME, rid=rid,
             title=(info.get('title') or '').strip(),
             nickname=(info.get('uname') or '').strip(),
-            url=durl[0]['url'],
+            url=PLAYER_BASE.format(rid),
             group=(info.get('area_name') or '').strip() or NAME,
             avatar=info.get('user_cover') or info.get('keyframe') or ''), None
     except Exception as e:
@@ -109,29 +111,18 @@ def fetch_area_map(sess, uids):
     return area
 
 
-def _resolve_room(sess, item):
-    """列表条目 -> Room（在播且有地址才返回）。"""
-    try:
-        time.sleep(PLAY_PACE)   # 逐房间播放地址请求节流，避免触发风控
-        rid = str(item.get('roomid') or '')
-        if not rid:
-            return None
-        pj = get_json(sess, f'{PLAY_API}?cid={rid}&quality=0&platform=web',
-                      referer='https://live.bilibili.com/all')
-        durl = ((pj.get('data') or {}).get('durl')) or []
-        if not durl or not durl[0].get('url'):
-            return None
-        return Room(
-            platform=NAME, rid=rid,
-            title=(item.get('title') or '').strip(),
-            nickname=(item.get('uname') or '').strip(),
-            url=durl[0]['url'],
-            group='B站',
-            avatar=item.get('user_cover') or item.get('face') or '')
-    except Exception as e:
-        log().info('  [列表] 房间 %s 解析失败: %s',
-                   item.get('roomid'), e)
+def build_room(item):
+    """批量列表条目 -> Room（不调任何逐房间接口）。"""
+    rid = str(item.get('roomid') or '')
+    if not rid:
         return None
+    return Room(
+        platform=NAME, rid=rid,
+        title=(item.get('title') or '').strip(),
+        nickname=(item.get('uname') or '').strip(),
+        url=PLAYER_BASE.format(rid),
+        group='B站',
+        avatar=item.get('user_cover') or item.get('face') or '')
 
 
 def fetch_all(sources, ctx):
@@ -148,32 +139,26 @@ def fetch_all(sources, ctx):
                 if rid and rid not in items:
                     items[rid] = it
     log().info('  [列表] %d页共 %d 个不重复房间', pages, len(items))
-    out = []
-    rooms_by_rid = {}
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        for room in ex.map(lambda it: _resolve_room(Session(), it),
-                           list(items.values())):
-            if room:
-                rooms_by_rid[room.rid] = room
-    # 列表接口不带分类，批量补一次分区名
+    out = [r for r in (build_room(it) for it in items.values()) if r]
+    # 列表接口不带分类，批量补一次分区名（不逐房间）
     uids = [str(it.get('uid')) for it in items.values() if it.get('uid')]
     if uids:
         area = fetch_area_map(Session(), uids)
         if area:
             log().info('  [分区] 批量获取 %d/%d 个房间分类', len(area),
                        len(items))
-        for rid, room in rooms_by_rid.items():
-            it = items.get(rid)
+        for room in out:
+            it = items.get(room.rid)
             uid = str(it.get('uid')) if it else ''
             if uid in area:
                 room.group = area[uid]
-    out = list(rooms_by_rid.values())
-    log().info('  [解析] %d 个在播可播', len(out))
+    log().info('  [解析] %d 个在播房间（播放地址走 Worker 动态解析，未逐个取流）',
+               len(out))
     return out
 
 
 class BilibiliPlatform(Platform):
-    """B站平台：整站列表 + 单直播间，播放地址逐房间限流取流（平台唯一例外）。"""
+    """B站平台：整站列表 + 单直播间；播放地址不逐房间取流（统一 Worker 解析）。"""
     name = NAME
     keep_stale = keep_stale
     max_workers = MAX_WORKERS

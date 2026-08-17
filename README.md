@@ -43,8 +43,9 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
   douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
   主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）；YY 频道列表
   纯 HTTP（SSR 第一页 + `/more/page.action` 分页补齐），播放地址**不逐个取流**，
-  m3u 直接写 `https://douyin-m3u8.pages.dev/yy/<房间号>`，由 Cloudflare Worker
-  点播时实时解析最高画质 FLV（看哪个解析哪个，零风控风险）。
+  m3u 直接写 `https://astar.cc.cd/yy/<房间号>`（B站为
+  `https://astar.cc.cd/bilibili/<房间号>`），由 Worker 点播时实时解析最高画质
+  FLV（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
   统一继承 `Platform` 基类、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**

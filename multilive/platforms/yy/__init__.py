@@ -6,8 +6,8 @@
     biz，再用 /more/page.action 分页接口（pageSize=200）把剩余房间
     全部抓齐；实测 dancing≈170 / music≈400 / pretty≈150。
   播放地址：不逐个取流（避免风控）。m3u 里的地址直接写成
-    https://douyin-m3u8.pages.dev/yy/<房间号> —— Cloudflare Worker
-    侧在点播时实时解析出最高画质 FLV 直链并 302，看哪个解析哪个。
+    https://astar.cc.cd/yy/<房间号> —— Worker 侧在点播时实时解析出
+    最高画质 FLV 直链并 302，看哪个解析哪个。
 
 m3u 语义：keep_stale=False，只保留在播房间。
 """
@@ -20,7 +20,7 @@ NAME = 'yy'
 keep_stale = False
 
 BASE = 'https://www.yy.com/{}'
-PLAYER_BASE = 'https://douyin-m3u8.pages.dev/yy/{}'
+PLAYER_BASE = 'https://astar.cc.cd/yy/{}'
 CAT_API = 'https://www.yy.com/more/page.action'
 PAGE_SIZE = 200
 LIST_WORKERS = 3
@@ -114,7 +114,7 @@ def fetch_category(sess, cat):
 
 
 class YYPlatform(Platform):
-    """YY 平台：列表纯 HTTP，播放地址走 pages.dev 动态解析。"""
+    """YY 平台：列表纯 HTTP，播放地址走 Worker 动态解析。"""
     name = NAME
     keep_stale = keep_stale
     max_workers = LIST_WORKERS
@@ -144,7 +144,7 @@ class YYPlatform(Platform):
                 title=meta['title'], nickname=meta['nickname'],
                 url=PLAYER_BASE.format(sid), group=meta['group'] or self.name,
                 avatar=meta.get('avatar') or ''))
-        log().info('[yy] 完成: %d 在播房间（地址走 pages.dev 动态解析，未逐个取流）',
+        log().info('[yy] 完成: %d 在播房间（地址走 Worker 动态解析，未逐个取流）',
                    len(out))
         return out
 

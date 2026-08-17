@@ -4,10 +4,10 @@
 
 1. **绝不逐房间调 API 获取信息/播放地址**（批量会触发风控）。列表与信息只用
    批量接口/SSR 页面内嵌数据；播放地址优先写
-   `https://douyin-m3u8.pages.dev/<平台>/<房间号>`，由 Cloudflare Worker
-   点播时实时解析（看哪个解析哪个）。
-2. 唯一例外是 bilibili（无批量播放接口），已降级为 3 并发 + 0.15s 节流 +
-   412/403 退避重试；其他平台不得照抄这个逐房间模式。
+   `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析
+   （看哪个解析哪个）。
+2. **不逐房间取播放地址**（包括 bilibili，`Room/playUrl` 已废弃不用），
+   一律写 Worker 解析地址。
 3. 平台下线用 `multilive.py` 的 `DISABLED` 集合，不删模块。
 4. 播放地址拿不到的房间直接跳过；单来源失败打印日志后继续，不整体崩溃。
 
@@ -15,7 +15,7 @@
 
 1. 浏览器抓包（DevTools / patchright）看列表与取流请求，确认是否带签名/cookie。
 2. 优先找**批量列表**接口（SSR 页面内嵌 / 分页接口），播放地址优先交给
-   douyin-m3u8.pages.dev 的 Worker 点播解析。
+   astar.cc.cd 的 Worker 点播解析。
 3. 纯 HTTP 复现并用 curl/node 实测：状态码、响应字段、FLV/HLS 头（注意
    直播流是无限流，验证时读几个字节就断，别用 Range 拉大包）。
 4. 未开播/不存在的返回结构也要摸清，用于区分「未开播(404)」与「风控(重试)」。
@@ -74,21 +74,32 @@
   `xlive/web-room/v1/index/getRoomBaseInfo?req_biz=web_room_componet&uids=…`
   一次性补一级分区名（`area_name`），不逐房间取信息。
 - 单房间信息：`api.live.bilibili.com/room/v1/room/get_info?room_id=`
-- 播放：`api.live.bilibili.com/room/v1/Room/playUrl?cid=<room_id>&quality=0&platform=web`
-  （整站列表无批量播放地址接口，播放地址需逐房间请求；已限 3 并发 +
-   每请求 0.15s 节流 + 412/403 退避重试，避免触发风控）
+- 播放：不逐房间取流（避免风控），m3u 条目直接写
+  `https://astar.cc.cd/bilibili/<房间号>`，Worker 点播时实时解析。
+  仅单个直播源仍走一次 `room/get_info` 取元数据（判断在播/标题/昵称），
+  不再调 `Room/playUrl`。
 - `keep_stale=False`
 
-### huya（纯 HTTP，2026-08 实测可播；**已暂时下线**，见 `multilive.py` 的 `DISABLED`）
+### huya（列表纯 HTTP 可用；播放直链 2026-08-17 js-reverse 实测**不可长播**；**已暂时下线**，见 `multilive/cli.py` 的 `DISABLED`）
 - 列表：`www.huya.com/cache.php?m=LiveList&do=getLiveListByPage&tagAll=0&page=N`
   （120 房间/页；条目里 `profileRoom` 才是房间号，`uid` 不是）
-- 播放：逐房间页 `www.huya.com/<房间号>` 解析内嵌 `stream: {...}` JSON：
-  `gameLiveInfo`（昵称/房间名/游戏）+ `gameStreamInfoList[0]`；
-  地址 = `sFlvUrl + '/' + sStreamName + '.' + sFlvUrlSuffix + '?' + sFlvAntiCode`，
-  实测直接 200 + FLV 头，无需再算签名。
-- 清晰度（2026-08 实测）：页面内嵌流为站点默认档（恒为 1920x1080、
-  实测 `videodatarate≈8000`，即蓝光8M）；房间最高原画(20M/30M)需播放器
-  SDK 的 ws RPC（`getCdnTokenInfoEx`）换 token，纯 HTTP 拿不到，暂取默认档。
+- 播放（2026-08-17 浏览器抓包 + 逐项实测）：
+  - 官方网页播放器全程走 **P2P slice 私有协议**（`p2p.huya.com/huyalive/{SN}_505_2_66.slice`
+    或 `/websocket/` 长连接形态），浏览器不发任何 FLV/HLS 直播请求；token 由 ws RPC
+    （`getCdnTokenInfoEx`/`getP2PStreamTokenInfoEx`）每 4 分钟续一次。
+  - 页面内嵌 `sFlvUrl/.flv`：302 到阿里 TBCache 边缘，但只吐 ~1MB 窗口就
+    `Connection: close`，且同 URL 一会 200 一会 403（实测连续 3 次 403 后一次 200、
+    浏览器页面内 fetch 亦 403），标准播放器无法长播。
+  - 页面内嵌 `sHlsUrl/.m3u8`：403（Bytedance NSS auth 拒绝），已死。
+  - P2P slice（页面内嵌 `sP2pAntiCode` 直接可用，无需 ws）：
+    - 能**连续**拉流（实测 60s 线性增长 ~50KB/s，`505` 后缀≈流畅档）；
+    - antiCode 的 `wsTime` 声明 5 分钟过期，但 CDN 不硬卡：实测签发 30+ 分钟、
+      声明过期 27+ 分钟仍返回 200 持续流数据；
+    - 但容器为私有分片（16B 头 + 长度前缀 H.264 NAL 等），PotPlayer/VLC/mpv
+      无法直接解码。
+  - 结论：**拿不到「标准播放器可直接长播」的直链**；若未来要接入只能走 CF Worker
+    按需解析 + slice→FLV 转封装（≈重写虎牙拉流端，且 CF IP 有被 huya 风控风险），
+    维持 `DISABLED`。
 - `keep_stale=False`（只留此刻在播）
 
 ### douyu（主链路纯 HTTP；浏览器仅兜底取参）
@@ -108,15 +119,15 @@
 - `keep_stale=False`
 
 
-### yy（列表纯 HTTP；播放地址走 pages.dev 动态解析，2026-08 实测可播）
+### yy（列表纯 HTTP；播放地址走 Worker 动态解析，2026-08 实测可播）
 - 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面只内嵌
   第一页在播房间（`data-url="/{sid}/{ssid}"` + `data-title` 房间标题）；
   页面 `pageInfo` 给出 totalCount/moduleId/biz，再用
   `www.yy.com/more/page.action?biz=…&moduleId=…&pageSize=200` 分页补齐
   全部房间；实测 dancing≈160 / music≈390 / pretty≈140（随直播浮动）。
 - 播放地址不逐个取流（避免风控），m3u 条目直接写
-  `https://douyin-m3u8.pages.dev/yy/<房间号>`：Cloudflare Worker 在点播时
-  通过 `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
+  `https://astar.cc.cd/yy/<房间号>`：Worker 在点播时通过
+  `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
   无 cookie/签名，gear=4 蓝光最高画质）实时解析 FLV 直链并 302，
   看哪个解析哪个。列表抓取全程零风险纯 HTTP。
 - `keep_stale=False`

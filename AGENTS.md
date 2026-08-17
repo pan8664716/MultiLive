@@ -6,7 +6,7 @@
 
 - 用户侧产物：`output/multilive.m3u`（全聚合）+ `output/<平台>_live.m3u`（单平台），订阅地址见 README（走 `gh-proxy.org` 代理前缀）
 - 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每小时自动跑 `python3 multilive.py` 并提交
-- 播放地址形态：抖音/斗鱼/快手/B站 为直链；**YY 不取直链**，m3u 里写 `https://douyin-m3u8.pages.dev/yy/<房间号>`，由 Cloudflare Worker 点播时实时解析（看哪个解析哪个）
+- 播放地址形态：抖音/斗鱼/快手 为直链；**YY/B站 不取直链**，m3u 里写 `https://astar.cc.cd/yy/<房间号>` / `https://astar.cc.cd/bilibili/<房间号>`，由 Worker 点播时实时解析（看哪个解析哪个）
 
 ## 快速开始
 
@@ -51,8 +51,8 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 1. **绝不逐房间调 API 获取信息或播放地址**（批量请求会触发风控）。只能：
    - 列表/信息：批量接口、SSR 页面内嵌数据（如 B站 `getRoomBaseInfo?uids=…` 50个/请求）；
-   - 播放地址：优先写 `https://douyin-m3u8.pages.dev/<平台>/<房间号>`，由 Worker 点播时解析；
-   - **唯一例外**：bilibili 无批量播放接口，只能逐房间 `Room/playUrl`（已降级为 3 并发 + 0.15s 节流 + 412/403 退避），不要扩大或提速。
+   - 播放地址：优先写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时解析；
+   - **不逐房间取播放地址**（包括 bilibili，`Room/playUrl` 已废弃不用）。
 2. 平台暂时下线：改 `multilive/cli.py` 顶部 `DISABLED = {'huya'}`（不抓取 + 每轮清空该平台输出），**不要删平台文件夹**；恢复 = 移出集合 + `sources.txt` 取消注释。
 3. 增量合并规则（`m3u.merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keep_stale=False` 的平台本轮运行后丢弃下播房间。
 4. `output/*.m3u` 与 `output/status.json` **入库**（订阅靠它们）。改了抓取逻辑必须本地跑通再提交，别只改代码不产出。
@@ -63,7 +63,7 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 - 先 `python3 multilive.py --platform <x> --dry-run --verbose`；`output/run.log` 滚动保留 3 份，`output/status.json` 每轮房间数可对比是否被风控/接口变动。
 - 常见风控码：B站 `-412`（数据中心 IP）/ `-352`；douyin ttwid/滑块；YY SDK `result:2`；斗鱼 websec 加密。
-- **B站 + Cloudflare IP 全线 -412**：CF 出口被 B站封，所以 B站不能像 YY 那样走 pages.dev 纯 Worker 解析（实测 `/bilibili/<房间号>` 全部 502），保持 MultiLive 内逐房间限流取流。
+- B站播放地址同样走 Worker（`astar.cc.cd/bilibili/<房间号>`）点播解析，MultiLive 内不再逐房间调 `Room/playUrl`。
 - 平台数量异常少：多半是分页没抓全（YY 教训：SSR 只有第一页，需页面 `pageInfo` 的 `totalCount/moduleId/biz` 走 `/more/page.action` 补齐）。
 - 接口失效：先用浏览器抓包找新接口，再转纯 HTTP 复现（方法论见 PLATFORMS.md）。
 

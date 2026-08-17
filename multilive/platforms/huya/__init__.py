@@ -1,13 +1,16 @@
-"""虎牙直播（纯 HTTP，2026-08 实测可播）。
+"""虎牙直播（列表纯 HTTP；播放直链 2026-08-17 逆向实测已不可长播，模块已下线）。
 
-两步纯 HTTP：
-  1) cache.php?m=LiveList&do=getLiveListByPage —— 整站在播房间列表
-     （120 房间/页），条目里 profileRoom 是真正的房间号
-  2) 逐房间页 https://www.huya.com/<房间号> —— 解析内嵌
-     hyPlayerConfig.stream.data[0]：
-       gameLiveInfo(昵称/房间名/游戏) + gameStreamInfoList(CDN 直链)
-  播放地址 = sFlvUrl + '/' + sStreamName + '.' + sFlvUrlSuffix + '?' + sFlvAntiCode
-  （实测直接返回 FLV 头，PotPlayer/VLC 可播；无需额外签名计算）
+列表：cache.php?m=LiveList&do=getLiveListByPage —— 整站在播房间列表
+      （120 房间/页），条目里 profileRoom 是真正的房间号。
+
+播放（详见 PLATFORMS.md「huya」章节）：
+  - 官方网页播放器全程走 P2P slice 私有协议（p2p.huya.com/..._505_2_66.slice），
+    每 4 分钟 ws 续 token；浏览器不发任何 FLV/HLS 直播请求。
+  - 页面内嵌 sFlvUrl/.flv 302 到 TBCache 边缘后只吐 ~1MB 窗口就断开且极不稳定
+    （同 URL 一会 200 一会 403），sHlsUrl/.m3u8 403 已死。
+  - P2P slice 可用页面内嵌 sP2pAntiCode 连续拉流（wsTime 过期 30+ 分钟仍 200），
+    但容器是私有分片格式，PotPlayer/VLC/mpv 无法直接解码。
+  结论：拿不到「标准播放器可直接长播」的直链，维持 DISABLED。
 
 m3u 语义：keep_stale=False，只保留此刻在播。
 """
