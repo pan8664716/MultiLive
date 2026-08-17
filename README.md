@@ -41,8 +41,9 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
 - **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY 纯 HTTP（仅 Python 3.9+ 标准库）；
   douyin 保留「接口 → 浏览器(可选) → 页面」三级降级；斗鱼目录与播放地址
   主链路纯 HTTP（参考抖音思路：浏览器仅在取参被风控时兜底）；YY 频道列表
-  纯 HTTP，播放地址因官方 SDK 签名只能浏览器取流（缓存直链，仅刷新新增/
-  过期房间）。
+  纯 HTTP（SSR 第一页 + `/more/page.action` 分页补齐），播放地址**不逐个取流**，
+  m3u 直接写 `https://douyin-m3u8.pages.dev/yy/<房间号>`，由 Cloudflare Worker
+  点播时实时解析最高画质 FLV（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/` 每个平台一个模块、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**
   （B站特殊：播放地址无批量接口、必须逐房间请求，为防触发风控降为
@@ -82,7 +83,7 @@ bilibili:https://live.bilibili.com/all:10          # B站整站列表（页数�
 bilibili:https://live.bilibili.com/6               # B站直播间页
 huya:https://www.huya.com/l:10                     # 虎牙全部直播（页数可选，120 房间/页）
 douyu:https://www.douyu.com/directory/all:10       # 斗鱼全部频道（页数可选，120 房间/页）
-yy:https://www.yy.com/music/                            # YY 频道页（SSR 内嵌全部在播房间）
+yy:https://www.yy.com/music/                            # YY 频道页（SSR 第一页 + 分页接口补齐）
 ```
 
 裸地址自动识别（按平台名排序逐个尝试）；有歧义时请用显式前缀。
@@ -124,9 +125,9 @@ sources.txt ──► config.load_sources() ──► 平台注册表（自动�
            平台级并行（各平台一个线程）
    ┌──────────┬──────────┬──────────┬─────────┐
    ▼          ▼          ▼          ▼         ▼
-douyin.py  kuaishou.py bilibili.py huya.py  douyu.py   ← 平台模块：parse() + fetch()
-   │          │          │          │         │           （内部均 5 并发）
-   └──────────┴──────────┴────┬─────┴─────────┘
+douyin.py  kuaishou.py bilibili.py huya.py  douyu.py  yy.py  ← 平台模块：parse() + fetch()
+   │          │          │          │         │          │        （内部自行限并发）
+   └──────────┴──────────┴────┬─────┴─────────┴──────────┘
                              ▼
                       Room 统一模型
                              ▼
@@ -147,8 +148,12 @@ douyin.py  kuaishou.py bilibili.py huya.py  douyu.py   ← 平台模块：parse(
 | `tools/browser_fetch_douyin.mjs` | douyin 浏览器兜底（可选，Patchright） |
 | `tools/douyu_warm.mjs` | 斗鱼浏览器取参兜底（Patchright，可选） |
 
+## 维护者 / AI 接管指引
+
+> 先读根目录 **AGENTS.md**（架构、铁律、排障、Action 注意事项），再读 **PLATFORMS.md**（平台接口情报）。
+
 ## 接入新平台（30 秒版）
 
-在 `multilive/platforms/` 新建 `douyu.py`，实现 `NAME / parse / fetch` 即可，
+在 `multilive/platforms/` 新建 `example.py`（照抄 `_template.py`），实现 `NAME / parse / fetch` 即可，
 框架会自动发现并参与并行抓取、合并与定时任务。完整约定与各平台的
 接口调研结论见 **PLATFORMS.md**。

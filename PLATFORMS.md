@@ -1,5 +1,26 @@
 # 平台接入指南（PLATFORMS）
 
+## 通用铁律（所有平台一致，务必遵守）
+
+1. **绝不逐房间调 API 获取信息/播放地址**（批量会触发风控）。列表与信息只用
+   批量接口/SSR 页面内嵌数据；播放地址优先写
+   `https://douyin-m3u8.pages.dev/<平台>/<房间号>`，由 Cloudflare Worker
+   点播时实时解析（看哪个解析哪个）。
+2. 唯一例外是 bilibili（无批量播放接口），已降级为 3 并发 + 0.15s 节流 +
+   412/403 退避重试；其他平台不得照抄这个逐房间模式。
+3. 平台下线用 `multilive.py` 的 `DISABLED` 集合，不删模块。
+4. 播放地址拿不到的房间直接跳过；单来源失败打印日志后继续，不整体崩溃。
+
+## 调研新平台的方法论（接口情报怎么来）
+
+1. 浏览器抓包（DevTools / patchright）看列表与取流请求，确认是否带签名/cookie。
+2. 优先找**批量列表**接口（SSR 页面内嵌 / 分页接口），播放地址优先交给
+   douyin-m3u8.pages.dev 的 Worker 点播解析。
+3. 纯 HTTP 复现并用 curl/node 实测：状态码、响应字段、FLV/HLS 头（注意
+   直播流是无限流，验证时读几个字节就断，别用 Range 拉大包）。
+4. 未开播/不存在的返回结构也要摸清，用于区分「未开播(404)」与「风控(重试)」。
+5. 单平台 `--dry-run` 验证通过后再放回 `sources.txt` 全量跑。
+
 ## 一个平台 = 一个模块
 
 在 `multilive/platforms/` 下新建 `douyu.py`，实现 3 个约定就会被自动注册：
@@ -16,7 +37,8 @@
 
 - `Room(platform, rid, title, nickname, url, group, avatar)`，无播放地址的房间直接跳过。
 - 纯 HTTP 用 `from multilive.core import Session`（自带 CookieJar/UA/超时）；
-  一次性 GET 用 `core.http_json`。所有平台零第三方依赖（标准库）。
+  HTTP 用 `multilive.core.Session`（`get/get_text/get_json/post_json`）。
+  所有平台零第三方依赖（标准库）。
 - `ctx.project_root`（读 tools/ 里的辅助脚本）、`ctx.pages_cap`（`--pages` 上限）。
 - 单来源失败不要整体崩溃：日志提示后继续其他来源；并发用
   `concurrent.futures.ThreadPoolExecutor`，每个线程独立 `Session`。
@@ -80,6 +102,20 @@
   did + getEncryption），之后仍回纯 HTTP；结果缓存 `output/douyu_warm.json`。
 - `keep_stale=False`
 
+
+### yy（列表纯 HTTP；播放地址走 pages.dev 动态解析，2026-08 实测可播）
+- 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面只内嵌
+  第一页在播房间（`data-url="/{sid}/{ssid}"` + `data-title` 房间标题）；
+  页面 `pageInfo` 给出 totalCount/moduleId/biz，再用
+  `www.yy.com/more/page.action?biz=…&moduleId=…&pageSize=200` 分页补齐
+  全部房间；实测 dancing≈160 / music≈390 / pretty≈140（随直播浮动）。
+- 播放地址不逐个取流（避免风控），m3u 条目直接写
+  `https://douyin-m3u8.pages.dev/yy/<房间号>`：Cloudflare Worker 在点播时
+  通过 `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
+  无 cookie/签名，gear=4 蓝光最高画质）实时解析 FLV 直链并 302，
+  看哪个解析哪个。列表抓取全程零风险纯 HTTP。
+- `keep_stale=False`
+
 ## 调研结论（后续平台的现成接口情报）
 
 以下结论来自 2026-08 实机抓包验证，新平台实现时可直接采用。
@@ -97,18 +133,6 @@
 2. `--verbose` 看 DEBUG 日志；`output/run.log` 保留近 3 轮日志（不入库）。
 3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
-5. 并发规则：平台之间并行，平台内部固定 5 并发（各平台文件顶部常量）。
+5. 并发规则：平台之间并行；平台内部并发数在各自文件顶部常量（多为 3~5）。
 
 
-### yy（列表纯 HTTP；播放地址走 pages.dev 动态解析，2026-08 实测可播）
-- 频道页 `https://www.yy.com/{dancing|pretty|music}` 为 SSR，页面只内嵌
-  第一页在播房间（`data-url="/{sid}/{ssid}"` + `data-title` 房间标题）；
-  页面 `pageInfo` 给出 totalCount/moduleId/biz，再用
-  `www.yy.com/more/page.action?biz=…&moduleId=…&pageSize=200` 分页补齐
-  全部房间；实测 dancing≈164 / music≈391 / pretty≈142。
-- 播放地址不逐个取流（避免风控），m3u 条目直接写
-  `https://douyin-m3u8.pages.dev/yy/<房间号>`：Cloudflare Worker 在点播时
-  通过 `stream-manager.yy.com/v3/channel/streams`（纯 POST 固定 JSON，
-  无 cookie/签名，gear=4 蓝光最高画质）实时解析 FLV 直链并 302，
-  看哪个解析哪个。列表抓取全程零风险纯 HTTP。
-- `keep_stale=False`

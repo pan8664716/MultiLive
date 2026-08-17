@@ -25,6 +25,6 @@ def fetch(sources, ctx):    # 抓取一个/多个来源
   - parse 返回 [] 表示「不认识这行」；抛 ValueError 表示「认领但格式错」。
   - fetch 失败不应整体崩溃：单来源失败打印日志后跳过其余来源。
   - 播放地址拿不到的房间直接跳过（不写入 m3u）。
-  - 纯标准库 HTTP 用 multilive.core.Session；GET 一次性的用 core.http_json。
+  - 纯标准库 HTTP 用 multilive.core.Session（get/get_text/get_json/post_json）。
   - 并发抓取用 concurrent.futures.ThreadPoolExecutor，每个线程独立 Session。
 """
