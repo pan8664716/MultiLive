@@ -1,7 +1,7 @@
 """核心基础：Room 数据模型、HTTP 会话、日志工具。
 
-所有平台模块只依赖本文件提供的工具（Session / log / Room），
-不直接读取文件或命令行参数，保证「加新平台 = 只写一个模块」。
+所有平台只依赖本文件提供的工具（Session / log / Room / Source），
+不直接读取文件或命令行参数，保证「加新平台 = 只写一个平台文件夹」。
 """
 import http.cookiejar
 import json
@@ -25,6 +25,16 @@ class Room:
     group: str = ''        # m3u group-title 分类名
     avatar: str = ''
     extra: dict = field(default_factory=dict)  # 平台私有字段，随条目透传
+
+
+@dataclass
+class Source:
+    """一个来源（一行配置解析后的结果），语义由平台自行定义。
+    meta 为可选的平台私有配置（如快手翻页数）。"""
+    platform: str
+    kind: str
+    target: str
+    meta: int = 0
 
 
 def log():

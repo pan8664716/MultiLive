@@ -15,8 +15,8 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 
-from multilive.config import Source
-from multilive.core import Room, Session, fmt_exc, log
+from multilive.core import Room, Session, Source, fmt_exc, log
+from multilive.platforms.base import Platform
 
 NAME = 'huya'
 keep_stale = False
@@ -27,22 +27,6 @@ DEFAULT_PAGES = 10        # 默认扫 10 页列表（1200 房间）
 MAX_PAGES = 79
 LIST_WORKERS = 5
 ROOM_WORKERS = 5
-
-
-def parse(line):
-    t = line.strip()
-    m = re.match(r'https?://www\.huya\.com/l(:\d+)?', t)
-    if not m:
-        return []
-    pages = DEFAULT_PAGES
-    if m.group(1):
-        try:
-            pages = int(m.group(1)[1:])
-        except ValueError:
-            pass
-    src = Source(NAME, 'list', 'ALL')
-    src.meta = min(max(pages, 1), MAX_PAGES)
-    return [src]
 
 
 def fetch_list_page(sess, page, total):
@@ -129,17 +113,41 @@ def fetch_room_page(sess, rid):
         return None
 
 
-def fetch(sources, ctx):
-    log().info('[huya] %d 个来源', len(sources))
-    rooms = fetch_list(sources, ctx)
-    out = []
-    with ThreadPoolExecutor(max_workers=ROOM_WORKERS) as ex:
-        futs = {ex.submit(fetch_room_page, Session(), rid): rid
-                for rid, _meta in rooms}
-        for fut in futs:
-            r = fut.result()
-            if r:
-                out.append(Room(platform=NAME, **r))
-    log().info('[huya] 完成: %d 在播房间（%d 个未解析到流地址已跳过）',
-               len(out), len(rooms) - len(out))
-    return out
+class HuyaPlatform(Platform):
+    """虎牙平台（当前在 multilive/cli.py 的 DISABLED 中下线）。"""
+    name = NAME
+    keep_stale = keep_stale
+    max_workers = ROOM_WORKERS
+
+    def parse(self, line):
+        t = line.strip()
+        m = re.match(r'https?://www\.huya\.com/l(:\d+)?', t)
+        if not m:
+            return []
+        pages = DEFAULT_PAGES
+        if m.group(1):
+            try:
+                pages = int(m.group(1)[1:])
+            except ValueError:
+                pass
+        src = Source(self.name, 'list', 'ALL')
+        src.meta = min(max(pages, 1), MAX_PAGES)
+        return [src]
+
+    def fetch(self, sources, ctx):
+        log().info('[huya] %d 个来源', len(sources))
+        rooms = fetch_list(sources, ctx)
+        out = []
+        with ThreadPoolExecutor(max_workers=ROOM_WORKERS) as ex:
+            futs = {ex.submit(fetch_room_page, Session(), rid): rid
+                    for rid, _meta in rooms}
+            for fut in futs:
+                r = fut.result()
+                if r:
+                    out.append(Room(platform=self.name, **r))
+        log().info('[huya] 完成: %d 在播房间（%d 个未解析到流地址已跳过）',
+                   len(out), len(rooms) - len(out))
+        return out
+
+
+platform = HuyaPlatform()

@@ -36,8 +36,8 @@ import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 
-from multilive.config import Source
-from multilive.core import Room, Session, fmt_exc, log
+from multilive.core import Room, Session, Source, fmt_exc, log
+from multilive.platforms.base import Platform
 
 NAME = 'douyu'
 keep_stale = False
@@ -54,22 +54,6 @@ PLAY_WORKERS = 5
 KEY_REFRESH_LEAD = 120     # 剩余有效期小于该秒数就刷新 key
 WARM_TIMEOUT = 180
 CACHE_NAME = 'douyu_warm.json'
-
-
-def parse(line):
-    t = line.strip()
-    m = re.match(r'https?://www\.douyu\.com/directory/all(:\d+)?', t)
-    if not m:
-        return []
-    pages = DEFAULT_PAGES
-    if m.group(1):
-        try:
-            pages = int(m.group(1)[1:])
-        except ValueError:
-            pass
-    src = Source(NAME, 'all', 'ALL')
-    src.meta = min(max(pages, 1), MAX_PAGES)
-    return [src]
 
 
 def _md5(s):
@@ -259,8 +243,6 @@ class _RoomError(RuntimeError):
     """房间级错误（未开播/无流等），仅跳过该房间。"""
 
 
-# ---------------- 播放地址解析 ----------------
-
 def resolve_play(sess, bundle, rid):
     """纯 HTTP POST getH5PlayV1。返回 (url, raw_json) 或抛错。"""
     ts = int(time.time())
@@ -293,106 +275,130 @@ def resolve_play(sess, bundle, rid):
     return play_url(j.get('data') or {}), j
 
 
-def fetch(sources, ctx):
-    log().info('[douyu] %d 个来源', len(sources))
-    rooms = fetch_dir(sources, ctx)
-    if not rooms:
-        return []
+class DouyuPlatform(Platform):
+    """斗鱼平台：目录列表 + 播放地址主链路纯 HTTP，浏览器仅取参兜底。"""
+    name = NAME
+    keep_stale = keep_stale
+    max_workers = PLAY_WORKERS
 
-    try:
-        bundle = warm(ctx)
-    except Exception as e:
-        log().warning('[douyu] 取加密参数失败(%s)，本轮跳过播放地址', fmt_exc(e))
-        return []
-
-    state = {'bundle': bundle, 'lock': threading.Lock(),
-             'aborted': False, 'sys_fail': 0, 'refreshed': False}
-    out = []
-
-    def get_bundle():
-        """返回可用的加密参数；临近过期时刷新（HTTP 优先，浏览器兜底）。"""
-        with state['lock']:
-            b = state['bundle']
-            if b['expire_at'] - time.time() > KEY_REFRESH_LEAD:
-                return b
-            log().info('  [取参] key 临近过期，刷新…')
+    def parse(self, line):
+        t = line.strip()
+        m = re.match(r'https?://www\.douyu\.com/directory/all(:\d+)?', t)
+        if not m:
+            return []
+        pages = DEFAULT_PAGES
+        if m.group(1):
             try:
-                nb = warm_http()
-            except Exception as e:
-                log().warning('  [取参] HTTP刷新失败(%s)，走浏览器', fmt_exc(e))
-                try:
-                    nb = warm_browser(ctx)
-                except Exception:
-                    nb = b  # 保底沿用旧 key（请求会失败并被计数熔断）
-            state['bundle'] = nb
-            save_cache(ctx, nb)
-            return nb
+                pages = int(m.group(1)[1:])
+            except ValueError:
+                pass
+        src = Source(self.name, 'all', 'ALL')
+        src.meta = min(max(pages, 1), MAX_PAGES)
+        return [src]
 
-    def work(rid):
-        if state['aborted']:
-            return None
-        b = get_bundle()
+    def fetch(self, sources, ctx):
+        log().info('[douyu] %d 个来源', len(sources))
+        rooms = fetch_dir(sources, ctx)
+        if not rooms:
+            return []
+
         try:
-            url, _j = resolve_play(Session(), b, rid)
+            bundle = warm(ctx)
+        except Exception as e:
+            log().warning('[douyu] 取加密参数失败(%s)，本轮跳过播放地址', fmt_exc(e))
+            return []
+
+        state = {'bundle': bundle, 'lock': threading.Lock(),
+                 'aborted': False, 'sys_fail': 0, 'refreshed': False}
+        out = []
+
+        def get_bundle():
+            """返回可用的加密参数；临近过期时刷新（HTTP 优先，浏览器兜底）。"""
             with state['lock']:
-                state['sys_fail'] = 0
-            return url or None
-        except _RoomError:
-            return None  # 房间级错误：未开播/无流等，仅跳过
-        except _SystemicError as e:
-            msg = fmt_exc(e)
-            with state['lock']:
-                state['sys_fail'] += 1
-                if state['sys_fail'] >= 3 and not state['refreshed']:
-                    state['refreshed'] = True
-                    refreshed = True
-                else:
-                    refreshed = False
-                if state['sys_fail'] >= 6:
-                    state['aborted'] = True
-                    abort = True
-                else:
-                    abort = False
-            if refreshed:
-                log().warning('[douyu] 疑似鉴权异常(%s)，换 key 重试', msg[:60])
+                b = state['bundle']
+                if b['expire_at'] - time.time() > KEY_REFRESH_LEAD:
+                    return b
+                log().info('  [取参] key 临近过期，刷新…')
                 try:
-                    with state['lock']:
-                        nb = warm_http()
-                        state['bundle'] = nb
-                    save_cache(ctx, nb)
-                    url, _j = resolve_play(Session(), get_bundle(), rid)
-                    return url or None
+                    nb = warm_http()
+                except Exception as e:
+                    log().warning('  [取参] HTTP刷新失败(%s)，走浏览器', fmt_exc(e))
+                    try:
+                        nb = warm_browser(ctx)
+                    except Exception:
+                        nb = b  # 保底沿用旧 key（请求会失败并被计数熔断）
+                state['bundle'] = nb
+                save_cache(ctx, nb)
+                return nb
+
+        def work(rid):
+            if state['aborted']:
+                return None
+            b = get_bundle()
+            try:
+                url, _j = resolve_play(Session(), b, rid)
+                with state['lock']:
+                    state['sys_fail'] = 0
+                return url or None
+            except _RoomError:
+                return None  # 房间级错误：未开播/无流等，仅跳过
+            except _SystemicError as e:
+                msg = fmt_exc(e)
+                with state['lock']:
+                    state['sys_fail'] += 1
+                    if state['sys_fail'] >= 3 and not state['refreshed']:
+                        state['refreshed'] = True
+                        refreshed = True
+                    else:
+                        refreshed = False
+                    if state['sys_fail'] >= 6:
+                        state['aborted'] = True
+                        abort = True
+                    else:
+                        abort = False
+                if refreshed:
+                    log().warning('[douyu] 疑似鉴权异常(%s)，换 key 重试', msg[:60])
+                    try:
+                        with state['lock']:
+                            nb = warm_http()
+                            state['bundle'] = nb
+                        save_cache(ctx, nb)
+                        url, _j = resolve_play(Session(), get_bundle(), rid)
+                        return url or None
+                    except Exception:
+                        pass
+                if abort:
+                    log().warning('[douyu] 播放接口持续异常(%s)，本轮停止解析'
+                                  '（%d个房间已跳过）', msg[:60],
+                                  len(rooms) - len(out))
+                return None
+            except Exception as e:
+                log().info('  [房间] %s 网络异常: %s', rid, fmt_exc(e))
+                return None
+
+        with ThreadPoolExecutor(max_workers=PLAY_WORKERS) as ex:
+            futs = {ex.submit(work, rid): rid for rid in rooms}
+            for fut, rid in [(f, r) for f, r in futs.items()]:
+                if state['aborted']:
+                    for f in futs:
+                        f.cancel()
+                    break
+                url = fut.result()
+                if url:
+                    meta = rooms[rid]
+                    r = Room(platform=self.name, rid=rid,
+                             title=meta['title'], nickname=meta['nickname'],
+                             url=url, group=meta['group'], avatar=meta['avatar'])
+                    out.append(r)
+        for f in futs:
+            if f.done() and not f.cancelled():
+                try:
+                    f.exception()
                 except Exception:
                     pass
-            if abort:
-                log().warning('[douyu] 播放接口持续异常(%s)，本轮停止解析'
-                              '（%d个房间已跳过）', msg[:60],
-                              len(rooms) - len(out))
-            return None
-        except Exception as e:
-            log().info('  [房间] %s 网络异常: %s', rid, fmt_exc(e))
-            return None
+        log().info('[douyu] 完成: %d 房间（目录 %d 个，可播放 %d 个）',
+                   len(out), len(rooms), len(out))
+        return out
 
-    with ThreadPoolExecutor(max_workers=PLAY_WORKERS) as ex:
-        futs = {ex.submit(work, rid): rid for rid in rooms}
-        for fut, rid in [(f, r) for f, r in futs.items()]:
-            if state['aborted']:
-                for f in futs:
-                    f.cancel()
-                break
-            url = fut.result()
-            if url:
-                meta = rooms[rid]
-                r = Room(platform=NAME, rid=rid,
-                         title=meta['title'], nickname=meta['nickname'],
-                         url=url, group=meta['group'], avatar=meta['avatar'])
-                out.append(r)
-    for f in futs:
-        if f.done() and not f.cancelled():
-            try:
-                f.exception()
-            except Exception:
-                pass
-    log().info('[douyu] 完成: %d 房间（目录 %d 个，可播放 %d 个）',
-               len(out), len(rooms), len(out))
-    return out
+
+platform = DouyuPlatform()

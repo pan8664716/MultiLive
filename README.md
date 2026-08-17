@@ -5,7 +5,8 @@
 VLC / mpv / IINA 直接导入播放。
 
 本仓库是 douyin-actions 与 kuaishou 两个方案的合并重构：统一了配置格式、
-抓取框架、m3u 增量合并与定时更新，**新增平台只需写一个模块**，不碰公共代码。
+抓取框架、m3u 增量合并与定时更新，**新增平台只需新建一个文件夹**，
+不碰公共代码。
 
 ## 订阅方式（直接导入播放器）
 
@@ -44,7 +45,8 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
   纯 HTTP（SSR 第一页 + `/more/page.action` 分页补齐），播放地址**不逐个取流**，
   m3u 直接写 `https://douyin-m3u8.pages.dev/yy/<房间号>`，由 Cloudflare Worker
   点播时实时解析最高画质 FLV（看哪个解析哪个，零风控风险）。
-- **平台插件化 + 并行**：`multilive/platforms/` 每个平台一个模块、自动注册；
+- **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
+  统一继承 `Platform` 基类、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**
   （B站特殊：播放地址无批量接口、必须逐房间请求，为防触发风控降为
     3 并发 + 每请求 0.15s 节流 + 412/403 退避重试；信息类数据全部走
@@ -119,17 +121,17 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 第
 ## 架构总览
 
 ```
-sources.txt ──► config.load_sources() ──► 平台注册表（自动发现）
+sources.txt ──► config.load_sources() ──► registry（自动发现 Platform 实例）
                     │
                     ▼
            平台级并行（各平台一个线程）
-   ┌──────────┬──────────┬──────────┬─────────┐
-   ▼          ▼          ▼          ▼         ▼
-douyin.py  kuaishou.py bilibili.py huya.py  douyu.py  yy.py  ← 平台模块：parse() + fetch()
-   │          │          │          │         │          │        （内部自行限并发）
-   └──────────┴──────────┴────┬─────┴─────────┴──────────┘
+   ┌──────────┬───────────┬──────────┬──────────┐
+   ▼          ▼           ▼          ▼          ▼
+ douyin/   kuaishou/   bilibili/   douyu/     yy/   ← 平台文件夹：继承 Platform，
+   │          │           │          │          │       实现 parse() + fetch()
+   └──────────┴───────────┴────┬─────┴──────────┘
                              ▼
-                      Room 统一模型
+                 Room / Source 统一模型（core）
                              ▼
                  m3u.merge() 增量合并（置顶/去重/保留策略）
                              ▼
@@ -140,11 +142,14 @@ douyin.py  kuaishou.py bilibili.py huya.py  douyu.py  yy.py  ← 平台模块：
 
 | 文件 | 职责 |
 |---|---|
-| `multilive.py` | CLI 入口、平台并发调度、日志初始化 |
-| `multilive/config.py` | sources.txt 解析、平台自动发现与注册 |
-| `multilive/core.py` | `Room` 模型、`Session` HTTP 会话（CookieJar）、日志 |
+| `multilive.py` | 薄入口（转调 `multilive/cli.py`） |
+| `multilive/cli.py` | CLI 参数、平台并发调度、日志初始化、`DISABLED` |
+| `multilive/config.py` | sources.txt 解析 |
+| `multilive/registry.py` | 平台注册表（自动发现） |
+| `multilive/core.py` | 公共库：`Room`/`Source` 模型、`Session`（CookieJar）、日志 |
 | `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
-| `multilive/platforms/*` | 平台实现（见 PLATFORMS.md） |
+| `multilive/platforms/base.py` | `Platform` 基类（统一契约）与公共小工具 |
+| `multilive/platforms/<平台>/` | 各平台实现（见 PLATFORMS.md） |
 | `tools/browser_fetch_douyin.mjs` | douyin 浏览器兜底（可选，Patchright） |
 | `tools/douyu_warm.mjs` | 斗鱼浏览器取参兜底（Patchright，可选） |
 
@@ -154,6 +159,7 @@ douyin.py  kuaishou.py bilibili.py huya.py  douyu.py  yy.py  ← 平台模块：
 
 ## 接入新平台（30 秒版）
 
-在 `multilive/platforms/` 新建 `example.py`（照抄 `_template.py`），实现 `NAME / parse / fetch` 即可，
+在 `multilive/platforms/` 新建 `example/` 文件夹（照抄 `_template.py`），
+继承 `Platform`、实现 `parse / fetch` 并导出 `platform` 实例即可，
 框架会自动发现并参与并行抓取、合并与定时任务。完整约定与各平台的
 接口调研结论见 **PLATFORMS.md**。

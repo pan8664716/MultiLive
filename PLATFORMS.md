@@ -21,27 +21,32 @@
 4. 未开播/不存在的返回结构也要摸清，用于区分「未开播(404)」与「风控(重试)」。
 5. 单平台 `--dry-run` 验证通过后再放回 `sources.txt` 全量跑。
 
-## 一个平台 = 一个模块
+## 一个平台 = 一个文件夹（统一契约）
 
-在 `multilive/platforms/` 下新建 `douyu.py`，实现 3 个约定就会被自动注册：
+在 `multilive/platforms/` 下新建 `<平台名>/` 文件夹，在 `__init__.py` 里
+继承 `Platform` 基类并导出 `platform` 实例，注册表（`multilive/registry.py`）
+就会自动发现：
 
-| 约定 | 说明 |
+| 类属性 / 方法 | 说明 |
 |---|---|
-| `NAME` | 平台名（用于 sources.txt 前缀、tvg-id、日志） |
+| `name` | 平台名（用于 sources.txt 前缀、tvg-id、日志） |
 | `parse(line) -> [Source]` | 认领一行来源配置；不认领返回 `[]` |
 | `fetch(sources, ctx) -> [Room]` | 抓取并返回统一模型 `Room` |
 | `keep_stale`（可选） | `True` 保留下播历史（有兜底地址时），`False` 只留此刻在播 |
 | `fallback_url(room)`（可选） | 历史条目兜底播放地址（douyin 用 pages.dev） |
+| `max_workers`（可选） | `self.parallel_map` 默认并发数，默认 3 |
 
 模板见 `multilive/platforms/_template.py`。要点：
 
+- 平台文件变大后可继续在文件夹内拆分 `api.py` / `stream.py` 等子模块，
+  `__init__.py` 只保留「类 + platform 实例」作为稳定契约出口。
 - `Room(platform, rid, title, nickname, url, group, avatar)`，无播放地址的房间直接跳过。
-- 纯 HTTP 用 `from multilive.core import Session`（自带 CookieJar/UA/超时）；
-  HTTP 用 `multilive.core.Session`（`get/get_text/get_json/post_json`）。
+- 纯 HTTP 用 `from multilive.core import Session`（自带 CookieJar/UA/超时），
+  数据模型 `Room`/`Source` 也在 `multilive.core`。
   所有平台零第三方依赖（标准库）。
 - `ctx.project_root`（读 tools/ 里的辅助脚本）、`ctx.pages_cap`（`--pages` 上限）。
-- 单来源失败不要整体崩溃：日志提示后继续其他来源；并发用
-  `concurrent.futures.ThreadPoolExecutor`，每个线程独立 `Session`。
+- 单来源失败不要整体崩溃：日志提示后继续其他来源；并发优先用
+  `self.parallel_map(fn, items)`（内部 ThreadPoolExecutor，每个任务独立 `Session`）。
 - 平台缩略名要能被用户一眼看懂：`douyin/kuaishou/bilibili/douyu/huya/twitch`。
 
 `Source(platform, kind, target, meta=0)` 的 `kind/target` 语义平台自定，
@@ -134,5 +139,4 @@
 3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
 5. 并发规则：平台之间并行；平台内部并发数在各自文件顶部常量（多为 3~5）。
-
 

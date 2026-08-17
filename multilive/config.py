@@ -1,53 +1,21 @@
-"""来源配置解析 + 平台注册表。
+"""来源配置解析（sources.txt）。
 
 sources.txt 每行一个来源，支持两种写法：
   1. 显式平台前缀：  douyin:https://live.douyin.com/categorynew/4_105
                      kuaishou:HOT:50
-  2. 裸地址：        由各平台自带 parser 依次尝试识别（有歧义时用显式前缀）
+  2. 裸地址：        由各平台自带 parse 依次尝试识别（有歧义时用显式前缀）
 
-新增平台：在 multilive/platforms/ 下新建模块，实现 NAME / parse / fetch
-三个约定即可被自动发现（见 platforms/_template.py）。
+新增平台：在 multilive/platforms/ 下新建文件夹，实现 Platform 子类并
+导出 platform 实例即可被自动注册（见 platforms/_template.py）。
 """
-import importlib
 import os
-import pkgutil
-from dataclasses import dataclass
 
-import multilive.platforms as _plat_pkg
 from multilive.core import log
-
-
-@dataclass
-class Source:
-    """一个来源（一行配置解析后的结果），语义由平台自行定义。
-    meta 为可选的平台私有配置（如快手翻页数）。"""
-    platform: str
-    kind: str
-    target: str
-    meta: int = 0
-
-
-def discover_platforms():
-    """自动发现 platforms/ 下所有平台模块（排除以下划线开头的模板）。"""
-    found = {}
-    for mod in pkgutil.iter_modules(_plat_pkg.__path__):
-        if mod.name.startswith('_'):
-            continue
-        try:
-            m = importlib.import_module(f'multilive.platforms.{mod.name}')
-        except Exception as e:
-            log().warning('平台模块 %s 加载失败: %s', mod.name, e)
-            continue
-        name = getattr(m, 'NAME', mod.name)
-        if callable(getattr(m, 'parse', None)) and callable(getattr(m, 'fetch', None)):
-            found[name] = m
-        else:
-            log().warning('平台模块 %s 缺少 parse/fetch 约定，已跳过', mod.name)
-    return found
+from multilive.registry import discover_platforms
 
 
 def load_sources(path, only_platforms=None, require_all=True):
-    """读取 sources.txt，返回 {platform_name: [Source, ...]}（保序）。
+    """读取 sources.txt，返回 {平台名: [Source, ...]}（保序）。
 
     only_platforms：CLI --platform 过滤；require_all=False 时某平台解析
     失败只告警（用于只跑单个平台调试）。

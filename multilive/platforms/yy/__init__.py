@@ -12,10 +12,9 @@
 m3u 语义：keep_stale=False，只保留在播房间。
 """
 import re
-from concurrent.futures import ThreadPoolExecutor
 
-from multilive.config import Source
-from multilive.core import Room, Session, fmt_exc, log
+from multilive.core import Room, Session, Source, fmt_exc, log
+from multilive.platforms.base import Platform
 
 NAME = 'yy'
 keep_stale = False
@@ -32,14 +31,6 @@ GROUP_MAP = {
     'music': '音乐',
     'sing': '音乐',
 }
-
-
-def parse(line):
-    m = re.match(r'https?://www\.yy\.com/([a-zA-Z0-9_]+)/?$', line.strip())
-    if m:
-        src = Source(NAME, 'category', m.group(1))
-        return [src]
-    return []
 
 
 def _grab(bar, key):
@@ -122,26 +113,40 @@ def fetch_category(sess, cat):
     return rooms
 
 
-def fetch(sources, ctx):
-    log().info('[yy] %d 个来源', len(sources))
-    cats = sorted({s.target for s in sources if s.kind == 'category'})
-    rooms = {}
-    with ThreadPoolExecutor(max_workers=LIST_WORKERS) as ex:
-        results = ex.map(lambda c: fetch_category(Session(), c), cats)
-        for cat_rooms in results:
+class YYPlatform(Platform):
+    """YY 平台：列表纯 HTTP，播放地址走 pages.dev 动态解析。"""
+    name = NAME
+    keep_stale = keep_stale
+    max_workers = LIST_WORKERS
+
+    def parse(self, line):
+        m = re.match(r'https?://www\.yy\.com/([a-zA-Z0-9_]+)/?$', line.strip())
+        if m:
+            return [Source(self.name, 'category', m.group(1))]
+        return []
+
+    def fetch(self, sources, ctx):
+        log().info('[yy] %d 个来源', len(sources))
+        cats = sorted({s.target for s in sources if s.kind == 'category'})
+        rooms = {}
+        for cat_rooms in self.parallel_map(
+                lambda c: fetch_category(Session(), c), cats):
             for sid, meta in cat_rooms.items():
                 if sid not in rooms:
                     rooms[sid] = meta
-    log().info('  [列表] 共 %d 个不重复房间', len(rooms))
-    if not rooms:
-        return []
-    out = []
-    for sid, meta in rooms.items():
-        out.append(Room(
-            platform=NAME, rid=sid,
-            title=meta['title'], nickname=meta['nickname'],
-            url=PLAYER_BASE.format(sid), group=meta['group'] or NAME,
-            avatar=meta.get('avatar') or ''))
-    log().info('[yy] 完成: %d 在播房间（地址走 pages.dev 动态解析，未逐个取流）',
-               len(out))
-    return out
+        log().info('  [列表] 共 %d 个不重复房间', len(rooms))
+        if not rooms:
+            return []
+        out = []
+        for sid, meta in rooms.items():
+            out.append(Room(
+                platform=self.name, rid=sid,
+                title=meta['title'], nickname=meta['nickname'],
+                url=PLAYER_BASE.format(sid), group=meta['group'] or self.name,
+                avatar=meta.get('avatar') or ''))
+        log().info('[yy] 完成: %d 在播房间（地址走 pages.dev 动态解析，未逐个取流）',
+                   len(out))
+        return out
+
+
+platform = YYPlatform()

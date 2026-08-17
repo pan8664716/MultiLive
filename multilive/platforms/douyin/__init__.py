@@ -20,8 +20,8 @@ import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 
-from multilive.config import Source
-from multilive.core import Room, Session, fmt_exc, log
+from multilive.core import Room, Session, Source, fmt_exc, log
+from multilive.platforms.base import Platform
 
 NAME = 'douyin'
 keep_stale = True
@@ -47,20 +47,6 @@ CATEGORY_NAMES = {
 
 CDN_QUALITY = ['FULL_HD1', 'HD1', 'SD1', 'SD2']
 _browser_lock = threading.Lock()
-
-
-def parse(line):
-    """支持：直播间页 / 分类页 / 纯房间号。"""
-    t = line.strip()
-    m = re.match(r'https?://live\.douyin\.com/categorynew/([\d_]+)', t)
-    if m:
-        return [Source(NAME, 'category', m.group(1))]
-    m = re.match(r'https?://live\.douyin\.com/(\d+)', t)
-    if m:
-        return [Source(NAME, 'room', m.group(1))]
-    if re.fullmatch(r'\d{6,15}', t):
-        return [Source(NAME, 'room', t)]
-    return []
 
 
 def split_category(path):
@@ -399,59 +385,80 @@ def _warm_session():
     return st, sess
 
 
-def fetch(sources, ctx):
-    log().info('[douyin] %d 个来源', len(sources))
-    has_http = True
-    try:
-        st, master = _warm_session()
-        log().info('[douyin] ttwid 初始化完成, status=%s', st)
-        if st != 200:
-            has_http = False
-    except Exception as e:
-        has_http = False
-        log().warning('[douyin] ttwid 初始化失败(%s)，跳过接口层', fmt_exc(e))
-        master = Session()
+class DouyinPlatform(Platform):
+    """抖音平台：接口/浏览器/页面三级降级，历史房间用 pages.dev 兜底。"""
+    name = NAME
+    keep_stale = keep_stale
+    max_workers = MAX_WORKERS
 
-    pages_limit = MAX_PAGES
-    if ctx.pages_cap:
-        pages_limit = min(pages_limit, ctx.pages_cap)
+    def parse(self, line):
+        """支持：直播间页 / 分类页 / 纯房间号。"""
+        t = line.strip()
+        m = re.match(r'https?://live\.douyin\.com/categorynew/([\d_]+)', t)
+        if m:
+            return [Source(self.name, 'category', m.group(1))]
+        m = re.match(r'https?://live\.douyin\.com/(\d+)', t)
+        if m:
+            return [Source(self.name, 'room', m.group(1))]
+        if re.fullmatch(r'\d{6,15}', t):
+            return [Source(self.name, 'room', t)]
+        return []
 
-    def _one(kind, target):
-        # 每个 worker 用独立 Session（复制 master cookie），避免线程竞争
-        shard = Session()
-        for c in master.cj:
-            shard.cj.set_cookie(c)
+    def fetch(self, sources, ctx):
+        log().info('[douyin] %d 个来源', len(sources))
+        has_http = True
         try:
-            rooms, method, group = fetch_source(
-                kind, target, shard, has_http, ctx, pages_limit)
-            return rooms, method, group, None
+            st, master = _warm_session()
+            log().info('[douyin] ttwid 初始化完成, status=%s', st)
+            if st != 200:
+                has_http = False
         except Exception as e:
-            return None, None, None, fmt_exc(e)
+            has_http = False
+            log().warning('[douyin] ttwid 初始化失败(%s)，跳过接口层', fmt_exc(e))
+            master = Session()
 
-    tasks = [(s.kind, s.target) for s in sources]
-    results = []
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        for r in ex.map(lambda t: _one(*t), tasks):
-            results.append(r)
+        pages_limit = MAX_PAGES
+        if ctx.pages_cap:
+            pages_limit = min(pages_limit, ctx.pages_cap)
 
-    out = []
-    oks, fails = 0, 0
-    for (rooms, method, group, err), src in zip(results, sources):
-        if err is not None or not rooms:
-            fails += 1
-            log().warning('[douyin] 全部失败 %s: %s', src.target,
-                          err or '空数据')
-            continue
-        oks += 1
-        log().info('[douyin] [%s] %s: %d 个, group="%s"', method,
-                   src.target, len(rooms), group)
-        for r in rooms:
-            out.append(Room(platform=NAME, rid=r['rid'], title=r['title'],
-                            nickname=r['nickname'], avatar=r['avatar'],
-                            url=r['url'] or '', group=group))
-    log().info('[douyin] 完成: %d/%d 来源成功, %d 房间', oks, len(sources), len(out))
-    return out
+        def _one(kind, target):
+            # 每个 worker 用独立 Session（复制 master cookie），避免线程竞争
+            shard = Session()
+            for c in master.cj:
+                shard.cj.set_cookie(c)
+            try:
+                rooms, method, group = fetch_source(
+                    kind, target, shard, has_http, ctx, pages_limit)
+                return rooms, method, group, None
+            except Exception as e:
+                return None, None, None, fmt_exc(e)
+
+        tasks = [(s.kind, s.target) for s in sources]
+        results = []
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            for r in ex.map(lambda t: _one(*t), tasks):
+                results.append(r)
+
+        out = []
+        oks, fails = 0, 0
+        for (rooms, method, group, err), src in zip(results, sources):
+            if err is not None or not rooms:
+                fails += 1
+                log().warning('[douyin] 全部失败 %s: %s', src.target,
+                              err or '空数据')
+                continue
+            oks += 1
+            log().info('[douyin] [%s] %s: %d 个, group="%s"', method,
+                       src.target, len(rooms), group)
+            for r in rooms:
+                out.append(Room(platform=self.name, rid=r['rid'], title=r['title'],
+                                nickname=r['nickname'], avatar=r['avatar'],
+                                url=r['url'] or '', group=group))
+        log().info('[douyin] 完成: %d/%d 来源成功, %d 房间', oks, len(sources), len(out))
+        return out
+
+    def fallback_url(self, room):
+        return f'https://douyin-m3u8.pages.dev/room/{room.rid}'
 
 
-def fallback_url(room):
-    return f'https://douyin-m3u8.pages.dev/room/{room.rid}'
+platform = DouyinPlatform()

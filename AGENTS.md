@@ -20,7 +20,7 @@ python3 multilive.py --pages 2              # 限制翻页数
 ## 架构与数据流
 
 ```
-sources.txt → config.load_sources()（自动发现+注册平台）
+sources.txt → config.load_sources()（经 registry 自动发现平台）
   → 平台级并行（每个平台一个线程）
   → 各平台 fetch(sources, ctx) 返回 [Room]
   → m3u.merge() 增量合并（去重/置顶/保留策略）
@@ -31,14 +31,21 @@ sources.txt → config.load_sources()（自动发现+注册平台）
 
 | 文件 | 职责 |
 |---|---|
-| `multilive.py` | CLI 入口、平台并行调度、`DISABLED`（平台下线集合）、日志 |
-| `multilive/config.py` | sources.txt 解析、平台自动发现注册 |
-| `multilive/core.py` | `Room` 模型、`Session`（纯标准库 HTTP）、`log`/`fmt_exc` |
+| `multilive.py` | 薄入口（转调 `multilive/cli.py`，保持 `python3 multilive.py` 用法不变） |
+| `multilive/cli.py` | CLI 参数、平台并行调度、`DISABLED`（平台下线集合）、日志 |
+| `multilive/config.py` | sources.txt 解析 |
+| `multilive/registry.py` | 平台注册表：自动发现 `platforms/` 下的 Platform 实例 |
+| `multilive/core.py` | 公共库：`Room`/`Source` 模型、`Session`（纯标准库 HTTP）、`log`/`fmt_exc` |
 | `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
-| `multilive/platforms/*` | 各平台实现（契约见 PLATFORMS.md / `_template.py`） |
+| `multilive/platforms/base.py` | `Platform` 基类（统一契约）+ 平台公共小工具 |
+| `multilive/platforms/<平台>/` | 各平台实现（每个平台一个文件夹，契约见 PLATFORMS.md / `_template.py`） |
 | `tools/*.mjs` | 浏览器兜底脚本（Patchright，仅 douyin/douyu 取参兜底用） |
 
-平台模块契约：`NAME` / `parse(line)->[Source]` / `fetch(sources,ctx)->[Room]` / `keep_stale`（可选）。新增平台照抄 `multilive/platforms/_template.py`。
+平台契约（统一方式）：每个平台一个文件夹 `multilive/platforms/<平台>/`，在
+`__init__.py` 里继承 `Platform` 基类、实现 `parse(line)->[Source]` 与
+`fetch(sources,ctx)->[Room]`，并导出 `platform` 实例，注册表即自动发现；
+`keep_stale`/`fallback_url` 为可选钩子。新增平台照抄
+`multilive/platforms/_template.py`。
 
 ## 铁律（改代码前必读）
 
@@ -46,7 +53,7 @@ sources.txt → config.load_sources()（自动发现+注册平台）
    - 列表/信息：批量接口、SSR 页面内嵌数据（如 B站 `getRoomBaseInfo?uids=…` 50个/请求）；
    - 播放地址：优先写 `https://douyin-m3u8.pages.dev/<平台>/<房间号>`，由 Worker 点播时解析；
    - **唯一例外**：bilibili 无批量播放接口，只能逐房间 `Room/playUrl`（已降级为 3 并发 + 0.15s 节流 + 412/403 退避），不要扩大或提速。
-2. 平台暂时下线：改 `multilive.py` 顶部 `DISABLED = {'huya'}`（不抓取 + 每轮清空该平台输出），**不要删模块**；恢复 = 移出集合 + `sources.txt` 取消注释。
+2. 平台暂时下线：改 `multilive/cli.py` 顶部 `DISABLED = {'huya'}`（不抓取 + 每轮清空该平台输出），**不要删平台文件夹**；恢复 = 移出集合 + `sources.txt` 取消注释。
 3. 增量合并规则（`m3u.merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keep_stale=False` 的平台本轮运行后丢弃下播房间。
 4. `output/*.m3u` 与 `output/status.json` **入库**（订阅靠它们）。改了抓取逻辑必须本地跑通再提交，别只改代码不产出。
 5. HTTP 只用标准库 `Session`（`get/get_text/get_json/post_json`，自带 CookieJar/UA）；文档里旧写的 `core.http_json` 不存在，别用。

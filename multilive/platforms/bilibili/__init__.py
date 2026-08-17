@@ -13,8 +13,8 @@ import time
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor
 
-from multilive.config import Source
-from multilive.core import Room, Session, log
+from multilive.core import Room, Session, Source, log
+from multilive.platforms.base import Platform
 
 NAME = 'bilibili'
 keep_stale = False
@@ -51,26 +51,6 @@ def get_json(sess, url, referer=None):
             last = e
             break
     raise last
-
-
-def parse(line):
-    t = line.strip()
-    m = re.match(r'https?://live\.bilibili\.com/(\d+)', t)
-    if m:
-        return [Source(NAME, 'room', m.group(1))]
-    m = re.match(r'https?://live\.bilibili\.com/all(:\d+)?', t)
-    if m:
-        pages = DEFAULT_LIST_PAGES
-        if m.group(1):
-            try:
-                pages = int(m.group(1)[1:])
-            except ValueError:
-                pass
-        src = Source(NAME, 'all', 'ALL')
-        src.meta = min(max(pages, 1), MAX_LIST_PAGES)
-        return [src]
-    # 裸数字行避免误认（抖音也有纯数字房间），B站必须显式前缀或 URL
-    return []
 
 
 def fetch_room(sess, short_id):
@@ -192,18 +172,46 @@ def fetch_all(sources, ctx):
     return out
 
 
-def fetch(sources, ctx):
-    log().info('[bilibili] %d 个来源', len(sources))
-    all_srcs = [s for s in sources if s.kind == 'all']
-    room_srcs = [s for s in sources if s.kind == 'room']
-    out = []
-    if all_srcs:
-        out.extend(fetch_all(all_srcs, ctx))
-    rooms = []
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
-        for room, _err in ex.map(lambda r: fetch_room(Session(), r),
-                                 [s.target for s in room_srcs]):
-            if room:
-                out.append(room)
-    log().info('[bilibili] 完成: %d 在播房间', len(out))
-    return out
+class BilibiliPlatform(Platform):
+    """B站平台：整站列表 + 单直播间，播放地址逐房间限流取流（平台唯一例外）。"""
+    name = NAME
+    keep_stale = keep_stale
+    max_workers = MAX_WORKERS
+
+    def parse(self, line):
+        t = line.strip()
+        m = re.match(r'https?://live\.bilibili\.com/(\d+)', t)
+        if m:
+            return [Source(self.name, 'room', m.group(1))]
+        m = re.match(r'https?://live\.bilibili\.com/all(:\d+)?', t)
+        if m:
+            pages = DEFAULT_LIST_PAGES
+            if m.group(1):
+                try:
+                    pages = int(m.group(1)[1:])
+                except ValueError:
+                    pass
+            src = Source(self.name, 'all', 'ALL')
+            src.meta = min(max(pages, 1), MAX_LIST_PAGES)
+            return [src]
+        # 裸数字行避免误认（抖音也有纯数字房间），B站必须显式前缀或 URL
+        return []
+
+    def fetch(self, sources, ctx):
+        log().info('[bilibili] %d 个来源', len(sources))
+        all_srcs = [s for s in sources if s.kind == 'all']
+        room_srcs = [s for s in sources if s.kind == 'room']
+        out = []
+        if all_srcs:
+            out.extend(fetch_all(all_srcs, ctx))
+        rooms = []
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+            for room, _err in ex.map(lambda r: fetch_room(Session(), r),
+                                     [s.target for s in room_srcs]):
+                if room:
+                    out.append(room)
+        log().info('[bilibili] 完成: %d 在播房间', len(out))
+        return out
+
+
+platform = BilibiliPlatform()
