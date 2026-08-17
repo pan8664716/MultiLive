@@ -1,9 +1,11 @@
 """快手直播（源自 kuaishou 方案，纯 HTTP 列表，无浏览器）。
 
 数据源 live_api/hot/list 与页面下拉加载一致：免登录免签名，
-每页 50 个在播房间。播放地址不逐房间取 CDN 直链（FLV 签名 24h
-有效、且统一形态更稳定），统一写 https://astar.cc.cd/kuaishou/<房间号>，
-由 Worker 点播时实时解析。
+每页 50 个在播房间。房间号取 author.id（live.kuaishou.com/u/<id>
+短 ID，跨场次有效），不是场次 id（一场直播一个、下播即失效）。
+播放地址不逐房间取 CDN 直链（FLV 签名 24h 有效、且统一形态更
+稳定），统一写 https://astar.cc.cd/kuaishou/<房间号>，由 Worker
+点播时实时解析。
 m3u 语义：keep_stale=False——只保留「此刻在播」列表，下播即失效。
 """
 import re
@@ -113,16 +115,21 @@ class KuaishouPlatform(Platform):
                     log().warning('[kuaishou] 来源 %s 失败: %s', s.target, fmt_exc(e))
 
         out = []
+        seen = set()
         for lid, room in all_rooms.items():
             author = room.get('author') or {}
+            rid = author.get('id')
+            if not rid or rid in seen:
+                continue
+            seen.add(rid)
             game = ((room.get('gameInfo') or {}).get('name') or '').strip() or self.name
-            out.append(Room(platform=self.name, rid=str(lid),
+            out.append(Room(platform=self.name, rid=str(rid),
                             title=(room.get('caption') or '').strip(),
                             nickname=(author.get('name') or '').strip(),
-                            url=PLAYER_BASE.format(lid),
+                            url=PLAYER_BASE.format(rid),
                             group=game,
                             avatar=(room.get('cover') or '')))
-        log().info('[kuaishou] 完成: %d 房间（无地址已跳过）', len(out))
+        log().info('[kuaishou] 完成: %d 房间（无 author.id 已跳过）', len(out))
         return out
 
 

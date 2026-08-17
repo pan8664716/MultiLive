@@ -65,7 +65,9 @@
 
 ### kuaishou（纯 HTTP）
 - `live.kuaishou.com/live_api/hot/list?type=HOT&filterType=0&page=N&pageSize=24`
-- 免登录免签名，每页 50 房间 + 4 档 CDN 直链（取最高 `level`）
+- 免登录免签名，每页 50 房间
+- 房间号取 `author.id`（`live.kuaishou.com/u/<id>` 短 ID，跨场次有效）；
+  播放地址统一写 `https://astar.cc.cd/kuaishou/<房间号>`，不逐房间取 CDN 直链
 - `keep_stale=False`：只保留此刻在播
 
 ### bilibili（纯 HTTP，整站列表 + 单房间）
@@ -138,4 +140,3 @@
 3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
 5. 并发规则：平台之间并行；平台内部并发数在各自文件顶部常量（多为 3~5）。
-
