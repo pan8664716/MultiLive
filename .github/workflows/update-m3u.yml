@@ -1,9 +1,9 @@
 name: 多平台直播 m3u 更新
 
 on:
-  # 每小时运行一次（cron 为 UTC，即北京时间每个整点）
+  # 每 30 分钟运行一次（cron 为 UTC，即北京时间每个整点/半点）
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/30 * * * *'
   # 支持手动触发
   workflow_dispatch:
 
