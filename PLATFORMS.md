@@ -139,9 +139,11 @@
 ### tiktok（浏览器批量抓取 /live 广场；纯 HTTP 拿不到列表）
 - TikTok `/live` 为纯客户端渲染：SSR 空壳、接口需 msToken/X-Bogus 签名，
   纯 HTTP 无法匿名拿列表；用 `tools/browser_fetch_tiktok.mjs`
-  （Patchright + 系统 Chrome）打开广场页滚动加载，**拦截站点自身发出的
-  api-live 签名请求**批量收集房间（不逐房间请求），拦不到时退 DOM 链接
-  收集 `@<uniqueId>/live`。
+  （Patchright + 系统 Chrome）打开广场页滚动加载，抓取顺序：
+  ① 页面 SSR 内嵌数据（`__UNIVERSAL_DATA_FOR_REHYDRATION__`/`SIGI_STATE`，
+  部分区域可用）→ ② **拦截站点自身发出的 api-live 签名请求**（能绕过 IP
+  风控/签名校验）→ ③ 退 DOM 链接收集 `@<uniqueId>/live`。
+  全程批量，不逐房间请求。
 - 房间号取 `uniqueId`（用户稳定 ID，跨场次有效，与快手 author.id 同思路）；
   播放地址统一写 `https://astar.cc.cd/tiktok/<uniqueId>`。
 - 注意：依赖浏览器（Action 已装 patchright + 系统 Chrome）；TikTok 按地区

@@ -69,7 +69,42 @@ function parseUserItem(it) {
 async function fetchLive(page) {
   const gathered = new Map();
 
-  // 拦截站点自己的 api-live 签名请求（能绕过 IP 风控 / 签名校验）
+  // ① 优先读 SSR 内嵌数据（部分区域 /live 会 SSR 出 __UNIVERSAL_DATA_FOR_REHYDRATION__）
+  const fromSsr = await page.evaluate(() => {
+    const findLiveRooms = (obj, out) => {
+      if (!obj || typeof obj !== 'object') return;
+      if (Array.isArray(obj)) {
+        for (const it of obj) findLiveRooms(it, out);
+        return;
+      }
+      for (const key of Object.keys(obj)) {
+        const v = obj[key];
+        if (/liveRoomUserInfoList/i.test(key) && Array.isArray(v)) {
+          for (const it of v) out.push(it);
+        } else if (v && typeof v === 'object') {
+          findLiveRooms(v, out);
+        }
+      }
+    };
+    const out = [];
+    for (const id of ['__UNIVERSAL_DATA_FOR_REHYDRATION__', 'SIGI_STATE']) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      try {
+        findLiveRooms(JSON.parse(el.textContent), out);
+      } catch { /* 忽略解析失败，继续其它来源 */ }
+    }
+    return out;
+  });
+  for (const it of fromSsr) {
+    const r = parseUserItem(it);
+    if (r && r.rid && !gathered.has(r.rid)) gathered.set(r.rid, r);
+  }
+  if (gathered.size) {
+    console.error('[browser] SSR 内嵌数据: %d 个房间', gathered.size);
+  }
+
+  // ② 拦截站点自己的 api-live 签名请求（能绕过 IP 风控 / 签名校验）
   page.on('response', async (res) => {
     if (!res.url().includes('api-live')) return;
     let j;
