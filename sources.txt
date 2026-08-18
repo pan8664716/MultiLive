@@ -37,7 +37,13 @@ douyin:https://live.douyin.com/categorynew/4_104
 kuaishou:HOT:50
 
 # ---- B站（纯 HTTP 列表；播放地址走 astar.cc.cd 动态解析）----
-bilibili:https://live.bilibili.com/all:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=2&areaId=86:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=2&areaId=878:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=2&areaId=80:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=3&areaId=35:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=3&areaId=256:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=6&areaId=0:10
+bilibili:https://live.bilibili.com/p/eden/area-tags?parentAreaId=1&areaId=0:10
 
 # ---- 虎牙（纯 HTTP 列表；播放地址走 astar.cc.cd 动态解析）----
 huya:https://www.huya.com/l:10

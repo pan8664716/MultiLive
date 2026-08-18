@@ -3,6 +3,8 @@
 来源：
   - 整站列表 https://live.bilibili.com/all（目录同款）
       room/v1/room/get_user_recommend 匿名可用，100 房间/页
+  - 分区列表 https://live.bilibili.com/p/eden/area-tags?parentAreaId=X&areaId=Y
+      room/v1/area/getRoomList 匿名可用（约 20 房间/页）
   - 单个直播间 https://live.bilibili.com/6 或 6
       room/v1/room/get_info（仅元数据：判断在播、取标题昵称）
 
@@ -14,6 +16,7 @@ m3u 语义：keep_stale=False，只保留在播房间。
 import re
 import time
 import urllib.error
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 
 from multilive.core import Room, Session, Source, log
@@ -25,6 +28,7 @@ keep_stale = False
 PLAYER_BASE = 'https://astar.cc.cd/bilibili/{}'
 INFO_API = 'https://api.live.bilibili.com/room/v1/room/get_info'
 REC_API = 'https://api.live.bilibili.com/room/v1/room/get_user_recommend'
+AREA_LIST_API = 'https://api.live.bilibili.com/room/v1/area/getRoomList'
 AREA_API = ('https://api.live.bilibili.com/xlive/web-room/v1/index/'
             'getRoomBaseInfo')
 MAX_WORKERS = 3
@@ -88,6 +92,32 @@ def fetch_rec_page(sess, page):
         return []
 
 
+def fetch_area_page(sess, pa, aa, page):
+    """单个分区一页房间（getRoomList，page_size 请求 100、服务端约给 20）。"""
+    try:
+        _st, j, _ = sess.get_json(
+            f'{AREA_LIST_API}?parent_area_id={pa}&area_id={aa}'
+            f'&page={page}&page_size=100',
+            referer='https://live.bilibili.com/p/eden/area-tags')
+        return (j.get('data') or [])
+    except Exception as e:
+        log().info('  [分区] parent=%s area=%s 第%d页失败: %s',
+                   pa, aa, page, e)
+        return []
+
+
+def fetch_area(sess, pa, aa, pages):
+    out = {}
+    for page in range(1, pages + 1):
+        for it in fetch_area_page(sess, pa, aa, page):
+            rid = str(it.get('roomid') or '')
+            if rid and rid not in out:
+                out[rid] = it
+    log().info('  [分区] parent=%s area=%s %d页: %d 个房间',
+               pa, aa, pages, len(out))
+    return out
+
+
 def fetch_area_map(sess, uids):
     """按 uid 批量取一级分区名（get_user_recommend 不返回分类字段）。
     一次最多带 50 个 uid，几百房间只需几个请求。返回 {uid: 分区名}。
@@ -116,12 +146,14 @@ def build_room(item):
     rid = str(item.get('roomid') or '')
     if not rid:
         return None
+    group = str(item.get('area_v2_name') or item.get('area_name')
+                or '').strip() or NAME
     return Room(
         platform=NAME, rid=rid,
         title=(item.get('title') or '').strip(),
         nickname=(item.get('uname') or '').strip(),
         url=PLAYER_BASE.format(rid),
-        group='B站',
+        group=group,
         avatar=item.get('user_cover') or item.get('face') or '')
 
 
@@ -165,6 +197,22 @@ class BilibiliPlatform(Platform):
 
     def parse(self, line):
         t = line.strip()
+        if re.match(r'https?://live\.bilibili\.com/p/eden/area-tags', t):
+            pages = DEFAULT_LIST_PAGES
+            mm = re.search(r':(\d+)$', t)
+            if mm:
+                try:
+                    pages = int(mm.group(1))
+                except ValueError:
+                    pass
+                t = t[:mm.start()]
+            q = urllib.parse.parse_qs(urllib.parse.urlparse(t).query)
+            pa = (q.get('parentAreaId') or [''])[0]
+            aa = (q.get('areaId') or [''])[0]
+            if pa.isdigit() and aa.isdigit():
+                src = Source(self.name, 'area', f'{pa}:{aa}')
+                src.meta = min(max(pages, 1), MAX_LIST_PAGES)
+                return [src]
         m = re.match(r'https?://live\.bilibili\.com/(\d+)', t)
         if m:
             return [Source(self.name, 'room', m.group(1))]
@@ -186,9 +234,28 @@ class BilibiliPlatform(Platform):
         log().info('[bilibili] %d 个来源', len(sources))
         all_srcs = [s for s in sources if s.kind == 'all']
         room_srcs = [s for s in sources if s.kind == 'room']
+        area_srcs = [s for s in sources if s.kind == 'area']
         out = []
         if all_srcs:
             out.extend(fetch_all(all_srcs, ctx))
+        if area_srcs:
+            items = {}
+            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+                futs = {}
+                for s in area_srcs:
+                    pa, _sep, aa = s.target.partition(':')
+                    pages = (s.meta if isinstance(s.meta, int) and s.meta
+                             else DEFAULT_LIST_PAGES)
+                    if ctx.pages_cap:
+                        pages = min(pages, ctx.pages_cap)
+                    futs[ex.submit(fetch_area, Session(), pa, aa, pages)] = s
+                for fut in futs:
+                    for rid, it in fut.result().items():
+                        if rid not in items:
+                            items[rid] = it
+            out.extend(r for r in (build_room(it)
+                                   for it in items.values()) if r)
+            log().info('  [分区] 合计 %d 个不重复房间', len(items))
         rooms = []
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
             for room, _err in ex.map(lambda r: fetch_room(Session(), r),
