@@ -1,7 +1,7 @@
 #EXTM3U
-# 生成时间: 2026-08-18 15:32:51
-# 房间数: 549
-# 各平台: yy=549
+# 生成时间: 2026-08-18 08:11:14
+# 房间数: 551
+# 各平台: yy=551
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/967da3f159ba47258c9b2399408a170d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:22490906", 燃舞蹈-精彩回放-燃舞女神热舞不断
 https://astar.cc.cd/yy/22490906
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1383545408", 婉伊依-挑战30天不停播
@@ -20,6 +20,8 @@ https://astar.cc.cd/yy/1352566633
 https://astar.cc.cd/yy/21714822
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1352316626", 胖婷婷招财-想做你的小宝贝
 https://astar.cc.cd/yy/1352316626
+#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1382695487", 燃舞蹈橘子-音豪橘子
+https://astar.cc.cd/yy/1382695487
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:28178997", Yx羡灵-Yx羡灵
 https://astar.cc.cd/yy/28178997
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1414783649", 樱花少女&hearts;ۣ（亿风）-一直被模仿从未被超越～
@@ -28,12 +30,12 @@ https://astar.cc.cd/yy/1414783649
 https://astar.cc.cd/yy/1354495040
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:32650059", 天晓颜妍-平芜尽处是春山
 https://astar.cc.cd/yy/32650059
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f8f64eff0f2d4569ac9016eb2dbb2aa6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383544102", 【溪禾】- 初见女团-今天这个神兽盘真好
+https://astar.cc.cd/yy/1383544102
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1356260784", 盘丝洞-退役演员曾出演过....
 https://astar.cc.cd/yy/1356260784
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/07dc06afc4994eea937a1bc6781f4452.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355644438", XY-萌欣呆璐组合-你的小可耐
 https://astar.cc.cd/yy/1355644438
-#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:58669058", 摩西泡一泡-想飞一次呀
-https://astar.cc.cd/yy/58669058
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1356259147", XY清纯少女-距离你0.01公里
 https://astar.cc.cd/yy/1356259147
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:1346951056", 创艺大静静-距离你0.6km
@@ -42,8 +44,6 @@ https://astar.cc.cd/yy/1346951056
 https://astar.cc.cd/yy/1382755731
 #EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:86818134", 俊美霞儿-俊美霞儿
 https://astar.cc.cd/yy/86818134
-#EXTINF:-1 tvg-logo="" group-title="舞蹈" tvg-id="yy:29112888", 白羊座女团-白羊座女团
-https://astar.cc.cd/yy/29112888
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3FRy3OIz2HkD7Dm06JCfZ9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:45904615", 辉煌欢欢-江苏常州车模欢欢
 https://astar.cc.cd/yy/45904615
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/98affe84be1045f1804a8613ecc1f3a8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1356073707", 新人女团-会唱会跳很反差
@@ -52,8 +52,6 @@ https://astar.cc.cd/yy/1356073707
 https://astar.cc.cd/yy/1414781184
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/3CXpSDOJLL5NbdOV6YV3XI.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1457262267", 嘉雯-距离你0.01千米
 https://astar.cc.cd/yy/1457262267
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6uXuV2r0cjtMjRenYE0juQ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1356247136", 小嘉琪-燃舞蹈-小嘉琪
-https://astar.cc.cd/yy/1356247136
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2HLwLx4LTVSeIjY7tlqq2l.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1458896627", 【童话传媒】〞樱花女团ゝ-距离你0.1公里
 https://astar.cc.cd/yy/1458896627
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5Ws3SXhOPyk91snpuXEvJZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:54392208", 千亿豆豆-娇艳动人豆豆
@@ -62,6 +60,10 @@ https://astar.cc.cd/yy/54392208
 https://astar.cc.cd/yy/1383561654
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/eb7fe26609bb46c2887d509bb67ccb79.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1346992991", 小伊娃-老爷生日快乐
 https://astar.cc.cd/yy/1346992991
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3U0mAhVdjIHvlODsuR27ZN.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1338560192", 广西Baby-童颜芭比美雅
+https://astar.cc.cd/yy/1338560192
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/6XqlxpYF5FMpU1zsJVhZ3q.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355224154", 燃舞蹈一然-EMI一然
+https://astar.cc.cd/yy/1355224154
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4B071q5ghHPO5E5A50zA7F.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1352021187", 天晓晨露-天晓晨露
 https://astar.cc.cd/yy/1352021187
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/12LZ9aOSRHW62UF5trsKUj.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1353619608", 睿鑫喜儿-治愈不开心
@@ -72,20 +74,14 @@ https://astar.cc.cd/yy/1355304487
 https://astar.cc.cd/yy/1383545915
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3BrelwtoYol5bdO484xJv2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1353680816", 我是小岁岁-我妈说不要彩礼
 https://astar.cc.cd/yy/1353680816
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1DVFi0cYsEjOIwOrxRqqGG.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355333375", 创艺柚子-纯欲热舞S身材
-https://astar.cc.cd/yy/1355333375
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/GrNUStC8NVB6V6vkhVf1c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1382872470", 创艺大白鹅-创艺大白鹅
-https://astar.cc.cd/yy/1382872470
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cafa83b9dd9d4168ae8b88456374f44e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414778186", 时代少女-美鑫18岁生日快乐
 https://astar.cc.cd/yy/1414778186
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/fe0e927aecb44249a0cfd24ced2720bb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383543774", 【SY】星星女团-请求一个帝王套！
-https://astar.cc.cd/yy/1383543774
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4pAyXaJvs0xW9dBdTTpPDe.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1344874094", 侣倾城-性感热舞仙女侣倾城
+https://astar.cc.cd/yy/1344874094
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/fbd65cd65c784126976f71f55625e9d9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414792043", 燃舞蹈-小年糕爱吃好运-炸年糕的嘞
 https://astar.cc.cd/yy/1414792043
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a7814b951f8b41beb41ee2da6f96d942.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1351916321", 天晓Kk-你想要的样子我都有
 https://astar.cc.cd/yy/1351916321
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5gG5C8JILOcQ6lF1DYM5n1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414824086", 燃舞蹈-苏苏吖-孤独滋味我了解
-https://astar.cc.cd/yy/1414824086
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b704a08b95c045f8beeb150343fafc0b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383545467", 月亮-燃舞蹈 月亮
 https://astar.cc.cd/yy/1383545467
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8c7014dfa97b4c93bc7b3009afac5b67.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383547114", 燃舞蹈-吃吃-这个主播跳舞很哇塞
@@ -96,20 +92,20 @@ https://astar.cc.cd/yy/1414803031
 https://astar.cc.cd/yy/1457501958
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4fa7a591064a4129970319b3b141b530.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:76360397", 921妮妮子-爱聊天爱跳舞~
 https://astar.cc.cd/yy/76360397
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a407854cac104c4fa1c7bc0a582aa725.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383544428", 燃舞蹈-包包-有共同好友在看
+https://astar.cc.cd/yy/1383544428
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4jqfW7SJc3jrmnNPTeXsFU.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:27670927", 诗诗-新主播诗诗
 https://astar.cc.cd/yy/27670927
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2TnBQSoVSEeZ3b54csZ63w.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355101572", 湖南欲儿-湖南最后的温柔
+https://astar.cc.cd/yy/1355101572
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2Gpou0nMXAkzJjsznfHR2m.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1356245058", 燃舞蹈-小蛮腰-人间清醒
 https://astar.cc.cd/yy/1356245058
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/a5e68811e25044c19f84c11bef83a6d7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414779116", 沐沐-又有新整活
 https://astar.cc.cd/yy/1414779116
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/ca82012b65db4284b1d1e72a81d6bcb6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383550300", 荣煜-深藏blue001-你的天降女友
-https://astar.cc.cd/yy/1383550300
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/85ff18271aaf415e979c245daa651e97.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414781306", 木绵--你在  才叫安全感
-https://astar.cc.cd/yy/1414781306
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/Vyjv5GQFCoem7212W2nol.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1463291381", 燃舞蹈-鱼乐乐-鱼乐乐
+https://astar.cc.cd/yy/1463291381
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/22YndtUwRGg5rqFYocoOoV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383545673", 尚佳倩倩-新人主播~
 https://astar.cc.cd/yy/1383545673
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/517xpUtJtbulwzSO2qmHPD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:66011561", 天晓钱满满-天晓钱满满
-https://astar.cc.cd/yy/66011561
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d83821dae3204a8ab42fb342475dfc28.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1510307109", 星耀未来-小西大王-星耀营-有点想你.....
 https://astar.cc.cd/yy/1510307109
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/30vrJ9cslJ8NvqDcMKBg37.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383549847", 麒麟阿Q-新主播
@@ -130,12 +126,10 @@ https://astar.cc.cd/yy/1458652504
 https://astar.cc.cd/yy/80722655
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7cLXAxggTnI5IIeSAZFOH6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414918231", 小奶瓶-想要偏爱和例外
 https://astar.cc.cd/yy/1414918231
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/f5af2c32930e4cf38b5287d8c443fcbd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1351825646", 创艺花花-拉拉猪包
+https://astar.cc.cd/yy/1351825646
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2uWnEJgeyECBBqAhEasfgf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1352984681", 尚古栗饱饱-心软的神在哪里阿~
 https://astar.cc.cd/yy/1352984681
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cdd92193972c48bcbacb35dbb028ba7d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:11255894", 创艺颜颜-s身材附近1km
-https://astar.cc.cd/yy/11255894
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3PMvDiHWD5uFrEAokOL5YX.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1354997439", 燃舞蹈暖心-燃舞女神暖心在线热舞~
-https://astar.cc.cd/yy/1354997439
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6pI1RrrNfmWQR3kfpwl7iB.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:28364990", 睿鑫小茶福-睿鑫小茶福
 https://astar.cc.cd/yy/28364990
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/549f489f1bdf4550851fd27f7342f08a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1453915435", 创艺乔宝儿-纯欲大美女附近0.26
@@ -158,16 +152,16 @@ https://astar.cc.cd/yy/1414777509
 https://astar.cc.cd/yy/1355166401
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3q66FXyjocQ0JlfPhRERT9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1454646856", 绿子-你经常看的
 https://astar.cc.cd/yy/1454646856
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3aHnwiTtz9PrDM0yx7i4Gr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383557432", ☪御风-抹香-急需资本介入
-https://astar.cc.cd/yy/1383557432
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5cO50s9VEPbWz5qflMieyt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383546827", 燃舞蹈-木木-燃舞蹈-木木
 https://astar.cc.cd/yy/1383546827
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5ZeZvAuI0MLNcyrmXTzBtz.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1344748253", 禾星大美-急需资本介入~
+https://astar.cc.cd/yy/1344748253
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5JJVqZPBf45P0WAevQIQPU.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:58752908", 创艺琳儿-长沙甜系小女友
 https://astar.cc.cd/yy/58752908
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2EeDHoAliAhC1UlgslGzmf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1382772985", 福七七~福气自来-新人主播想做你心里的人
 https://astar.cc.cd/yy/1382772985
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4D06efa9BWqnajVdVbtvs5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414855872", 尚古元旦-咋能有个守护？
-https://astar.cc.cd/yy/1414855872
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a6b046cbb5034140800a61e8c523c319.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414819741", 知知老师-你刷过
+https://astar.cc.cd/yy/1414819741
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4BVegF90mM0dnGzD35Y4R8?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1382809523", 创艺小露-好好播 慢慢等
 https://astar.cc.cd/yy/1382809523
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/FLvV2Xk6IYuSPoAnB6HPi.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355344883", 一言-会好的，会更好
@@ -192,12 +186,14 @@ https://astar.cc.cd/yy/1383546061
 https://astar.cc.cd/yy/1382797347
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6OARV10xcBn5DtxUfHOpGK.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383545504", 柠檬檬-千篇一律和万里挑一的女孩
 https://astar.cc.cd/yy/1383545504
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/5obKgsTbVWlgTftKgzEpOI.png?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:33473940", 创艺DJ萱萱-等一个心软的神…
+https://astar.cc.cd/yy/33473940
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f983860d6a7e4111b96d5dde712a75fc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1354802564", 天晓林雪-光有光的来意
 https://astar.cc.cd/yy/1354802564
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5daXsfkyje8Oq2uQHEBPLB.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1356324644", 辉煌湖北乐儿-新主播 第一天
+https://astar.cc.cd/yy/1356324644
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d38070d936734c0eb49bedbb8c532280.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:51429955", 俊美小茶子-动感热舞小茶子
 https://astar.cc.cd/yy/51429955
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/0ccc0399e3514f3fbad0ef2627d62c12.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1454319781", 哆咪-我们是不是在哪里见过
-https://astar.cc.cd/yy/1454319781
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/3g0QWS9jri3riSfJRMlYZi.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1356383101", 山东林思思-会为我停留吗
 https://astar.cc.cd/yy/1356383101
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/6d076f43b0cf4638b141a59a465d5f43.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414791584", 橙汁橙🍊-在线等大哥
@@ -208,24 +204,30 @@ https://astar.cc.cd/yy/1383548782
 https://astar.cc.cd/yy/1459522190
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6nr7shUNtWuuE0EBM1LTEV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1354670196", 峰品v初遇-嘿！一起摸泥鳅
 https://astar.cc.cd/yy/1354670196
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6EBqCblVPIjJv0djkMiCpq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414781018", 青禾-念念-星耀营-西安主播
+https://astar.cc.cd/yy/1414781018
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/60hivJaQQEdiZd4yVWsblM.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:38971088", 金小渔超白-该用户关注了你
+https://astar.cc.cd/yy/38971088
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/khh1Y2JI9MQWSnEyPRW5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383545525", -奕心🥰🥰🥰-贵州奕心
 https://astar.cc.cd/yy/1383545525
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7cikIbmzyFwkB7YKOc8Pje.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355301829", 媛-播够1000下班
 https://astar.cc.cd/yy/1355301829
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6jXbwXLyHiQYGL9jbZDzL2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1454360931", 燃舞蹈-球球-做我大哥  我宠你
+https://astar.cc.cd/yy/1454360931
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d38a0403b6c74320badb014108e1e529.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383544950", 创艺莎莎-今天有点皮
 https://astar.cc.cd/yy/1383544950
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/190e345508bb4fbbab52d39890352d62.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383549274", 一只鱼-想你了宝贝
-https://astar.cc.cd/yy/1383549274
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2CgvYK530VHSt3ksr9TnwC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:24393249", EMI心宝宝-唐山姐姐
 https://astar.cc.cd/yy/24393249
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1oUMvkegk9PuO1OX32yTcY.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:35979181", 铭子-我要赚钱去三亚
+https://astar.cc.cd/yy/35979181
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4GiM1D842wLuyx39DhIria.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1345762229", 初夏
 https://astar.cc.cd/yy/1345762229
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6kniNtX4PjGpl6QNM73A7R.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1414783019", 【芷珊】小嗨吖-掐指一算，你命里缺我
 https://astar.cc.cd/yy/1414783019
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/0b2145c762da483ebdce684f5538ea4c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383548705", 小婷宝-进来 有点事跟你说
-https://astar.cc.cd/yy/1383548705
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4bkD1g2l2VDni1XvHqHUCM.png?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1352926401", 燃舞蹈莫愁-性感舞姬会沁
-https://astar.cc.cd/yy/1352926401
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/63u9kXE6sCQucGDEHCIN5Q.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383548760", 七七-感恩良心主播
+https://astar.cc.cd/yy/1383548760
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/IJ696m0aot389DF4LTt6a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:82751188", 海迪小红-想你
+https://astar.cc.cd/yy/82751188
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7cfXKWrLuGVYVX0TwyeVlk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:75240499", 皮小念-好运连连
 https://astar.cc.cd/yy/75240499
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5jXEYjUE7Qyg3CUQk9UwI8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383546278", 旺椰椰-等你爱我
@@ -250,10 +252,6 @@ https://astar.cc.cd/yy/1353213758
 https://astar.cc.cd/yy/1355268307
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/0d0a6d26d2044ca8bc589b71da9b9f92.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1344118880", 睿廷熠熠-我保证.我是天使
 https://astar.cc.cd/yy/1344118880
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/594ef4d2d9354e92bfeb8abe113d7120.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1383547152", 聂小倩-想成为你的心跳
-https://astar.cc.cd/yy/1383547152
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2GyUR0QLKjcyPRMPqW2rVu.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1355531344", L嘉萱萱-太难了没大哥
-https://astar.cc.cd/yy/1355531344
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/5CdV0U4yhB5cajrieEZTZT.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:21516827", 桑婉晴-没人能坚持3秒对视
 https://astar.cc.cd/yy/21516827
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6ZisX8IMhgp9UAMgNp8Xgr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:1339199210", 到期小慧儿-到期小慧儿
@@ -264,596 +262,604 @@ https://astar.cc.cd/yy/1383560240
 https://astar.cc.cd/yy/1383558673
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/67IUhDKodOzT8Z3jvKZ5Ro.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:34881866", 创艺肉包-要是你在就好了
 https://astar.cc.cd/yy/34881866
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:54880976", 禾星艺琳吖-八月不努力就胖十斤！
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cf15205a26234fc0b32e8f2d7e3b915d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="舞蹈" tvg-id="yy:37730679", 琳宝-珠圆玉润
+https://astar.cc.cd/yy/37730679
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:54880976", 4537闵珠珠-只有两首歌不会
 https://astar.cc.cd/yy/54880976
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1350889549", 8407喵喵-赚钱开煎饼果子店
-https://astar.cc.cd/yy/1350889549
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2c4241491feb42f68a342595b9f84c21.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543751", 小富婆-白日梦探险家
-https://astar.cc.cd/yy/1383543751
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:18068582", 谨溪-沈阳第一大美女
-https://astar.cc.cd/yy/18068582
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:80294552", 睿廷阿茶-实力唱将小阿茶
-https://astar.cc.cd/yy/80294552
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:30181862", 刘亦菲之杭州分菲-这女孩好乖
-https://astar.cc.cd/yy/30181862
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/afa4c5c7d02049afb7920b50ac11e897.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414776320", 橘紫-轻熟女人开播啦
 https://astar.cc.cd/yy/1414776320
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2XFBNb2aXhtHvpPLpavPVs.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:67140188", 俊美洲徒小怪兽-爱笑的女孩运气不会差-进来唱给你听
-https://astar.cc.cd/yy/67140188
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2ef0b0511d3141129ea37c125d5a9ba5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543644", 【ZM】亦瑶-温柔治愈歌声伴你
-https://astar.cc.cd/yy/1383543644
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1606922", 睿廷我笑了 白白白-睿廷我笑了
-https://astar.cc.cd/yy/1606922
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1350889549", 8407喵喵-赚钱开煎饼果子店
+https://astar.cc.cd/yy/1350889549
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1347008025", 辉煌迷鹿-真希望你能看见我。。
+https://astar.cc.cd/yy/1347008025
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1354690204", 山东卷卷-愿得一人心
 https://astar.cc.cd/yy/1354690204
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:21658204", 辉煌坏坏-重庆坏坏 状态拉满
 https://astar.cc.cd/yy/21658204
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1351302047", 晨一凌晨-商学院小凌晨
-https://astar.cc.cd/yy/1351302047
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:95825545", 睿廷漫漫-歌声与你相约
-https://astar.cc.cd/yy/95825545
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1332693571", 7396粤语嬉-音乐老师教你学唱歌
-https://astar.cc.cd/yy/1332693571
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1lsPcWNPfuJwr9g9qp50TW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355093157", 清香嫣子-你知道我在等你吗
-https://astar.cc.cd/yy/1355093157
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:12488339", 燃点花小喵-经典老歌
-https://astar.cc.cd/yy/12488339
 #EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1356168536", 天晓浅月-公主不一定养花~也会直播
 https://astar.cc.cd/yy/1356168536
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/52bccdbdc3864150b1e695d6161c79b1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351779086", 睿廷卢小天-让你尖叫让你跳~
-https://astar.cc.cd/yy/1351779086
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/6f2ac35692964d3d8f6843090bb2206e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414778535", 四川七七-萌新川妹会唱歌~
-https://astar.cc.cd/yy/1414778535
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1355530516", 乖乖（马上有钱）-看跳舞付费直播间
-https://astar.cc.cd/yy/1355530516
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:86265586", 烟嗓彤晴晴-灵魂烟嗓歌手彤晴晴
-https://astar.cc.cd/yy/86265586
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1355234440", 诗韵-简简单单的弹琴
-https://astar.cc.cd/yy/1355234440
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:24022147", 睿廷田小茶-睿廷田小茶
-https://astar.cc.cd/yy/24022147
-#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1354327527", 佛山喜糖-距离0.1
-https://astar.cc.cd/yy/1354327527
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cc63d8b4785142bb927ee2dcd4712d3d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414835808", 小蛋糕六六-第一天直播
-https://astar.cc.cd/yy/1414835808
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4c00deb388b14e8f8567f61d8cc04ad9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:22591666", 曙光苏沐槿-这首歌能打动你的心吗
-https://astar.cc.cd/yy/22591666
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/3plJt9166MVavzE6jrjZ0I.png?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355379659", 博乒网ChinaTT-热舞开始啦
-https://astar.cc.cd/yy/1355379659
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1edDRnAB5tRLqx9dXMzbRp.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:97063018", 洲徒徐雅莉-天籁歌声雅莉
-https://astar.cc.cd/yy/97063018
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/9pjSOmcdkLP0KynG6eo6C.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354264457", 禾星暮岚-温婉动人包包
-https://astar.cc.cd/yy/1354264457
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/KUqmg1mEt2qw9YvMlK8ys.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356349329", 创艺小红帽-你会不会突然的出现
-https://astar.cc.cd/yy/1356349329
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f26d5d5cd89644519926e89297c2efcf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414777839", 忆星十安-乖一点就抱你
-https://astar.cc.cd/yy/1414777839
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b7a46a7f44664b0ea66403004707d987.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353669735", YY9081OW-无聊就是玩
-https://astar.cc.cd/yy/1353669735
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/2be55838354f4ec79e3c2f60875ccc24.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543760", 落落～-可爱输出机器
-https://astar.cc.cd/yy/1383543760
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5lf3M9q0CtVZO2tKdm6G73.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354258707", 森宁猫九儿-养一只猫...
-https://astar.cc.cd/yy/1354258707
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5UANQ2yeBW49070nvWDffC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:45825276", 睿廷颜云-睿廷颜云
-https://astar.cc.cd/yy/45825276
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6tqnhBCinz3GIlGm5U5iZ2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352890384", 悦度初见-再看一眼，会不会不一样
-https://astar.cc.cd/yy/1352890384
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5FFLz6eH1iOpD9bjAOD7lr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:42029727", 到期小婉-脑can禁止入内
-https://astar.cc.cd/yy/42029727
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6beyb11dPw6zDwjHN7SBe8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414804056", 小鱼丸-想被偏爱
-https://astar.cc.cd/yy/1414804056
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/NDFlNWM3NWItZWY3Ni00ZTIyLTg5NjMtMTAxMThlODMxMGYy.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:23071544", 晨一心水-心水
-https://astar.cc.cd/yy/23071544
-#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/79d7802c4c5b40079e25e4251c817e36.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58950095", 小豆沙利徒-俊美小豆沙
-https://astar.cc.cd/yy/58950095
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/saGs5Ex1TTfXTg5b6IFGI.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:25564728", 麦甜小曲库-张含韵yy分韵
-https://astar.cc.cd/yy/25564728
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3uaje0MBlwsQUAUsUTod9p.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355054176", 一诺慕斯呀-晨一一诺慕斯
-https://astar.cc.cd/yy/1355054176
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/ihJe2ab78t1wx5XZXoH9d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354860633", 林晨-你的心上人
-https://astar.cc.cd/yy/1354860633
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3Ih3C3PcjFT3aBCkE6gcEr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340307506", Yx安琪-安琪
-https://astar.cc.cd/yy/1340307506
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6uHTLOtPyIpJtg8RWpwXxx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382627075", Yx小宝-清纯美女小宝儿在线等你
-https://astar.cc.cd/yy/1382627075
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2RaAIOkLADRqc2h88PVfuR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:86292611", 晨一郡主-人美歌甜
-https://astar.cc.cd/yy/86292611
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4xboz01Mx59JtO26ernL0H.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1346267061", 1747妞崽崽-素质女孩妞妞
-https://astar.cc.cd/yy/1346267061
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3ciTxyUU7d8V65WHPrpw0U.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382649271", 禾星白周-唱歌主播
-https://astar.cc.cd/yy/1382649271
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6oqK7MD7UGeHa3uWZ17emR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544743", 幻世南汐-哥，我真的想清楚了
-https://astar.cc.cd/yy/1383544743
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/051414d557b7475884c18901e775ce5f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355132779", 虎娱佩佩饱-如果有老公 谁又想打工
-https://astar.cc.cd/yy/1355132779
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/74hiBqRqNNMpZ1yR0YAg2z.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356175234", AL一夏-附近的人
-https://astar.cc.cd/yy/1356175234
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6BuXeWrEApJZ7e4e59gr1e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352985166", 到期浙江鹿-我一定会是你的偏爱
-https://astar.cc.cd/yy/1352985166
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5d8E1HREU1woKCVVBiVjeZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349263683", 天晓哒哒-安静唱歌
-https://astar.cc.cd/yy/1349263683
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/337ac965e9b94a8e8545c4b509e85761.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544156", 好声音♪  慵懒下午茶-依宝宝-四川第一温柔
-https://astar.cc.cd/yy/1383544156
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/391b22dfe4364503a6b23723c5986a74.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414824555", 星创依依-今天你笑了吗
-https://astar.cc.cd/yy/1414824555
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d9936ba041dd4c7b95d0e353ed2ec286.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383546919", 创艺月野-玫瑰都是带刺的
-https://astar.cc.cd/yy/1383546919
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6WMI5eP8qVnlKpn24Lj8vU.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:29609819", 奇领小新欢-被记得是件很浪漫的事
-https://astar.cc.cd/yy/29609819
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1uYQ0JWh1TEKZYaRIL1hNg.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355329799", 辉煌小C-开播了
-https://astar.cc.cd/yy/1355329799
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/7GgIBR0zelBkjQhxUS42iP.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:92237800", 俊美盼小盼-俊美盼小盼
-https://astar.cc.cd/yy/92237800
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1NAl851NEtfI9lnjleTeqm.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382808589", 小别兔-小别兔
-https://astar.cc.cd/yy/1382808589
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/3rErR0dwDDKNlQlFIe95gE.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88213280", 禾星冷宝-禾星冷宝
-https://astar.cc.cd/yy/88213280
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1351302047", 晨一凌晨-商学院小凌晨
+https://astar.cc.cd/yy/1351302047
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1352608468", 晨一小菲儿-晨一小菲儿
+https://astar.cc.cd/yy/1352608468
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:21392273", 睿廷研儿-9795研儿
+https://astar.cc.cd/yy/21392273
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1lsPcWNPfuJwr9g9qp50TW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355093157", 清香嫣子-你知道我在等你吗
+https://astar.cc.cd/yy/1355093157
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1606922", 睿廷我笑了 白白白-睿廷我笑了
+https://astar.cc.cd/yy/1606922
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4BTgpa2pS6QdSZkledBZgA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33253532", 晨仔仔-晨仔仔
 https://astar.cc.cd/yy/33253532
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a5e2cbce0b62453ea7e22a0f22836226.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543769", 【ZM】点点-00后滑雪女教练
+https://astar.cc.cd/yy/1383543769
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/7dccea5504bc4aa2af57eb4bd9240c81.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461836181", 森宁雪艺-森宁雪艺新主播求关注
+https://astar.cc.cd/yy/1461836181
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1414812916", 依诺唱情歌-正在演唱
+https://astar.cc.cd/yy/1414812916
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:23071544", 晨一心水-心水
+https://astar.cc.cd/yy/23071544
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:99095862", 951小雨-气质清纯小雨
+https://astar.cc.cd/yy/99095862
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:73744657", Yx苒苒-这个主播没大哥~
+https://astar.cc.cd/yy/73744657
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1346267061", 1747妞崽崽-素质女孩妞妞
+https://astar.cc.cd/yy/1346267061
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c73878ae4a4046c087c764fe7cb082bc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37474017", 虎娱雨露-留下来给我撑腰..
+https://astar.cc.cd/yy/37474017
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:21287112", 睿廷薇薇-睿廷薇薇
+https://astar.cc.cd/yy/21287112
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1352376737", 江西季鲸落-爱上点班呐
+https://astar.cc.cd/yy/1352376737
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:73762073", 禾星艺琳吖-八月不努力就胖十斤！
+https://astar.cc.cd/yy/73762073
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:92237800", 俊美盼小盼-俊美盼小盼
+https://astar.cc.cd/yy/92237800
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:25492270", 丁采儿-669丁采儿
+https://astar.cc.cd/yy/25492270
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:95825545", 睿廷漫漫-歌声与你相约
+https://astar.cc.cd/yy/95825545
+#EXTINF:-1 tvg-logo="" group-title="音乐" tvg-id="yy:1353810722", 天晓陈诗瑶-一只快乐的小菜鸡
+https://astar.cc.cd/yy/1353810722
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/3lWuAxfnUzVwpmI8aEFpOn.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351070581", 辉煌桃子-辉煌桃子
+https://astar.cc.cd/yy/1351070581
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2c4241491feb42f68a342595b9f84c21.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543751", 小富婆-白日梦探险家
+https://astar.cc.cd/yy/1383543751
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/XZwY2vR9NT1F20Yz0G6Im.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545640", 辉煌小渔姬-你的氧气女孩
+https://astar.cc.cd/yy/1383545640
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4gMh2hK7WmYi1qFLNXf5X1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:32050773", 仙小暖-别进来，我怕你走不出去
+https://astar.cc.cd/yy/32050773
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1edDRnAB5tRLqx9dXMzbRp.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:97063018", 洲徒徐雅莉-天籁歌声雅莉
+https://astar.cc.cd/yy/97063018
+#EXTINF:-1 tvg-logo="https://allone.yystatic.com/resource-workflow/6V6GMQtaFQZJWsVuTyLo8E.jpg" group-title="音乐" tvg-id="yy:1574830", 951九万姐姐【也许在下雨天】-八万她姐九万
+https://astar.cc.cd/yy/1574830
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1NAl851NEtfI9lnjleTeqm.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382808589", 小别兔-小别兔
+https://astar.cc.cd/yy/1382808589
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a6fb6696b51d4f3f86d5ce0f78736eb4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:77495432", 小爪子-小爪子
+https://astar.cc.cd/yy/77495432
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2IBKVppwCspBidMoaBJ5vf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:12488339", 燃点花小喵-经典老歌
+https://astar.cc.cd/yy/12488339
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1IEnC5Xy554cg4Y1RHNKjl.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349194729", 到期七-晨一小七
+https://astar.cc.cd/yy/1349194729
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6PJ02tXAVp4d9RlKgOnMlP.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:86265586", 烟嗓彤晴晴-灵魂烟嗓歌手彤晴晴
+https://astar.cc.cd/yy/86265586
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchor-growing/653ef1827687894609faec45.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1344897725", 祥盛六一-祥盛六一
+https://astar.cc.cd/yy/1344897725
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1f3KiT94UOHEI6y1xGsS3L.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349859439", 睿廷安小雪-你好 ，宝宝
+https://astar.cc.cd/yy/1349859439
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7YZqgt6BBVSbGnvkhdCoqv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:34097599", 小舍得-Hi~
+https://astar.cc.cd/yy/34097599
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4c00deb388b14e8f8567f61d8cc04ad9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:22591666", 曙光苏沐槿-这首歌能打动你的心吗
+https://astar.cc.cd/yy/22591666
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1PFbKMSdqWO7vaieZA784o.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350118700", 7927江小白-妹妹指令“找姐夫”
+https://astar.cc.cd/yy/1350118700
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6beyb11dPw6zDwjHN7SBe8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414804056", 小鱼丸-想被偏爱
+https://astar.cc.cd/yy/1414804056
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2mRCd6BcXh1ZFytcAk8RbA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352281838", 燃点小甜妹-燃点小甜甜
+https://astar.cc.cd/yy/1352281838
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/gErW5o3vAyxariMqSCuAx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37023395", 湖北宸星-湖北宸星
+https://astar.cc.cd/yy/37023395
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3Ih3C3PcjFT3aBCkE6gcEr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340307506", Yx安琪-安琪
+https://astar.cc.cd/yy/1340307506
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4gKaXVgN5LiicLFmNzn91W.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350933636", 燃点四月-燃点四月
+https://astar.cc.cd/yy/1350933636
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2RaAIOkLADRqc2h88PVfuR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:86292611", 晨一郡主-人美歌甜
+https://astar.cc.cd/yy/86292611
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4d153d787bb047138404320c408768df.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1338453653", An米儿-距您1km
+https://astar.cc.cd/yy/1338453653
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6weuNSDdsTu0pzHGkEAstA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26301282", 天晓小佳佳-伤感情歌古风
+https://astar.cc.cd/yy/26301282
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/3rErR0dwDDKNlQlFIe95gE.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88213280", 禾星冷宝-禾星冷宝
+https://astar.cc.cd/yy/88213280
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3OGLQgGSFBD9mgOdR2AuOV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:36199318", 禾星佳佳-河南人在泉州等你
+https://astar.cc.cd/yy/36199318
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/fe8a0876097a4335815c4d55d519f38b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1460209096", 到期苏小诺-福建苏小诺
 https://astar.cc.cd/yy/1460209096
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2KW3gqPpWL46pTLCr4c79A.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:30202986", 华矩晚晚-腿长一米八
 https://astar.cc.cd/yy/30202986
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/15U2gIzJLlSgj0mJ7pJeA0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:25492270", 丁采儿-669丁采儿
-https://astar.cc.cd/yy/25492270
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5W3WPMI3L2e40b3CC3bSS2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:76413139", 黄逗-专攻苦情歌
-https://astar.cc.cd/yy/76413139
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2yj5zPNKnGdHev3TvNfFRd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88160605", 8131小牙牙-8131小牙牙
-https://astar.cc.cd/yy/88160605
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2KhVHqXa5Xe4T0mFeYRQGm.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1338240136", 忆星晚晚-忆星晚晚
-https://astar.cc.cd/yy/1338240136
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2d3ag9ZIiLwByGZpvJJ3ct.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:89202792", 四川圆圆-伶俐乖巧小艾艾
-https://astar.cc.cd/yy/89202792
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/64ec76ebfef11f0828fb895d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31281189", 虎娱米哆-快进来给我撑腰
-https://astar.cc.cd/yy/31281189
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2gHAvesIrpTn41fmQsVqY2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1334667583", 雨霏-实力唱将雨霏
-https://astar.cc.cd/yy/1334667583
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7m1nL8RXcuMqYfU4Lmn8aH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1348171668", 【睿廷】璇宝宝~-我的帝王套去哪了~~~
-https://astar.cc.cd/yy/1348171668
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6vE2rvQKKH0TGMpxYLmO7E.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383562555", 睿廷  苗子  来哥~！-素颜
-https://astar.cc.cd/yy/1383562555
-#EXTINF:-1 tvg-logo="http://mobilelivephoto.bs2dl.yy.com/2563392127_1698036727.802411.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21392273", 睿廷研儿-9795研儿
-https://astar.cc.cd/yy/21392273
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2318bbcda3c54a0b985e799d0d2ce400.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352236623", 951小谦谦-可爱顽皮小谦谦
-https://astar.cc.cd/yy/1352236623
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4IIyrR3bMK3FssfpDiIJY3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354570658", 峰品婉儿-是个小可怜来个人心疼一下
-https://astar.cc.cd/yy/1354570658
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4XOOFSQTKVZVo4YFjJ4bcl.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:73744657", Yx苒苒-这个主播没大哥~
-https://astar.cc.cd/yy/73744657
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5mKxUnw5gQFiMhFwg00CLk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1333337943", 睿廷雪儿-全糖女孩又复活了~
-https://astar.cc.cd/yy/1333337943
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a6fb6696b51d4f3f86d5ce0f78736eb4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:77495432", 小爪子-小爪子
-https://astar.cc.cd/yy/77495432
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6weuNSDdsTu0pzHGkEAstA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26301282", 天晓小佳佳-伤感情歌古风
-https://astar.cc.cd/yy/26301282
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3OGLQgGSFBD9mgOdR2AuOV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:36199318", 禾星佳佳-河南人在泉州等你
-https://astar.cc.cd/yy/36199318
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1puATU9i6nSaWOf7n9exVt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354347754", 麒麟子梦-隔壁小姐姐
-https://astar.cc.cd/yy/1354347754
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3OGhiGigdnOvMcv0KXa5UX.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1393747463", 辉煌月月-实力唱将 在线嗨唱不停
-https://astar.cc.cd/yy/1393747463
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/3cb1b2374636451ebb9ff876bfa95d90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:55141931", 赛罗丹-丹宝
-https://astar.cc.cd/yy/55141931
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/mw8zfQWMD5u9dsJkOMTFd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:95603686", EMI徐發發-嘴毒别惹，后果自负
-https://astar.cc.cd/yy/95603686
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3qnwqMwXmFZzDhqoUJVs3C.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355553869", 虎娱珍儿-武汉珍儿
-https://astar.cc.cd/yy/1355553869
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2nPYVF49gVdHlzD95oRDNJ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414812916", 依诺唱情歌-正在演唱
-https://astar.cc.cd/yy/1414812916
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6pdy6yJKcx4o7BZuY1D2rp.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352289281", 天晓王娅娅-试图引起你的注意
+https://astar.cc.cd/yy/1352289281
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/26fcgYMR53jRgky3Mx3qS7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35055231", 虎娱小熙-小熙等你
 https://astar.cc.cd/yy/35055231
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6ktWOa4HnDUXFwP69qntjt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1450851177", 辉煌婷婷子-辉煌婷婷子
 https://astar.cc.cd/yy/1450851177
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5tiYSaRrjpZDWTXRoa8pe4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353780927", 河南暖暖-河南暖暖
-https://astar.cc.cd/yy/1353780927
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6WgJzs8E1TCSAOkg2QwKDq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352376737", 江西季鲸落-爱上点班呐
-https://astar.cc.cd/yy/1352376737
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4ofM4ZEkqX1zktv8YddD0H.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33824662", 天晓大白兔-天晓大白兔
-https://astar.cc.cd/yy/33824662
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/79MeCZeL076S9JW81wFLC8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355251991", 辉煌王伊一-辉煌伊一子
-https://astar.cc.cd/yy/1355251991
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1Fobg9NiFRGeEdJTiBLi8L.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351158502", 忆星温小暖-忆星温小暖
-https://astar.cc.cd/yy/1351158502
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1RxJzK4gl6d0I3EVxpz1wl.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26843922", 光纵淇淇-奇迹降临~
-https://astar.cc.cd/yy/26843922
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/44euy80k9Aj5XWDEc0ji2r.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414855954", 虎娱柳尚青-虎娱柳尚青
-https://astar.cc.cd/yy/1414855954
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c024754bcdf746c49f5120d1fdf138bb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461664374", 华矩乐乐-华矩乐乐
-https://astar.cc.cd/yy/1461664374
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/EKSmW75QQMcJGXi9uv58V.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414895663", 忆星文文-做你心尖上的人
-https://astar.cc.cd/yy/1414895663
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/s9lf2iyuAU9HF6A12cHxv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33746163", Yx允儿-Yx允儿
-https://astar.cc.cd/yy/33746163
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6Acoz4Z3kBhAq8gxGNlEFE?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:41107819", Yx金凤-感恩有你
-https://astar.cc.cd/yy/41107819
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3fcnLhT1zXHynfzX4BP1Eo.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355065623", 天创可可-内蒙女孩大可可
-https://astar.cc.cd/yy/1355065623
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/3lWuAxfnUzVwpmI8aEFpOn.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351070581", 辉煌桃子-辉煌桃子
-https://astar.cc.cd/yy/1351070581
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/SNSzJoXXLfzgFlaFJwT9Q.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382736994", EMI周舟-这个主播没大哥
-https://astar.cc.cd/yy/1382736994
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/072e4b825ccf44c2ac1be6a6140fdf90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414786938", 星创湖北贝贝-可甜可盐
-https://astar.cc.cd/yy/1414786938
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4d153d787bb047138404320c408768df.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1338453653", An米儿-距您1km
-https://astar.cc.cd/yy/1338453653
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/7GKKguUt0HfqnGVcLiCuKJ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1347347197", 天晓如心-浙江如心
-https://astar.cc.cd/yy/1347347197
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5XHLomdu0OihiNb38KzaXU.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350390080", 小虎ya儿-比我萌的不存在
-https://astar.cc.cd/yy/1350390080
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7XZnLUdMGy8tQUz6JJ2UdA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1507561737", 266灵儿-你支持过的人
-https://astar.cc.cd/yy/1507561737
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6k9aS4q8Ts1RkqREnWkVVQ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383555086", 莫小北-好声音十万强
-https://astar.cc.cd/yy/1383555086
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/253YRq4klZrxvCds6YT779.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354886016", 天晓凌波莉-宝藏女孩凌波莉
-https://astar.cc.cd/yy/1354886016
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8d61a1a440534f4a9c55835b78301375.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355478329", 7038小新-7038小新
-https://astar.cc.cd/yy/1355478329
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5zZN9m0OgJbq8dIIyexikF.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1334384450", 晨一陈洁-聊聊吗！！
-https://astar.cc.cd/yy/1334384450
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/N4yskwGFimXJZ5mdCmkts.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353683528", 忆星艾米-留下来给小米撑腰吧
-https://astar.cc.cd/yy/1353683528
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/d39Y5A9bVcfwqhKqqWze8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35209366", 夏千伊❥8168-最近看过的人
-https://astar.cc.cd/yy/35209366
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6MjkM3RjY8oL16V7bvN9ZA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88933105", 禾星唐九九-禾星唐九九
-https://astar.cc.cd/yy/88933105
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/92a8db93763b4b93b4e59b58150e5351.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353891071", 7343阿蜜呀-俊美阿蜜
-https://astar.cc.cd/yy/1353891071
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4gMh2hK7WmYi1qFLNXf5X1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:32050773", 仙小暖-别进来，我怕你走不出去
-https://astar.cc.cd/yy/32050773
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3d5a3Pi1cgoK3i0chEtQ4u.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353014761", 虎娱小鲤-感谢你曾经来过.
-https://astar.cc.cd/yy/1353014761
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4TifINV7wr8OfUW93fjTz8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353198576", 【云九】湖南筱可.好运降临-等风等雨也在等你
-https://astar.cc.cd/yy/1353198576
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8b999234c6ea42d7b8a73e3e0a3ad9bb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414790775", 花落啊妍-一只新主播
-https://astar.cc.cd/yy/1414790775
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6KcGc3ABrndtCVFu4MMxRS.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354677073", 深圳小爱-深圳小爱
-https://astar.cc.cd/yy/1354677073
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4162cfecf617466e896c996ddc664b90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354573898", 天晓盛夏-治愈系女声盛夏
-https://astar.cc.cd/yy/1354573898
-#EXTINF:-1 tvg-logo="https://allone.yystatic.com/resource-workflow/6V6GMQtaFQZJWsVuTyLo8E.jpg" group-title="音乐" tvg-id="yy:1574830", 951九万姐姐【也许在下雨天】-八万她姐九万
-https://astar.cc.cd/yy/1574830
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1ye2oi4a89bQAyxOZtm9An.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353583728", 铭宇小雨-天籁之音小雨
-https://astar.cc.cd/yy/1353583728
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d8a63e48fef0435da2aa66da37c07aa4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1337309798", 虎娱王小夏-安静唱歌~
-https://astar.cc.cd/yy/1337309798
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/TXVva2x3UmfDlBUJCYjpx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355821976", 忆星小茶-忆星小茶
-https://astar.cc.cd/yy/1355821976
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/YTBhOGEwMWMtMTAxOS00NjNjLWEyYjktNTY0M2FjYWM2Yzc1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354516771", 辉煌小胖雪-这里是快乐的天堂
-https://astar.cc.cd/yy/1354516771
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6bKvPTo6lJcEmRoAKfFqr6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461455273", 好声音♪静静老师【我回来啦】-我的歌里有你的故事
-https://astar.cc.cd/yy/1461455273
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Cb1NmFNhsBNGEO1a0V6Rn.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1508647477", 婧怡-辽宁最后一个恋爱脑
-https://astar.cc.cd/yy/1508647477
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4FFrUngs3VnJizF9L6pUln.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353619511", 四川钱满满-我是不是你的菜
-https://astar.cc.cd/yy/1353619511
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6T3yOLETbHRichiwOBpXze.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:24121171", 到期苏语-恬静清新 湖北苏语
-https://astar.cc.cd/yy/24121171
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/gErW5o3vAyxariMqSCuAx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37023395", 湖北宸星-湖北宸星
-https://astar.cc.cd/yy/37023395
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2jmdmYAptZhz7raFkizUuE.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353468922", 江西小墨熙-你的爱播已在线直播
-https://astar.cc.cd/yy/1353468922
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/9420147cd9454a3a82f289baf3f8ade0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414935098", 悦度苏苏-想我了就来看我
-https://astar.cc.cd/yy/1414935098
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3qt1qysKGKOY4JqdhCYMZ3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355134806", 951雅心-气质女神雅心
-https://astar.cc.cd/yy/1355134806
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c338b32b20574f96902daa1bb1432dfd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353328431", 河北茜茜-好家伙滴~！
-https://astar.cc.cd/yy/1353328431
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2aGo5soFY4QdgXJQMT8Sez.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382819140", 小啊青-允许一切发生吧
-https://astar.cc.cd/yy/1382819140
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1GsjWI0R4s1FHKC0BtpedW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340375279", 到期小静-今夜你来吗
-https://astar.cc.cd/yy/1340375279
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4gKaXVgN5LiicLFmNzn91W.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350933636", 燃点四月-燃点四月
-https://astar.cc.cd/yy/1350933636
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/810232df2f9c40e58204a453ca4443ef.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353429228", 辉煌梦梦-安徽梦梦
-https://astar.cc.cd/yy/1353429228
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5lgMfhLC2Yti2Jl4ay3wjr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355523502", 7038發發-7038發發
-https://astar.cc.cd/yy/1355523502
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/67u6PUuJ47uf4RRaLUz3NB.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1348560833", 河南梦诗-梦诗
-https://astar.cc.cd/yy/1348560833
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5ApfsrxyhUH2V2BLJLV3xz.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383546815", 创艺李贝贝-甜御小奶音
-https://astar.cc.cd/yy/1383546815
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/38ee1477bd0d4501b42fd3ea39965a7d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33057051", 鱼闹闹-08年，东北第一嫩苗
-https://astar.cc.cd/yy/33057051
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/78POTRhSPU26LAMMreVWYA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352838548", 禾星安晴儿-等你偏爱~
-https://astar.cc.cd/yy/1352838548
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5OxSGzdkTuNTJH7FcDgD34.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1336276615", 俊美聆听-求保护
-https://astar.cc.cd/yy/1336276615
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/3a30263a155d4594bac8a1df510cefeb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94345711", 禾星唐诗瑶-素质女孩瑶瑶
-https://astar.cc.cd/yy/94345711
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchor-growing/653ef1827687894609faec45.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1344897725", 祥盛六一-祥盛六一
-https://astar.cc.cd/yy/1344897725
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/566a993ca2ee42e2b71cfd4653e291c5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1348596239", 星创橙子-河南橙子
-https://astar.cc.cd/yy/1348596239
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/407aa67b59574f5f884e6ff5b385ea63.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:87383033", 天晓小99-99每天都很乖
-https://astar.cc.cd/yy/87383033
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5B11dfUnpBDlJQE3XrQjDi.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351793036", 峰品v小汐-等一个心软的神
-https://astar.cc.cd/yy/1351793036
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Fuvcjb12ddvJLtmnyQ9ov.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1331845207", 到期梦梦-戏腔，流行旋律经典老歌
-https://astar.cc.cd/yy/1331845207
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1hSbRGPPF5aBUsgdXAiQCy.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355374557", এ᭄༊晶晶ღꦿ࿐-开播喽
-https://astar.cc.cd/yy/1355374557
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6kCnHD7PU8LVY8j0vOicIq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382674123", 哆来咪-微胖新主播求守护大哥
-https://astar.cc.cd/yy/1382674123
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/f59a9c2baab8486daeb33b96d7d37293.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351870597", 古都情春丽-民美通唱歌主播
-https://astar.cc.cd/yy/1351870597
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/232bd034d7a3440fa325ffb8dee980b3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414821411", 贵州景汐-老主播懂规矩
-https://astar.cc.cd/yy/1414821411
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4wAPbcvO3BGaGo3DdO3es5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:27665090", 辉煌染染-这个女主播没大哥
-https://astar.cc.cd/yy/27665090
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7beJjQsO1dbrkrF7NY16jp.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414921822", 锦芊-一个人直播有点害怕
-https://astar.cc.cd/yy/1414921822
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/ML4iIWBJ1jFzSB5iWTXie.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:57913504", 睿廷静baby-你的静@了你
-https://astar.cc.cd/yy/57913504
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1PFbKMSdqWO7vaieZA784o.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350118700", 7927江小白-妹妹指令“找姐夫”
-https://astar.cc.cd/yy/1350118700
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1OdOhAkcBPRoTcGj6nV9Vc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58028290", 天晓楚煊-你会不会突然的出现
-https://astar.cc.cd/yy/58028290
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6gtz4BiOIAcZGvbE33ezTA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355234440", 诗韵-简简单单的弹琴
+https://astar.cc.cd/yy/1355234440
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3NMPnzE7jk6BNPo3Yq5Qbk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:32507952", L嘉大飞-你消费过的主播
 https://astar.cc.cd/yy/32507952
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a5e2cbce0b62453ea7e22a0f22836226.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543769", 【ZM】点点-00后滑雪女教练
-https://astar.cc.cd/yy/1383543769
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5kiWvnse8Yz15iBbQNQg91.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1338890348", 四川夕夕-你知道我在等你吗
-https://astar.cc.cd/yy/1338890348
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/e08d56758d854768a347d7e1a97206b7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414821964", Aeo叶十七-有夠誇張欸～
-https://astar.cc.cd/yy/1414821964
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/43aVTjwcC01WCA4CyB0v51.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383551070", 灵罗娃娃格温-眼睛超会笑
-https://astar.cc.cd/yy/1383551070
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2mRCd6BcXh1ZFytcAk8RbA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352281838", 燃点小甜妹-燃点小甜甜
-https://astar.cc.cd/yy/1352281838
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1SlOeyuFKIAFdJjOgkLTNA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37751451", 奇领陈v妮-v妮邀请你进入直播间
-https://astar.cc.cd/yy/37751451
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6GGxQza39F6FlPuqObLuH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:50326584", 话社晴天-好嗓音性感嘴唇
-https://astar.cc.cd/yy/50326584
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3ZnwH8XOdKhfagph0Fq2ws.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414925727", 蓝黎黎-蓝黎黎
-https://astar.cc.cd/yy/1414925727
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1RmPEWhhs00OF29C2tM3gq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:45535667", 虎娱小魅宝-有没有人宠我一下
-https://astar.cc.cd/yy/45535667
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3eXx94J3JrjqJiUZMbkrel.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:12882077", 禾星繁繁-温暖治愈系繁繁
-https://astar.cc.cd/yy/12882077
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/1d3734b50af748cc98327bfb19ec36f8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382763234", 炫音甜心-没大哥放心进
-https://astar.cc.cd/yy/1382763234
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c985a4b2a39540ff91c172b4775c1202.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:68770658", 禾星-小y-星耀营-重庆最后的单纯
-https://astar.cc.cd/yy/68770658
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c94a010d821f4e8783405146211f46a6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544663", 创艺让让-冒充1下公主
-https://astar.cc.cd/yy/1383544663
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/17d267416ae54b49979e40fa195153c9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354483672", Yx琳儿-邻家女孩
-https://astar.cc.cd/yy/1354483672
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2tDByiFcg8IALIeqv4yNSQ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352608468", 晨一小菲儿-晨一小菲儿
-https://astar.cc.cd/yy/1352608468
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/79XRKZBmZJhUwMq9cUP064.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354806805", 河南小鱼儿-让智商耽误的颜值主播
-https://astar.cc.cd/yy/1354806805
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c73878ae4a4046c087c764fe7cb082bc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37474017", 虎娱雨露-留下来给我撑腰..
-https://astar.cc.cd/yy/37474017
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/24C4epPfpHudel9fIdF4jO?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355071267", 1803哈妮-别把我弄丢了
-https://astar.cc.cd/yy/1355071267
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3n4kvyAksXzgY5pPohMlnt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:38928855", 雅琳-开始是你一直是你
-https://astar.cc.cd/yy/38928855
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4wghMwUw0E6TvYubm5eqD5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355388314", 虎娱圆紫-安静唱歌
-https://astar.cc.cd/yy/1355388314
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6mOdFHWoaQ9jCkNvJwYTp7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:54336838", 梦之音霏羽-梦之音霏羽
-https://astar.cc.cd/yy/54336838
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5HdlEhvROH3x4e83bCZ1ZW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349437561", 创艺梓茉-笑起来很好看+1
-https://astar.cc.cd/yy/1349437561
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1Ls7d9sPDV7ZoaXW35zbHK.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35971720", 睿廷钰潼-谁来守护我
-https://astar.cc.cd/yy/35971720
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/aXydIA9B6psmSr2rULg1i.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544222", 炫音禄禄-大师说今天有贵人来直播间
-https://astar.cc.cd/yy/1383544222
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2XFBNb2aXhtHvpPLpavPVs.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:67140188", 俊美洲徒小怪兽-爱笑的女孩运气不会差-进来唱给你听
+https://astar.cc.cd/yy/67140188
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/58PeYtQMBeNTRnIYOYTg6R.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353096748", 虎娱媛媛子-你们有三个共同好友
+https://astar.cc.cd/yy/1353096748
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/64ec76ebfef11f0828fb895d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31281189", 虎娱米哆-快进来给我撑腰
+https://astar.cc.cd/yy/31281189
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Cb1NmFNhsBNGEO1a0V6Rn.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1508647477", 婧怡-辽宁最后一个恋爱脑
+https://astar.cc.cd/yy/1508647477
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5SyL9pmPBP6VAPSGlFTKez.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354327527", 佛山喜糖-距离0.1
+https://astar.cc.cd/yy/1354327527
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3fcnLhT1zXHynfzX4BP1Eo.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355065623", 天创可可-内蒙女孩大可可
+https://astar.cc.cd/yy/1355065623
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6QZIPwSlllj4qi6p9lhDgv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353346825", 阿米-人美歌甜气质女生
+https://astar.cc.cd/yy/1353346825
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d9936ba041dd4c7b95d0e353ed2ec286.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383546919", 创艺月野-玫瑰都是带刺的
+https://astar.cc.cd/yy/1383546919
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/576CyhRLL6D54spwfnGLAC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414909285", Yx亦竹-一直都在哦！贵在坚持。
 https://astar.cc.cd/yy/1414909285
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/12bd8062227b4464860654d47ac79bb4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:70701522", 虎娱可菲-可菲-近我者发
-https://astar.cc.cd/yy/70701522
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/2CxfrMPSbbTMql4sAH9aLC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355120978", 忆星江西悦-忆星江西悦
-https://astar.cc.cd/yy/1355120978
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/7dccea5504bc4aa2af57eb4bd9240c81.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461836181", 森宁雪艺-森宁雪艺新主播求关注
-https://astar.cc.cd/yy/1461836181
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2BEuq5cwbGjxbKMTX8Tzfu.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382772381", EMI音果-北京烟嗓好声音
-https://astar.cc.cd/yy/1382772381
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/23yKUTVDuuwpYRC9Tuxk2T.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:89493547", 晨一喜宝-这是你要的烟嗓嘛？
-https://astar.cc.cd/yy/89493547
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2KfRrNWNDnqQKnTlK1g6jC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1393870619", 安徽盼盼-马年快乐
-https://astar.cc.cd/yy/1393870619
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2c6e709b9b264e70a17763eb95878f1c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:28225029", 禾星小暖暖-这个主播没大哥
-https://astar.cc.cd/yy/28225029
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/24e94a5435e742fcaeb23584730d311f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354552969", 成都璇子-一眼沦陷 一听上瘾
-https://astar.cc.cd/yy/1354552969
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4CAgiilxXlUusVeJpt52T1?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355213805", 土豆-唱跳rap撒都会
-https://astar.cc.cd/yy/1355213805
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c338b32b20574f96902daa1bb1432dfd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353328431", 河北茜茜-好家伙滴~！
+https://astar.cc.cd/yy/1353328431
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/810232df2f9c40e58204a453ca4443ef.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353429228", 辉煌梦梦-安徽梦梦
+https://astar.cc.cd/yy/1353429228
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5OxSGzdkTuNTJH7FcDgD34.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1336276615", 俊美聆听-求保护
+https://astar.cc.cd/yy/1336276615
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7XZnLUdMGy8tQUz6JJ2UdA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1507561737", 266灵儿-你支持过的人
+https://astar.cc.cd/yy/1507561737
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f26d5d5cd89644519926e89297c2efcf.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414777839", 忆星十安-乖一点就抱你
+https://astar.cc.cd/yy/1414777839
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/3cb1b2374636451ebb9ff876bfa95d90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:55141931", 赛罗丹-丹宝
+https://astar.cc.cd/yy/55141931
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8d61a1a440534f4a9c55835b78301375.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355478329", 7038小新-7038小新
+https://astar.cc.cd/yy/1355478329
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/mw8zfQWMD5u9dsJkOMTFd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:95603686", EMI徐發發-嘴毒别惹，后果自负
+https://astar.cc.cd/yy/95603686
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/2vhcFQ7OapVStxJhAhFPrb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349688542", 天晓悦儿-唱歌给您听，关注常来哦~
 https://astar.cc.cd/yy/1349688542
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1G2j2avJUIBwgCENrs0BCc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354508806", 睿廷甜心-甜心
-https://astar.cc.cd/yy/1354508806
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2yj5zPNKnGdHev3TvNfFRd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88160605", 8131小牙牙-8131小牙牙
+https://astar.cc.cd/yy/88160605
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5FFLz6eH1iOpD9bjAOD7lr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:42029727", 到期小婉-脑can禁止入内
+https://astar.cc.cd/yy/42029727
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4ofM4ZEkqX1zktv8YddD0H.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33824662", 天晓大白兔-天晓大白兔
+https://astar.cc.cd/yy/33824662
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2DMRWNATDpUWwdTcGXMfQ1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545040", 锦安-新主播随心聊天听歌，欢迎
 https://astar.cc.cd/yy/1383545040
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6hlkCppsfQKHUn1yWOx30p.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:79620806", 杭州小哚-清纯甜美小哚
-https://astar.cc.cd/yy/79620806
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4bfta7gjVBbOnRt377lZWD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1333801608", 雪颖轩婉桐-曹婉桐
-https://astar.cc.cd/yy/1333801608
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6iIFdxTcYypyERZMwlU9e2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414812880", 天晓皮皮大王-新新新新新主播！！！
-https://astar.cc.cd/yy/1414812880
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/94240b4f44e142c587c81614b71f5c54.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353464058", 天晓香菜-重生之我是女主播
-https://astar.cc.cd/yy/1353464058
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/eac76ca90d4b4aff86cc5da7cef6d688.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21310128", 新起点文浩-YY第二男歌手文浩
-https://astar.cc.cd/yy/21310128
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/7XZKX14OMEiQ6rJUl19QhV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382750712", EMI栀小恩-榜一超好秒
-https://astar.cc.cd/yy/1382750712
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/OGE2YjZhMmUtMjE4Yi00MThjLWFjYzctMzUyMzI5MDAyYzRj.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:24022147", 睿廷田小茶-睿廷田小茶
+https://astar.cc.cd/yy/24022147
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4TifINV7wr8OfUW93fjTz8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353198576", 【云九】湖南筱可.好运降临-等风等雨也在等你
+https://astar.cc.cd/yy/1353198576
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7K1us868SxWCdtbR9DQkMG.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1346308500", 御山Y滢滢-有趣有料
 https://astar.cc.cd/yy/1346308500
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c45dc722ef744d1aa278f5a1559f53fa.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356344295", 忆星小阿祁-你的电子宠物已上线
-https://astar.cc.cd/yy/1356344295
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/72wLCONZ5AjrzOyr8eMlVJ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545350", 舒舒-就等你啦
-https://astar.cc.cd/yy/1383545350
-#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/82d5c2a93ec0489483e18b6dbdc7970a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350125149", 星创小诺-星创小诺
-https://astar.cc.cd/yy/1350125149
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/x7eV9dDcZhRShnzTnHho9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:34820971", 盛世小梦梦-温婉可人小梦梦
-https://astar.cc.cd/yy/34820971
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1IBNnNCTDFNq26tDcANri0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:27878869", 湖南文子-在线等你~~
-https://astar.cc.cd/yy/27878869
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/151f0b47958b4b47be43908e592d1040.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414783347", 七千岁-你好陌生人
-https://astar.cc.cd/yy/1414783347
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/65e5b0b798154ae49cb72756f2bae5ae.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:38462848", 天晓杨子曦-有趣的灵魂两百多吨
-https://astar.cc.cd/yy/38462848
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/45imt45eQZz2swRPp8I2Jj.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:28350058", 梦之音汐宝-赚够两百就下班~
-https://astar.cc.cd/yy/28350058
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/9291ed6bc6184e54a52d5752cb369f2e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:32760995", 江南长公主-今天吃什么
-https://astar.cc.cd/yy/32760995
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4J989kuT9jw7JpuNe7NKhe.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354987486", 睿廷梦曼-天青色等烟雨，而我在等你
-https://astar.cc.cd/yy/1354987486
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f1d7b80544ab439ba63484d2539d650c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94689326", 子歇浙江-丑女无敌
-https://astar.cc.cd/yy/94689326
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/7jIHqhki63h0ztn64TBkFR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1088304", 熊猫-重庆美女 话不多呆会儿呗
-https://astar.cc.cd/yy/1088304
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/coverCutMgr/8fa169c92333e2d0d19d3fb30ef290fe.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414781053", 一米-唱歌曼曼y-星耀营-别翻了就我吧
-https://astar.cc.cd/yy/1414781053
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/5744bbce966d400fbc2b47a8e9680109.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:60247101", 王一诺-音乐精灵王一诺
-https://astar.cc.cd/yy/60247101
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5igT8IavtLmPk9Cl8VehKZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353327278", 忆星大棠棠-超白，好中
-https://astar.cc.cd/yy/1353327278
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3CVjqYON7eKasTeewMwfeF.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345787409", 河南笑笑[好运来]-有光吗
-https://astar.cc.cd/yy/1345787409
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5YbgyJ4bnMdnj8BVZwlgbC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345406666", 天晓温苒-中奖
-https://astar.cc.cd/yy/1345406666
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/62huSE3RBa0f2Hp72yVI0u.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:13050798", 睿廷小逸-没有标题的直播
-https://astar.cc.cd/yy/13050798
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1lAJrjusxSFal6HM0lhbhZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356311465", 到期阔落，给我刷点呗-有3个好友在看
-https://astar.cc.cd/yy/1356311465
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/41w9B3Ei5yNMSohOiJPVQ0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1444501968", 茶社徐璐-白白胖胖有希望
-https://astar.cc.cd/yy/1444501968
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7N3k4Sa9L4vn7e6jgD9tYN.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58753777", 睿廷阿冰-酷酷的女子
-https://astar.cc.cd/yy/58753777
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/7b3ec6235ca844b2a9f50a8977b9b1d6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350888441", 睿廷ou欧-温婉动人欧欧
-https://astar.cc.cd/yy/1350888441
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4Dkf9476a5IPTHOYOOMSDz.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:83647941", 安徽菜菜-在等你~
-https://astar.cc.cd/yy/83647941
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Zy6oYx8IoCFl1wOYPm9jS.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:27070764", 【EMI】南乔-掐指一算，你该来了
-https://astar.cc.cd/yy/27070764
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/992e859d99f3499a866cc4a18a454024.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414779939", 忆星妍妍-昨天打赏过的主播
-https://astar.cc.cd/yy/1414779939
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6UVrLXhyKVj4EncYdyNIWG.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354979429", 虎娱小财迷-想要被宠
-https://astar.cc.cd/yy/1354979429
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6m03f9w8ThiYzRUONf2qhT.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1346123389", 宋逸璇-靠近爱笑的女孩运气不会太
-https://astar.cc.cd/yy/1346123389
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1XP1yqNx6HwINlEIV6NRrW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:30302847", 冕加圈圈-活力歌唱小圈圈
-https://astar.cc.cd/yy/30302847
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/8X0EvvW1ygMnA1jnpNn7U.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1455509980", EMI禾一-来都来了
-https://astar.cc.cd/yy/1455509980
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/TFsNzm3xnELCnLliFkPM5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351719751", 浩克-好运来
-https://astar.cc.cd/yy/1351719751
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2TxoEmHn870mkZ3xBPPZ9L.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:23218695", 河南沈清-女大暑假赚点米
-https://astar.cc.cd/yy/23218695
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/69jbv67hgLsrVVjJzard8X.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340389367", 小小-距离你0.1KM
-https://astar.cc.cd/yy/1340389367
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/bJMPL572DyjVIQajEZDBb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94227201", 重庆芯儿-重庆芯児等一人宠
-https://astar.cc.cd/yy/94227201
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/eYaRX2skLcrVdMjTDBZ0O.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354655211", 华矩榆忻-赚点馒头吃吃
-https://astar.cc.cd/yy/1354655211
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/XZwY2vR9NT1F20Yz0G6Im.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545640", 辉煌小渔姬-你的氧气女孩
-https://astar.cc.cd/yy/1383545640
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/8526712_1667310671.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:30608028", 和利皇-手艺人纪实录
-https://astar.cc.cd/yy/30608028
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/KYqepIWQzbiokuHWIcozq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21699469", 小羽-第一次直播
-https://astar.cc.cd/yy/21699469
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2e0YOiugaKw0ZNn0zPk64f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:18533288", 森宁慧慧-遇良人求守护
-https://astar.cc.cd/yy/18533288
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/673f6383afd4458ea2e362814a6b4508.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345495291", 晨一可乐-她的腿很长
-https://astar.cc.cd/yy/1345495291
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6fULYYjBDhpeHTz8DjSvja.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354223924", 饭饭（If.you）-喜欢的人再看一眼还是喜欢
-https://astar.cc.cd/yy/1354223924
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2Gc3TXZwlcjq56ZbmCZq3m.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21968218", 小福气-祝你天天开心
 https://astar.cc.cd/yy/21968218
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5h8W47cYQj0tIJobsoyRkK.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352765368", 天晓乐渝-天晓乐渝
-https://astar.cc.cd/yy/1352765368
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3eXx94J3JrjqJiUZMbkrel.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:12882077", 禾星繁繁-温暖治愈系繁繁
+https://astar.cc.cd/yy/12882077
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/TXVva2x3UmfDlBUJCYjpx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355821976", 忆星小茶-忆星小茶
+https://astar.cc.cd/yy/1355821976
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4fYRQiOcJAgUQQXMxvMebR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1332693571", 7396粤语嬉-音乐老师教你学唱歌
+https://astar.cc.cd/yy/1332693571
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/52bccdbdc3864150b1e695d6161c79b1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351779086", 睿廷卢小天-让你尖叫让你跳~
+https://astar.cc.cd/yy/1351779086
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/7jIHqhki63h0ztn64TBkFR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1088304", 熊猫-重庆美女 话不多呆会儿呗
+https://astar.cc.cd/yy/1088304
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6T3yOLETbHRichiwOBpXze.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:24121171", 到期苏语-恬静清新 湖北苏语
+https://astar.cc.cd/yy/24121171
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/s9lf2iyuAU9HF6A12cHxv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33746163", Yx允儿-Yx允儿
+https://astar.cc.cd/yy/33746163
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5JWwCLVyyZoCAYBrovDh1d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1343495052", 创艺李茶茶-你的小茶精来啦~
+https://astar.cc.cd/yy/1343495052
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/KUqmg1mEt2qw9YvMlK8ys.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356349329", 创艺小红帽-你会不会突然的出现
+https://astar.cc.cd/yy/1356349329
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/67a81e9a59ff42b4a1919dbdc898f5c2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544041", 虎娱-颂一-星耀营-想把我唱给你听
+https://astar.cc.cd/yy/1383544041
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3qt1qysKGKOY4JqdhCYMZ3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355134806", 951雅心-气质女神雅心
+https://astar.cc.cd/yy/1355134806
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1lAJrjusxSFal6HM0lhbhZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356311465", 到期阔落，给我刷点呗-有3个好友在看
+https://astar.cc.cd/yy/1356311465
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6uHTLOtPyIpJtg8RWpwXxx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382627075", Yx小宝-清纯美女小宝儿在线等你
+https://astar.cc.cd/yy/1382627075
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7N3k4Sa9L4vn7e6jgD9tYN.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58753777", 睿廷阿冰-酷酷的女子
+https://astar.cc.cd/yy/58753777
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/SNSzJoXXLfzgFlaFJwT9Q.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382736994", EMI周舟-这个主播没大哥
+https://astar.cc.cd/yy/1382736994
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/7b3ec6235ca844b2a9f50a8977b9b1d6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350888441", 睿廷ou欧-温婉动人欧欧
+https://astar.cc.cd/yy/1350888441
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5mKxUnw5gQFiMhFwg00CLk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1333337943", 睿廷雪儿-全糖女孩又复活了~
+https://astar.cc.cd/yy/1333337943
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5tOqWq0EiQM01RcyzNOVpd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33173177", 睿廷赵灵儿-699灵儿
+https://astar.cc.cd/yy/33173177
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/2CxfrMPSbbTMql4sAH9aLC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355120978", 忆星江西悦-忆星江西悦
+https://astar.cc.cd/yy/1355120978
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3ciTxyUU7d8V65WHPrpw0U.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382649271", 禾星白周-唱歌主播
+https://astar.cc.cd/yy/1382649271
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1puATU9i6nSaWOf7n9exVt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354347754", 麒麟子梦-隔壁小姐姐
+https://astar.cc.cd/yy/1354347754
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6k9aS4q8Ts1RkqREnWkVVQ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383555086", 莫小北-好声音十万强
+https://astar.cc.cd/yy/1383555086
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6m03f9w8ThiYzRUONf2qhT.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1346123389", 宋逸璇-靠近爱笑的女孩运气不会太
+https://astar.cc.cd/yy/1346123389
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/253YRq4klZrxvCds6YT779.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354886016", 天晓凌波莉-宝藏女孩凌波莉
+https://astar.cc.cd/yy/1354886016
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/8X0EvvW1ygMnA1jnpNn7U.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1455509980", EMI禾一-来都来了
+https://astar.cc.cd/yy/1455509980
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1hSbRGPPF5aBUsgdXAiQCy.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355374557", এ᭄༊晶晶ღꦿ࿐-开播喽
+https://astar.cc.cd/yy/1355374557
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/232bd034d7a3440fa325ffb8dee980b3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414821411", 贵州景汐-老主播懂规矩
+https://astar.cc.cd/yy/1414821411
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5tiYSaRrjpZDWTXRoa8pe4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353780927", 河南暖暖-河南暖暖
+https://astar.cc.cd/yy/1353780927
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7beJjQsO1dbrkrF7NY16jp.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414921822", 锦芊-一个人直播有点害怕
+https://astar.cc.cd/yy/1414921822
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4OFflZyPIUNgK36fCEnfj5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414784781", you-越努力越幸运
+https://astar.cc.cd/yy/1414784781
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2KhVHqXa5Xe4T0mFeYRQGm.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1338240136", 忆星晚晚-忆星晚晚
+https://astar.cc.cd/yy/1338240136
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6MjkM3RjY8oL16V7bvN9ZA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88933105", 禾星唐九九-禾星唐九九
+https://astar.cc.cd/yy/88933105
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4bfta7gjVBbOnRt377lZWD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1333801608", 雪颖轩婉桐-曹婉桐
+https://astar.cc.cd/yy/1333801608
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5lf3M9q0CtVZO2tKdm6G73.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354258707", 森宁猫九儿-养一只猫...
+https://astar.cc.cd/yy/1354258707
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/40SFJVu6XkVcIlGCnWaSRO.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1450361021", 發發哆4635-发财被爱好运常在~
+https://astar.cc.cd/yy/1450361021
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1Fobg9NiFRGeEdJTiBLi8L.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351158502", 忆星温小暖-忆星温小暖
+https://astar.cc.cd/yy/1351158502
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/e08d56758d854768a347d7e1a97206b7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414821964", Aeo叶十七-有夠誇張欸～
+https://astar.cc.cd/yy/1414821964
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/9pjSOmcdkLP0KynG6eo6C.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354264457", 禾星暮岚-温婉动人包包
+https://astar.cc.cd/yy/1354264457
+#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/79d7802c4c5b40079e25e4251c817e36.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58950095", 小豆沙利徒-俊美小豆沙
+https://astar.cc.cd/yy/58950095
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/YTBhOGEwMWMtMTAxOS00NjNjLWEyYjktNTY0M2FjYWM2Yzc1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354516771", 辉煌小胖雪-这里是快乐的天堂
+https://astar.cc.cd/yy/1354516771
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c024754bcdf746c49f5120d1fdf138bb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461664374", 华矩乐乐-华矩乐乐
+https://astar.cc.cd/yy/1461664374
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c985a4b2a39540ff91c172b4775c1202.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:68770658", 禾星-小y-星耀营-重庆最后的单纯
+https://astar.cc.cd/yy/68770658
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6bKvPTo6lJcEmRoAKfFqr6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1461455273", 好声音♪静静老师【我回来啦】-我的歌里有你的故事
+https://astar.cc.cd/yy/1461455273
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/51e2113e1bbc49ef8b73cf81331b3ea2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354413948", 小宁宁-小宁宁
 https://astar.cc.cd/yy/1354413948
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4GQkp261WQqpcJndUwrAxD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352461443", 光纵白玉-是白玉吖！
 https://astar.cc.cd/yy/1352461443
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7m1nL8RXcuMqYfU4Lmn8aH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1348171668", 【睿廷】璇宝宝~-我的帝王套去哪了~~~
+https://astar.cc.cd/yy/1348171668
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6vE2rvQKKH0TGMpxYLmO7E.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383562555", 睿廷  苗子  来哥~！-素颜
+https://astar.cc.cd/yy/1383562555
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/24C4epPfpHudel9fIdF4jO?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355071267", 1803哈妮-别把我弄丢了
+https://astar.cc.cd/yy/1355071267
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6BuXeWrEApJZ7e4e59gr1e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352985166", 到期浙江鹿-我一定会是你的偏爱
+https://astar.cc.cd/yy/1352985166
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6Acoz4Z3kBhAq8gxGNlEFE?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:41107819", Yx金凤-感恩有你
+https://astar.cc.cd/yy/41107819
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5d8E1HREU1woKCVVBiVjeZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349263683", 天晓哒哒-安静唱歌
+https://astar.cc.cd/yy/1349263683
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3n4kvyAksXzgY5pPohMlnt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:38928855", 雅琳-开始是你一直是你
+https://astar.cc.cd/yy/38928855
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3uaje0MBlwsQUAUsUTod9p.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355054176", 一诺慕斯呀-晨一一诺慕斯
+https://astar.cc.cd/yy/1355054176
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6mOdFHWoaQ9jCkNvJwYTp7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:54336838", 梦之音霏羽-梦之音霏羽
+https://astar.cc.cd/yy/54336838
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cbdb6256b14244e5aa35049d5d217ee1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543772", 【星耀未来】喵喵妙-这主播能处
+https://astar.cc.cd/yy/1383543772
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/337ac965e9b94a8e8545c4b509e85761.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544156", 好声音♪  慵懒下午茶-依宝宝-四川第一温柔
+https://astar.cc.cd/yy/1383544156
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5HdlEhvROH3x4e83bCZ1ZW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349437561", 创艺梓茉-笑起来很好看+1
+https://astar.cc.cd/yy/1349437561
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7OH1fwmoMDA2A4UH8CLb71.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355530516", 乖乖（马上有钱）-看跳舞付费直播间
+https://astar.cc.cd/yy/1355530516
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/9420147cd9454a3a82f289baf3f8ade0.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414935098", 悦度苏苏-想我了就来看我
+https://astar.cc.cd/yy/1414935098
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1uYQ0JWh1TEKZYaRIL1hNg.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355329799", 辉煌小C-开播了
+https://astar.cc.cd/yy/1355329799
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2aGo5soFY4QdgXJQMT8Sez.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382819140", 小啊青-允许一切发生吧
+https://astar.cc.cd/yy/1382819140
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1GsjWI0R4s1FHKC0BtpedW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340375279", 到期小静-今夜你来吗
+https://astar.cc.cd/yy/1340375279
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4IIyrR3bMK3FssfpDiIJY3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354570658", 峰品婉儿-是个小可怜来个人心疼一下
+https://astar.cc.cd/yy/1354570658
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6tqnhBCinz3GIlGm5U5iZ2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352890384", 悦度初见-再看一眼，会不会不一样
+https://astar.cc.cd/yy/1352890384
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/38ee1477bd0d4501b42fd3ea39965a7d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:33057051", 鱼闹闹-08年，东北第一嫩苗
+https://astar.cc.cd/yy/33057051
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/78POTRhSPU26LAMMreVWYA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352838548", 禾星安晴儿-等你偏爱~
+https://astar.cc.cd/yy/1352838548
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2BEuq5cwbGjxbKMTX8Tzfu.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382772381", EMI音果-北京烟嗓好声音
+https://astar.cc.cd/yy/1382772381
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2KfRrNWNDnqQKnTlK1g6jC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1393870619", 安徽盼盼-马年快乐
+https://astar.cc.cd/yy/1393870619
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3OGhiGigdnOvMcv0KXa5UX.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1393747463", 辉煌月月-实力唱将 在线嗨唱不停
+https://astar.cc.cd/yy/1393747463
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6oqK7MD7UGeHa3uWZ17emR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544743", 幻世南汐-哥，我真的想清楚了
+https://astar.cc.cd/yy/1383544743
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/407aa67b59574f5f884e6ff5b385ea63.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:87383033", 天晓小99-99每天都很乖
+https://astar.cc.cd/yy/87383033
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5B11dfUnpBDlJQE3XrQjDi.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351793036", 峰品v小汐-等一个心软的神
+https://astar.cc.cd/yy/1351793036
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2aEb8vtsPezIkbrMjLsIE5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382655194", 天晓克拉-天晓克拉
+https://astar.cc.cd/yy/1382655194
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3qnwqMwXmFZzDhqoUJVs3C.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355553869", 虎娱珍儿-武汉珍儿
+https://astar.cc.cd/yy/1355553869
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6kCnHD7PU8LVY8j0vOicIq.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382674123", 哆来咪-微胖新主播求守护大哥
+https://astar.cc.cd/yy/1382674123
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2e6wCDl3te66UbRe2cJeK6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353204932", 兔兔-兔兔
+https://astar.cc.cd/yy/1353204932
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/f59a9c2baab8486daeb33b96d7d37293.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351870597", 古都情春丽-民美通唱歌主播
+https://astar.cc.cd/yy/1351870597
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/anchorCover/3plJt9166MVavzE6jrjZ0I.png?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355379659", 博乒网ChinaTT-热舞开始啦
+https://astar.cc.cd/yy/1355379659
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/79MeCZeL076S9JW81wFLC8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355251991", 辉煌王伊一-辉煌伊一子
+https://astar.cc.cd/yy/1355251991
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/92a8db93763b4b93b4e59b58150e5351.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353891071", 7343阿蜜呀-俊美阿蜜
+https://astar.cc.cd/yy/1353891071
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3d5a3Pi1cgoK3i0chEtQ4u.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353014761", 虎娱小鲤-感谢你曾经来过.
+https://astar.cc.cd/yy/1353014761
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/74hiBqRqNNMpZ1yR0YAg2z.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356175234", AL一夏-附近的人
+https://astar.cc.cd/yy/1356175234
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/59F8MyRQtLHjzdlSiBgeO3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1337550196", 晨一唐朵朵-请带我出低谷
+https://astar.cc.cd/yy/1337550196
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/eac76ca90d4b4aff86cc5da7cef6d688.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21310128", 新起点文浩-YY第二男歌手文浩
+https://astar.cc.cd/yy/21310128
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1SlOeyuFKIAFdJjOgkLTNA.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:37751451", 奇领陈v妮-v妮邀请你进入直播间
+https://astar.cc.cd/yy/37751451
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/151f0b47958b4b47be43908e592d1040.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414783347", 七千岁-你好陌生人
+https://astar.cc.cd/yy/1414783347
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/4162cfecf617466e896c996ddc664b90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354573898", 天晓盛夏-治愈系女声盛夏
+https://astar.cc.cd/yy/1354573898
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/860cfb3368284963a3843cd153cde542.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:78394196", 伊人-山西清纯甜美伊人
+https://astar.cc.cd/yy/78394196
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/saGs5Ex1TTfXTg5b6IFGI.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:25564728", 麦甜小曲库-张含韵yy分韵
+https://astar.cc.cd/yy/25564728
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/d8a63e48fef0435da2aa66da37c07aa4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1337309798", 虎娱王小夏-安静唱歌~
+https://astar.cc.cd/yy/1337309798
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2gHAvesIrpTn41fmQsVqY2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1334667583", 雨霏-实力唱将雨霏
+https://astar.cc.cd/yy/1334667583
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/17d267416ae54b49979e40fa195153c9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354483672", Yx琳儿-邻家女孩
+https://astar.cc.cd/yy/1354483672
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2quoHV3WdDMP8jbMUBLDbX.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31531122", 禾星梦凡-就像在机场等一艘船
+https://astar.cc.cd/yy/31531122
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/c832a3496ccd401ea43b4868a5d0fb5b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414781045", 伊拉宝宝-来听歌啦~
 https://astar.cc.cd/yy/1414781045
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/fe10408dd66047bea2042a7212026820.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21823968", 光纵璇璇-今天是你的甜心~
 https://astar.cc.cd/yy/21823968
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5JWwCLVyyZoCAYBrovDh1d.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1343495052", 创艺李茶茶-你的小茶精来啦~
-https://astar.cc.cd/yy/1343495052
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/cbdb6256b14244e5aa35049d5d217ee1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383543772", 【星耀未来】喵喵妙-这主播能处
-https://astar.cc.cd/yy/1383543772
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6QZIPwSlllj4qi6p9lhDgv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353346825", 阿米-人美歌甜气质女生
-https://astar.cc.cd/yy/1353346825
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1uTK7YTUxg8RjmkQfwrrJv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:36683678", 雪儿-雪儿
-https://astar.cc.cd/yy/36683678
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/7kSkVp9Khkgv6zVlCV3DM5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354410324", 冕加西漫-你会来吗
-https://astar.cc.cd/yy/1354410324
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6GVs6SD2AN9QrXqSiNRjMt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21851566", Yx米情-Yx米情
-https://astar.cc.cd/yy/21851566
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2uoh4u1DzWmc2OsExkhU8t.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:72827919", 【虎娱】烦小凡  向上-有喜欢听歌的吗还
-https://astar.cc.cd/yy/72827919
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/32bpVCMgWH6B4ZLYXGeJEP.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:75833027", Yx陈语寒-幼儿园抢饭第一
-https://astar.cc.cd/yy/75833027
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/79XRKZBmZJhUwMq9cUP064.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354806805", 河南小鱼儿-让智商耽误的颜值主播
+https://astar.cc.cd/yy/1354806805
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5igT8IavtLmPk9Cl8VehKZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353327278", 忆星大棠棠-超白，好中
+https://astar.cc.cd/yy/1353327278
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3CVjqYON7eKasTeewMwfeF.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345787409", 河南笑笑[好运来]-有光吗
+https://astar.cc.cd/yy/1345787409
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/391b22dfe4364503a6b23723c5986a74.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414824555", 星创依依-今天你笑了吗
+https://astar.cc.cd/yy/1414824555
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5YbgyJ4bnMdnj8BVZwlgbC.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345406666", 天晓温苒-中奖
+https://astar.cc.cd/yy/1345406666
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/62huSE3RBa0f2Hp72yVI0u.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:13050798", 睿廷小逸-没有标题的直播
+https://astar.cc.cd/yy/13050798
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/12bd8062227b4464860654d47ac79bb4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:70701522", 虎娱可菲-可菲-近我者发
+https://astar.cc.cd/yy/70701522
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5lgMfhLC2Yti2Jl4ay3wjr.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355523502", 7038發發-7038發發
+https://astar.cc.cd/yy/1355523502
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/072e4b825ccf44c2ac1be6a6140fdf90.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414786938", 星创湖北贝贝-可甜可盐
+https://astar.cc.cd/yy/1414786938
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1TwbW8z3nE05UwrWl8q0lR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21545247", 天晓李钰琪-还记得我吗
 https://astar.cc.cd/yy/21545247
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5MOLCf1sQFduK79S9Amvhk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:51916879", 茶社锦鲤-好运锦鲤~~
-https://astar.cc.cd/yy/51916879
-#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/494bf784e09c40598f55dd5ccc579d31.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353246083", 雪颖轩叶子-性感小野猪在线唱歌
-https://astar.cc.cd/yy/1353246083
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/992e859d99f3499a866cc4a18a454024.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414779939", 忆星妍妍-昨天打赏过的主播
+https://astar.cc.cd/yy/1414779939
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/23yKUTVDuuwpYRC9Tuxk2T.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:89493547", 晨一喜宝-这是你要的烟嗓嘛？
+https://astar.cc.cd/yy/89493547
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6UVrLXhyKVj4EncYdyNIWG.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354979429", 虎娱小财迷-想要被宠
+https://astar.cc.cd/yy/1354979429
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/566a993ca2ee42e2b71cfd4653e291c5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1348596239", 星创橙子-河南橙子
+https://astar.cc.cd/yy/1348596239
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1VDY8KyL0rgcWIOVYWKXPO.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349688861", 李豆-进来的人都暴富
 https://astar.cc.cd/yy/1349688861
-#EXTINF:-1 tvg-logo="http://emyms.bs2cdn.yy.com/YzM4YWQwMWYtMTMwNi00NTVmLWEyZGYtMWU2NGE3NmJjOWU5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35243984", 露芽芽-睡觉怕打雷
-https://astar.cc.cd/yy/35243984
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5zZN9m0OgJbq8dIIyexikF.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1334384450", 晨一陈洁-聊聊吗！！
+https://astar.cc.cd/yy/1334384450
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5W3WPMI3L2e40b3CC3bSS2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:76413139", 黄逗-专攻苦情歌
+https://astar.cc.cd/yy/76413139
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/N4yskwGFimXJZ5mdCmkts.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353683528", 忆星艾米-留下来给小米撑腰吧
+https://astar.cc.cd/yy/1353683528
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1LYWqIIHhBGnXvR7hSLuaw.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356244412", 睿廷南栀-星耀营-真男人从不蹲门口
+https://astar.cc.cd/yy/1356244412
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4CAgiilxXlUusVeJpt52T1?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355213805", 土豆-唱跳rap撒都会
+https://astar.cc.cd/yy/1355213805
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3KRR0joz2mswATLWZnVGvj.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21156021", 睿廷张小娜-想变有钱
+https://astar.cc.cd/yy/21156021
 #EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/b88a1bf9dd0642499ae2ddb1a86d72e9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:88604361", 祥盛月怂怂-祥盛月怂怂
 https://astar.cc.cd/yy/88604361
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/efc31faefd0a47eb860938d2f745522b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21606211", 御山安琪-哈哈~
-https://astar.cc.cd/yy/21606211
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/4OFflZyPIUNgK36fCEnfj5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414784781", you-越努力越幸运
-https://astar.cc.cd/yy/1414784781
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Z2iabjxuS0kolZbI2m3fa.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:66736265", 晓冰-甜美气质女神冰冰
 https://astar.cc.cd/yy/66736265
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6AwwRQOR2Mucu36hvSMl4W.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350198005", 小柯-你刷过礼物的主播
-https://astar.cc.cd/yy/1350198005
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/7a6fc0a2b0fb4579a55d6d25c5924c84.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354470969", 河北九九-开播赚学费
-https://astar.cc.cd/yy/1354470969
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2MWKg6ByH0fSiGLWDZPA23.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354055065", 辉煌王61-王61
 https://astar.cc.cd/yy/1354055065
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/73fdc81f35994b9fa2673d1c927b896f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352702772", 安妮-安妮开播了
 https://astar.cc.cd/yy/1352702772
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/55f5wG2r30ANiKG38sMWZ3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31712359", 灵犀-灵犀
-https://astar.cc.cd/yy/31712359
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8b999234c6ea42d7b8a73e3e0a3ad9bb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414790775", 花落啊妍-一只新主播
+https://astar.cc.cd/yy/1414790775
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6KcGc3ABrndtCVFu4MMxRS.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354677073", 深圳小爱-深圳小爱
+https://astar.cc.cd/yy/1354677073
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/7XZKX14OMEiQ6rJUl19QhV.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382750712", EMI栀小恩-榜一超好秒
+https://astar.cc.cd/yy/1382750712
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/43aVTjwcC01WCA4CyB0v51.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383551070", 灵罗娃娃格温-眼睛超会笑
+https://astar.cc.cd/yy/1383551070
+#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/82d5c2a93ec0489483e18b6dbdc7970a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350125149", 星创小诺-星创小诺
+https://astar.cc.cd/yy/1350125149
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/860016f9db154427906fcb6f9762d607.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1459094718", 好声音♪ 烨子-河北唱歌主播为你疗伤
+https://astar.cc.cd/yy/1459094718
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6GGxQza39F6FlPuqObLuH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:50326584", 话社晴天-好嗓音性感嘴唇
+https://astar.cc.cd/yy/50326584
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5ackgCEr7lHuwUM2mbfmA4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352028015", 张北北-你支持过的主播
+https://astar.cc.cd/yy/1352028015
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3ZnwH8XOdKhfagph0Fq2ws.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414925727", 蓝黎黎-蓝黎黎
+https://astar.cc.cd/yy/1414925727
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/45imt45eQZz2swRPp8I2Jj.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:28350058", 梦之音汐宝-赚够两百就下班~
+https://astar.cc.cd/yy/28350058
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4J989kuT9jw7JpuNe7NKhe.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354987486", 睿廷梦曼-天青色等烟雨，而我在等你
+https://astar.cc.cd/yy/1354987486
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6124SKcQqlFHt9DCVnHDws.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31797050", 沐雨-给我一首歌的时间
+https://astar.cc.cd/yy/31797050
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f1d7b80544ab439ba63484d2539d650c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94689326", 子歇浙江-丑女无敌
+https://astar.cc.cd/yy/94689326
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c94a010d821f4e8783405146211f46a6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544663", 创艺让让-冒充1下公主
+https://astar.cc.cd/yy/1383544663
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/EKSmW75QQMcJGXi9uv58V.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414895663", 忆星文文-做你心尖上的人
+https://astar.cc.cd/yy/1414895663
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/5744bbce966d400fbc2b47a8e9680109.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:60247101", 王一诺-音乐精灵王一诺
+https://astar.cc.cd/yy/60247101
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/25iIUAAC0jX5CAJNNnnOPB.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414883655", 鑫佑鑫-：，。蹦迪主\播了\1
+https://astar.cc.cd/yy/1414883655
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2318bbcda3c54a0b985e799d0d2ce400.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352236623", 951小谦谦-可爱顽皮小谦谦
+https://astar.cc.cd/yy/1352236623
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/f5bf0b4ba1024508a5a32e3a8eff8b63.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383559985", 创艺小蛋糕-少萝宝宝来喽
+https://astar.cc.cd/yy/1383559985
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/32bpVCMgWH6B4ZLYXGeJEP.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:75833027", Yx陈语寒-幼儿园抢饭第一
+https://astar.cc.cd/yy/75833027
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Zy6oYx8IoCFl1wOYPm9jS.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:27070764", 【EMI】南乔-掐指一算，你该来了
+https://astar.cc.cd/yy/27070764
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/3a30263a155d4594bac8a1df510cefeb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94345711", 禾星唐诗瑶-素质女孩瑶瑶
+https://astar.cc.cd/yy/94345711
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/78ik3HW2fBUxhNdn1Itef1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353923653", 禾星心垚-禾星心垚
+https://astar.cc.cd/yy/1353923653
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2c6e709b9b264e70a17763eb95878f1c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:28225029", 禾星小暖暖-这个主播没大哥
+https://astar.cc.cd/yy/28225029
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1XP1yqNx6HwINlEIV6NRrW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:30302847", 冕加圈圈-活力歌唱小圈圈
+https://astar.cc.cd/yy/30302847
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b7a46a7f44664b0ea66403004707d987.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353669735", YY9081OW-无聊就是玩
+https://astar.cc.cd/yy/1353669735
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/xSMGk6C0hoYm3DJZ0L7NO.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353619799", 禾星崽崽-点进来~
+https://astar.cc.cd/yy/1353619799
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/69jbv67hgLsrVVjJzard8X.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1340389367", 小小-距离你0.1KM
+https://astar.cc.cd/yy/1340389367
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/379CDOrLo0nOBXlgAYDEW6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21849527", EMI高世妍-你的今日女友
+https://astar.cc.cd/yy/21849527
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/NGQ1ZjA0YjAtYzAwMC00Yjk1LWI4ODQtNjBiNzZhZmM5ODg2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382753972", 创艺美希-哥哥，我想通了 ！
+https://astar.cc.cd/yy/1382753972
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/bJMPL572DyjVIQajEZDBb.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:94227201", 重庆芯儿-重庆芯児等一人宠
+https://astar.cc.cd/yy/94227201
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/051414d557b7475884c18901e775ce5f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355132779", 虎娱佩佩饱-如果有老公 谁又想打工
+https://astar.cc.cd/yy/1355132779
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6hlkCppsfQKHUn1yWOx30p.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:79620806", 杭州小哚-清纯甜美小哚
+https://astar.cc.cd/yy/79620806
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3K6yHs6D25S4QKjAA8itoh.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1454793037", 云九如冰-遇见你
+https://astar.cc.cd/yy/1454793037
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/2e0YOiugaKw0ZNn0zPk64f.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:18533288", 森宁慧慧-遇良人求守护
+https://astar.cc.cd/yy/18533288
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/c45dc722ef744d1aa278f5a1559f53fa.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356344295", 忆星小阿祁-你的电子宠物已上线
+https://astar.cc.cd/yy/1356344295
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1RxJzK4gl6d0I3EVxpz1wl.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26843922", 光纵淇淇-奇迹降临~
+https://astar.cc.cd/yy/26843922
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7bIqOSSj6dtXeiXenDbvJo.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:23895899", 梦之音柒柒-你知道我在等你吗
+https://astar.cc.cd/yy/23895899
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/ZqNj3OhXUTVlWtJqb9cjW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354471772", 成都如予初-没大哥24H随缘播
+https://astar.cc.cd/yy/1354471772
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/65e5b0b798154ae49cb72756f2bae5ae.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:38462848", 天晓杨子曦-有趣的灵魂两百多吨
+https://astar.cc.cd/yy/38462848
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5h8W47cYQj0tIJobsoyRkK.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352765368", 天晓乐渝-天晓乐渝
+https://astar.cc.cd/yy/1352765368
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4FFrUngs3VnJizF9L6pUln.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353619511", 四川钱满满-我是不是你的菜
+https://astar.cc.cd/yy/1353619511
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4wghMwUw0E6TvYubm5eqD5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355388314", 虎娱圆紫-安静唱歌
+https://astar.cc.cd/yy/1355388314
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2jmdmYAptZhz7raFkizUuE.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353468922", 江西小墨熙-你的爱播已在线直播
+https://astar.cc.cd/yy/1353468922
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6GVs6SD2AN9QrXqSiNRjMt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21851566", Yx米情-Yx米情
+https://astar.cc.cd/yy/21851566
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6WMI5eP8qVnlKpn24Lj8vU.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:29609819", 奇领小新欢-被记得是件很浪漫的事
+https://astar.cc.cd/yy/29609819
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/18337e75004e463f9f1e4dfb7ef31e46.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355102764", 亿婉婉-阳光超龄少女
+https://astar.cc.cd/yy/1355102764
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/189VAsVB8gs4PxnTDJllFH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383548041", 大美-纯欲美人在线撩仔
+https://astar.cc.cd/yy/1383548041
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7YshiYpun9m2isgOKxziEM.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1454443311", 冬冬-广西冬冬
+https://astar.cc.cd/yy/1454443311
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/Dh8dpfhN0YQq9KkP1fRGm.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:66818442", 白苏苏-第二天直播
+https://astar.cc.cd/yy/66818442
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/TFsNzm3xnELCnLliFkPM5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351719751", 浩克-好运来
+https://astar.cc.cd/yy/1351719751
+#EXTINF:-1 tvg-logo="http://emyms.bs2cdn.yy.com/YzM4YWQwMWYtMTMwNi00NTVmLWEyZGYtMWU2NGE3NmJjOWU5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35243984", 露芽芽-睡觉怕打雷
+https://astar.cc.cd/yy/35243984
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/5sjs0oqWNFcO9C9OiDCz26.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1351695235", 花落安渔-主播慢热
+https://astar.cc.cd/yy/1351695235
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4wAPbcvO3BGaGo3DdO3es5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:27665090", 辉煌染染-这个女主播没大哥
+https://astar.cc.cd/yy/27665090
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/efc31faefd0a47eb860938d2f745522b.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:21606211", 御山安琪-哈哈~
+https://astar.cc.cd/yy/21606211
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/eYaRX2skLcrVdMjTDBZ0O.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354655211", 华矩榆忻-赚点馒头吃吃
+https://astar.cc.cd/yy/1354655211
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6eHzsSxEriflpbUpgJ4Sse.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355910963", 【L嘉】瑶～妮儿-没人疼
+https://astar.cc.cd/yy/1355910963
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1OdOhAkcBPRoTcGj6nV9Vc.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:58028290", 天晓楚煊-你会不会突然的出现
+https://astar.cc.cd/yy/58028290
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/673f6383afd4458ea2e362814a6b4508.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1345495291", 晨一可乐-她的腿很长
+https://astar.cc.cd/yy/1345495291
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/6fULYYjBDhpeHTz8DjSvja.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354223924", 饭饭（If.you）-喜欢的人再看一眼还是喜欢
+https://astar.cc.cd/yy/1354223924
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/72wLCONZ5AjrzOyr8eMlVJ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545350", 舒舒-就等你啦
+https://astar.cc.cd/yy/1383545350
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/9ae6ae8fce164d9eac94944229a1028a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382787908", 御山宝儿-御山宝儿
 https://astar.cc.cd/yy/1382787908
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1Qu7tCnBtelMlo5mNp6YzD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414960645", 忆星小秋儿-江西最后一个甜妹
 https://astar.cc.cd/yy/1414960645
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5LjbmwqTD23OvfkxH3YHvR.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1352260573", 夏雨-寻一护妻狂魔
-https://astar.cc.cd/yy/1352260573
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7bIqOSSj6dtXeiXenDbvJo.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:23895899", 梦之音柒柒-你知道我在等你吗
-https://astar.cc.cd/yy/23895899
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/B5WGHjDhc3RpLJsVsbnNY.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383550493", 辉煌安冉-守静致远
-https://astar.cc.cd/yy/1383550493
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/44euy80k9Aj5XWDEc0ji2r.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414855954", 虎娱柳尚青-虎娱柳尚青
+https://astar.cc.cd/yy/1414855954
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/58bc377a66d74928a6d73788e7bcf5a9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414917107", 安周-没想到吧 又是我
+https://astar.cc.cd/yy/1414917107
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/ce8f7ab8ed194bda91ee8bf7a04063db.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353186406", OK莉-请求资本介入
+https://astar.cc.cd/yy/1353186406
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/9291ed6bc6184e54a52d5752cb369f2e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:32760995", 江南长公主-今天吃什么
+https://astar.cc.cd/yy/32760995
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/9fwlNS0hznlt0FOpOXsE6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355165015", 俊美团团-许个愿来个哥
 https://astar.cc.cd/yy/1355165015
 #EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/bfc2e051c29049668452f8330b1c01c3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1355643533", 天晓泉泉-人类是 益虫
 https://astar.cc.cd/yy/1355643533
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/4tm13EgVWj6NePOb5wIMYH.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:71778429", 睿鑫子韩-给个面子！进来点首歌再走
 https://astar.cc.cd/yy/71778429
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/de7ac447f03645e8a65e0b7e01f2ee8e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1350644028", 冕加18-耐看型
-https://astar.cc.cd/yy/1350644028
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/67a81e9a59ff42b4a1919dbdc898f5c2.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383544041", 虎娱-颂一-星耀营-想把我唱给你听
-https://astar.cc.cd/yy/1383544041
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/anchorCover/ODbRTV2aCU03nuWIIxUjO.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26923377", 纪梵希-0.4m
-https://astar.cc.cd/yy/26923377
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/bdc4c86b271549738ac8a926cb3e7ce9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1349795969", 花漾-吃饱饱没烦恼
+https://astar.cc.cd/yy/1349795969
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3753yXnf5algh3MxzYJH28.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1356080527", 明月-但愿人长久，千里共婵娟！
+https://astar.cc.cd/yy/1356080527
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1uTK7YTUxg8RjmkQfwrrJv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:36683678", 雪儿-雪儿
+https://astar.cc.cd/yy/36683678
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/1278428564_1638896584.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1346963673", 到期然小果-越努力，越幸运加油
+https://astar.cc.cd/yy/1346963673
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/3P2KGcMEAGz0nRrV2VCXyv.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383545038", 【星耀未来】甜茶-攒钱买狗粮
+https://astar.cc.cd/yy/1383545038
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/6Bohp3jU0c6ldYlfLso2r1.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1343880213", 晨一容儿-成都钱多多
 https://astar.cc.cd/yy/1343880213
+#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5MOLCf1sQFduK79S9Amvhk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:51916879", 茶社锦鲤-好运锦鲤~~
+https://astar.cc.cd/yy/51916879
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/4sQ4xtYCrDPzi8Kpzd4umW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:16197543", 手徒茹哥-手徒茹哥
 https://astar.cc.cd/yy/16197543
+#EXTINF:-1 tvg-logo="http://zonemin.bs2dl.yy.com/group16/M00/494bf784e09c40598f55dd5ccc579d31.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1353246083", 雪颖轩叶子-性感小野猪在线唱歌
+https://astar.cc.cd/yy/1353246083
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/ac0580083de54d3baebbedf88ef20880.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354518237", 河北张镁美-大美美
 https://astar.cc.cd/yy/1354518237
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1K0FCzS9upqydBGaUS2OBZ.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:49802175", Ge阿黎-哈尔滨男明星
+https://astar.cc.cd/yy/49802175
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/26h2WQkrVDxpB7hJaS6kvy.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35450858", 星创影儿-星创影儿
+https://astar.cc.cd/yy/35450858
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/7W767s0Cn2E2KepNsNkOLM.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:26658802", 林33-韩范美女林33
 https://astar.cc.cd/yy/26658802
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/1dAuRKA2NYgVPevR9LGbD.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:35607875", 禾星吱吱-山西吱吱
-https://astar.cc.cd/yy/35607875
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/ZqNj3OhXUTVlWtJqb9cjW.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354471772", 成都如予初-没大哥24H随缘播
-https://astar.cc.cd/yy/1354471772
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/58bc377a66d74928a6d73788e7bcf5a9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414917107", 安周-没想到吧 又是我
-https://astar.cc.cd/yy/1414917107
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/860cfb3368284963a3843cd153cde542.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:78394196", 伊人-山西清纯甜美伊人
-https://astar.cc.cd/yy/78394196
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2c91f006a55f446ea7a0965471606b3e.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:40537563", 辉煌CoCo-爱听歌？不进屋还等啥呢
+https://astar.cc.cd/yy/40537563
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/55f5wG2r30ANiKG38sMWZ3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:31712359", 灵犀-灵犀
+https://astar.cc.cd/yy/31712359
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1drb9YBXbm7WXXQJ9CPC0y.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1458869182", 苏禧-你有爱播嘛，反正我挺爱播
+https://astar.cc.cd/yy/1458869182
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/offlineIndividuationCover/x7eV9dDcZhRShnzTnHho9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:34820971", 盛世小梦梦-温婉可人小梦梦
+https://astar.cc.cd/yy/34820971
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/B5WGHjDhc3RpLJsVsbnNY.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1383550493", 辉煌安冉-守静致远
+https://astar.cc.cd/yy/1383550493
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/197a9df15e194d0d8fe259060557a104.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1414880851", Aha七七-永恒文希-Aha七七-永恒 正在直
 https://astar.cc.cd/yy/1414880851
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/7EV4Zf6FVLaIPrJpidgFz6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1354529469", 天晓甜甜-电眼小甜甜
+https://astar.cc.cd/yy/1354529469
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1lLVgeYBnGTX7tVEXWQqc5.jpg?imageview/4/0/w/400/h/500/q/80" group-title="音乐" tvg-id="yy:1382831910", 粤语昕然-喜欢听粤语歌的有福了
+https://astar.cc.cd/yy/1382831910
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1456897662", 忆星槿尘-天天快乐
 https://astar.cc.cd/yy/1456897662
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1348624001", 睿廷姗姗-一眼心动，只属于你
@@ -862,8 +868,6 @@ https://astar.cc.cd/yy/1348624001
 https://astar.cc.cd/yy/1414811737
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1453549290", 天晓王子暖-需要人陪
 https://astar.cc.cd/yy/1453549290
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/59aslJDZ1eRviBDEW0XBgI.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383545192", 【ZM】小雪（白白白）-河北最后软萌甜妹
-https://astar.cc.cd/yy/1383545192
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/ced4787eb16d4ae0b5b6f52fd7307054.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414824568", 铃铛-在线召唤水军
 https://astar.cc.cd/yy/1414824568
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354247804", 北京小羽-别挑了  就我吧
@@ -874,12 +878,12 @@ https://astar.cc.cd/yy/1352499102
 https://astar.cc.cd/yy/1451229568
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1350823503", 虎娱鐘镱-安静直播....
 https://astar.cc.cd/yy/1350823503
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1382622581", 禾星兔兔-禾星兔兔
+https://astar.cc.cd/yy/1382622581
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1343691588", 天晓钱多多-浙江钱多多
 https://astar.cc.cd/yy/1343691588
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1349060181", 丹晓-丹晓
 https://astar.cc.cd/yy/1349060181
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355636922", 平聚安哈哈-在
-https://astar.cc.cd/yy/1355636922
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1352006244", 广西小凤凰-你会不会突然出现
 https://astar.cc.cd/yy/1352006244
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1qWtlRjwhNqCCrBoWN8PNK.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:63985272", 岑薇-来个心软的神吧
@@ -896,16 +900,14 @@ https://astar.cc.cd/yy/1458887795
 https://astar.cc.cd/yy/1353925426
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b6a2d0eff8c94ecd98b2f35bde7b3738.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1356049724", 林遥-等一束光
 https://astar.cc.cd/yy/1356049724
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414820264", 小鱼儿-一点都不菜
-https://astar.cc.cd/yy/1414820264
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/aac9ab176ed3427d97617acc77c28a54.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1336199279", 摩西微微-四川妹儿在线摆龙门阵~
 https://astar.cc.cd/yy/1336199279
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1356352818", 倾城千与-等一个偏爱
 https://astar.cc.cd/yy/1356352818
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1345302491", 摩西默娇-黑龙江第一温柔
 https://astar.cc.cd/yy/1345302491
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414833639", 【ZM】山奈-我需要你
-https://astar.cc.cd/yy/1414833639
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355643404", 798颜选-白小宸-等你呢，还不进来？
+https://astar.cc.cd/yy/1355643404
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/125bd7ea009e4915b740d9de141adf32.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414973382", 忆星白十一-笑嘻嘻
 https://astar.cc.cd/yy/1414973382
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/a3ed5a9ef6be461f8c03f9f6da54560a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383558342", 林颜汐⁴⁷⁴&sup2;&sup3;🌈爱财爱己-本次观看未付费
@@ -922,18 +924,20 @@ https://astar.cc.cd/yy/1510197177
 https://astar.cc.cd/yy/16158559
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/6305599d89e34082b3bff2b1b389eadd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414802117", 忆星晓薇-本人比封面好看
 https://astar.cc.cd/yy/1414802117
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/a5512fa8e6d241129683abec3da0f7b7.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414792637", 星耀营一彩予～桃桃二十二-和星光同样浪漫
+https://astar.cc.cd/yy/1414792637
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/31ada095cae8490c9246b95c8686f728.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414811458", 小米-你在就好了
+https://astar.cc.cd/yy/1414811458
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:31258840", 冷不凡灬燃-没大哥放心进
 https://astar.cc.cd/yy/31258840
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355461755", 广东小七寳-古灵精怪小七寶
-https://astar.cc.cd/yy/1355461755
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/240843742d454a40bf9a6897d24b0990.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383559207", 安徽星月-你在就好了
+https://astar.cc.cd/yy/1383559207
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/dafca378f00f46ab836edd791f37fec6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1382809600", 夕夕-心软的神呢
 https://astar.cc.cd/yy/1382809600
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1356336357", 雪颖轩云兮-世界那么大还是遇到你
 https://astar.cc.cd/yy/1356336357
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/97679ad7ac9241a9afe3c4cbfdc6e7de.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414881678", 吉祥-你在就好了
 https://astar.cc.cd/yy/1414881678
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1C9uNoRvCADSQ5I4YtFG06.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383545988", 涵涵大王-我好想你啊
-https://astar.cc.cd/yy/1383545988
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383546127", 佳佳吖-再靠近一点点
 https://astar.cc.cd/yy/1383546127
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1356254327", 荷包蛋-湖南美女
@@ -946,6 +950,8 @@ https://astar.cc.cd/yy/1351382298
 https://astar.cc.cd/yy/1346414088
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354485494", 辉煌赫赫本-再靠近一点点
 https://astar.cc.cd/yy/1354485494
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1463237877", 麒麟林音-我跟你说 我今天...
+https://astar.cc.cd/yy/1463237877
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354952356", 怼怼-愿被温柔以待
 https://astar.cc.cd/yy/1354952356
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/426589ecff3342f097e29cd56701bca6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1344628632", 李飘飘-在YY打工
@@ -958,8 +964,6 @@ https://astar.cc.cd/yy/1414796164
 https://astar.cc.cd/yy/1346161637
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:41067703", 虎娱小菲儿-气质女神小菲儿
 https://astar.cc.cd/yy/41067703
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/258a9effa6684f83a65cbac24df6e138.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1355822063", 江西芯茹-打工日记
-https://astar.cc.cd/yy/1355822063
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414791477", 晚晴-不知名宝藏主播
 https://astar.cc.cd/yy/1414791477
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354953381", 山东小梦-你支持过的人~
@@ -974,50 +978,56 @@ https://astar.cc.cd/yy/1345181534
 https://astar.cc.cd/yy/1509698378
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/a2eba3de58e6425d8f08910f31260bff.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1355061652", 天晓小钟-马上中奖-天晓小钟-
 https://astar.cc.cd/yy/1355061652
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1355111047", 峰品v菲菲-说不如做，时间能证明一切
+https://astar.cc.cd/yy/1355111047
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/8d5fe836eb3b4e1b9deecfda660c0bed.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414802832", 薯条-睡觉时不困
 https://astar.cc.cd/yy/1414802832
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:62707648", EMI雀雀-生活不易 小雀卖艺
 https://astar.cc.cd/yy/62707648
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354748957", 星创玖玥-也想有个家长
-https://astar.cc.cd/yy/1354748957
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/3a592f145e074a3fbe1e8e86f6e84be6.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414794043", 薯仔-为你俯首称臣
 https://astar.cc.cd/yy/1414794043
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414828937", 影子-影子
 https://astar.cc.cd/yy/1414828937
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414796200", 河南桃子-越努力越幸运
+https://astar.cc.cd/yy/1414796200
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1354883962", 晨一77-等一个大哥
 https://astar.cc.cd/yy/1354883962
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414806721", 江西粥粥-中中中-我的帝王套什么时候来
 https://astar.cc.cd/yy/1414806721
+#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414926514", 御山诗安-观我旧往 同我仰春
+https://astar.cc.cd/yy/1414926514
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/5L2DlAAJWE6Vqnd4VKwScx.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414789047", 山东锦梦-温柔御姐求守护
 https://astar.cc.cd/yy/1414789047
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1353767725", 北京财财-财宝的直播间
 https://astar.cc.cd/yy/1353767725
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1356372731", 如意-你的最爱
 https://astar.cc.cd/yy/1356372731
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6GLdksvAgPQMejGSIR5OAk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1355517396", 小淣-安静跳舞
-https://astar.cc.cd/yy/1355517396
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/coverCutMgr/8c074580b24806a0fea91d81730f827a.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383545333", 橙小右-顶级整活能手
 https://astar.cc.cd/yy/1383545333
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414789173", 忆星沅沅-进直播间送鸡蛋
 https://astar.cc.cd/yy/1414789173
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/75d4cd7b94f54544b9340487716111e9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:21586911", 睿廷西小西-直播第六天。
+https://astar.cc.cd/yy/21586911
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:39761154", AEO沈糖-重庆最后的温柔
 https://astar.cc.cd/yy/39761154
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/22c176e0594d4420b461c14743d24d69.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414789132", 蓝莓汁-蓝莓汁
 https://astar.cc.cd/yy/1414789132
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/0cc54894b7334c3cb93442949d1a2578.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414790690", 季陌妍-顶级整活能手
+https://astar.cc.cd/yy/1414790690
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1382609921", 禾星沈优念-123456
 https://astar.cc.cd/yy/1382609921
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383548299", 妮妮子-是个正经人
 https://astar.cc.cd/yy/1383548299
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/25ca9e6d64474f308e6df697466282dd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414806358", 许浅夏-附近2.5公里
+https://astar.cc.cd/yy/1414806358
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/b99c714a306a4090a293a453f6e86bac.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1348357564", 安妮～Luck🦄-新主播~求守护
 https://astar.cc.cd/yy/1348357564
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/26ac62a931944245a5c915b30164dc04.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1507885866", 布丁豆丁的布❤9896-进来会暴富-布丁豆丁
 https://astar.cc.cd/yy/1507885866
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/82d2643b58914b61be252064854650e4.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414792810", 禾星-条条-和你不见不散
-https://astar.cc.cd/yy/1414792810
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414899094", 俊美朵莉亚-恭喜你发现了宝藏💥
-https://astar.cc.cd/yy/1414899094
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1414784364", 禾星-薇薇-星耀营-喜欢年上
 https://astar.cc.cd/yy/1414784364
+#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/4469a9811cf74d5fac57b66a4c4beeb3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414784876", 燃-元元-为你心动一万次
+https://astar.cc.cd/yy/1414784876
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/4c9f388e84244c9bbd30ebf80e14853c.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414784656", 禾星-步步糕-浪漫收藏夹
 https://astar.cc.cd/yy/1414784656
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1349215818", 安徽柒妹-会打王者会喊哥
@@ -1028,8 +1038,6 @@ https://astar.cc.cd/yy/1508355480
 https://astar.cc.cd/yy/1414784258
 #EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383544732", Aeo-新奶茶-这么多人看什么呢
 https://astar.cc.cd/yy/1383544732
-#EXTINF:-1 tvg-logo="" group-title="颜值" tvg-id="yy:1383544120", 可爱多-欢乐斗冲榜，缺家人助力
-https://astar.cc.cd/yy/1383544120
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/b529155b2d8a488fba3c7086da325414.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544276", 熙瑶-附近200米
 https://astar.cc.cd/yy/1383544276
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/2d17142eaa5a4902ba6eb66743bf1fae.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414781146", 招财芽芽-有没有心软的神降临
@@ -1042,8 +1050,10 @@ https://astar.cc.cd/yy/1383544321
 https://astar.cc.cd/yy/1383544110
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/6Gpdl5JMZilkHQBINiRy8Z.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414780614", 洛洛-冒充1下公主
 https://astar.cc.cd/yy/1414780614
-#EXTINF:-1 tvg-logo="http://screenshot-storage.yy.com/screenshot/1463681169_3091453530_dbb246d8-ee5a-4fc4-9113-28b9a6763936.jpg?x-oss-process=image/resize,w_400,h_500,m_mfit/crop,g_north,w_400,h_500" group-title="颜值" tvg-id="yy:1463681169", 最美富婆～-遇见即是上上签
+#EXTINF:-1 tvg-logo="http://screenshot-storage.yy.com/screenshot/1463681169_3091453530_04cddfd9-6bd8-4f88-a600-17edf4962bee.jpg?x-oss-process=image/resize,w_400,h_500,m_mfit/crop,g_north,w_400,h_500" group-title="颜值" tvg-id="yy:1463681169", 最美富婆～-遇见即是上上签
 https://astar.cc.cd/yy/1463681169
+#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/5GIzL4Ta16eSuc80FxDQNt.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544120", 可爱多-欢乐斗冲榜，缺家人助力
+https://astar.cc.cd/yy/1383544120
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/55W4v0cygt4SvwTWtfGrex.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544188", 幻世-知柚-腼腆女大
 https://astar.cc.cd/yy/1383544188
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/a34f1522485b42bc8678fc97a8820f05.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544359", 锌锌-新主播没大哥
@@ -1058,18 +1068,12 @@ https://astar.cc.cd/yy/1414781037
 https://astar.cc.cd/yy/1414781040
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/6536d21530d149dc80efcd52cc42d507.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414781028", 乔一一-等待心动讯号
 https://astar.cc.cd/yy/1414781028
-#EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/2GZu2meE419f7PfEAbPtuk.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1353932555", 平聚小刘涛-新主播 求关注
-https://astar.cc.cd/yy/1353932555
 #EXTINF:-1 tvg-logo="http://emyfs.bs2cdn.yy.com/individuationCover/1almOgpP6iGZI8DjWODxNh.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414781046", 恰恰阿-早起太烦恼
 https://astar.cc.cd/yy/1414781046
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/15006c154c9145739d3f127ade87eaf9.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544326", 严夏真-来听歌吧
 https://astar.cc.cd/yy/1383544326
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/ee5bbaa7c0b2413290e6ea39cdfdff21.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414780380", 星星-偷走你的心
 https://astar.cc.cd/yy/1414780380
-#EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/1LayMA4jvj4W3KzLoCEHEh.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1383544392", Aeo-乌梅子酱-巨爱聊天
-https://astar.cc.cd/yy/1383544392
-#EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/live/f9c3555138434ad89fe3ad11593088c8.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414781172", 米莉-新手主播天花板
-https://astar.cc.cd/yy/1414781172
 #EXTINF:-1 tvg-logo="https://mobilelivephoto.bs2dl.yy.com/group16/M00/580702b25dd94c56b7c94cf310e601b3.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1450754552", 798颜选-初恋少女团-刷点吧 就当喂猪了
 https://astar.cc.cd/yy/1450754552
 #EXTINF:-1 tvg-logo="https://emyfs.bs2cdn.yy.com/individuationCover/3Bs9QQbNc6guGEdwFuH8cd.jpg?imageview/4/0/w/400/h/500/q/80" group-title="颜值" tvg-id="yy:1414778451", 小音-听说直播间外面也能点赞
