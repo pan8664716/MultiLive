@@ -29,18 +29,20 @@ VLC / mpv / IINA 直接导入播放。
 B站: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/bilibili_live.m3u
 斗鱼: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/douyu_live.m3u
 YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/yy_live.m3u
+虎牙: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u
+Twitch: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/twitch_live.m3u
+TikTok: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/tiktok_live.m3u
 ```
-
-> 虎牙订阅：`https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/huya_live.m3u`
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
 > 若网络可直连 GitHub，把前缀 `https://gh-proxy.org/` 去掉即可用 raw 地址。
 
 ## 特性
 
-- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 列表纯 HTTP（仅 Python 3.9+
-  标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级。抖音/快手
-  直接写列表接口自带的 CDN 直链（抖音 HLS / 快手 FLV），YY/B站/斗鱼/虎牙
+- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 / Twitch 列表纯 HTTP（仅
+  Python 3.9+ 标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级，
+  TikTok /live 用浏览器批量抓取（Patchright）。抖音/快手直接写列表接口自带的
+  CDN 直链（抖音 HLS / 快手 FLV），YY/B站/斗鱼/虎牙/Twitch/TikTok
   播放地址**不逐个取流**，m3u 直接写 `https://astar.cc.cd/<平台>/<房间号>`，
   由 Worker/代理点播时实时解析最高画质流（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
@@ -102,7 +104,7 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 第
 ## 输出文件
 
 - `output/multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
-- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` / `output/huya_live.m3u` — 每个平台单独一份
+- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` / `output/huya_live.m3u` / `output/twitch_live.m3u` / `output/tiktok_live.m3u` — 每个平台单独一份
 - `output/status.json` — 机器可读运行摘要（入库）
 - `output/run.log` — 滚动日志（保留 3 份，不入库）
 - `output/douyu_warm.json` — 旧的斗鱼取参缓存（已不再生成，可忽略）
@@ -125,8 +127,8 @@ sources.txt ──► config.load_sources() ──► registry（自动发现 Pl
            平台级并行（各平台一个线程）
    ┌──────────┬───────────┬──────────┬──────────┐
    ▼          ▼           ▼          ▼          ▼
- douyin/   kuaishou/   bilibili/   douyu/     yy/   ← 平台文件夹：继承 Platform，
-   │          │           │          │          │       实现 parse() + fetch()
+ douyin/   kuaishou/   bilibili/   douyu/     yy/   huya/   twitch/  tiktok/
+   │          │           │          │          │        （平台文件夹，见 PLATFORMS.md）
    └──────────┴───────────┴────┬─────┴──────────┘
                              ▼
                  Room / Source 统一模型（core）
@@ -149,6 +151,7 @@ sources.txt ──► config.load_sources() ──► registry（自动发现 Pl
 | `multilive/platforms/base.py` | `Platform` 基类（统一契约）与公共小工具 |
 | `multilive/platforms/<平台>/` | 各平台实现（见 PLATFORMS.md） |
 | `tools/browser_fetch_douyin.mjs` | douyin 浏览器兜底（可选，Patchright） |
+| `tools/browser_fetch_tiktok.mjs` | TikTok /live 列表浏览器抓取（Patchright，必需） |
 | `tools/douyu_warm.mjs` | 斗鱼浏览器取参兜底（Patchright，可选） |
 
 ## 维护者 / AI 接管指引

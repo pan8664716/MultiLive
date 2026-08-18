@@ -127,12 +127,26 @@
 
 以下结论来自 2026-08 实机抓包验证，新平台实现时可直接采用。
 
-### 待接入：Twitch
-- 官方 API（Helix）需要 `Client-ID` + OAuth token，播放地址走
-  `usher.ttvnw.net/api/channel/hls/<channel>.m3u8` 需要签名 sig/token，
-  **匿名纯 HTTP 拿不到**。`keep_stale=True`（保留历史 + 播放器二次解析）。
-- 若匿名需求明确，可考虑第三方 m3u8 聚合站点做兜底地址（类似 douyin 的
-  pages.dev 方案），稳定性和合规需自己评估。
+### twitch（匿名 GQL 批量列表，纯 HTTP）
+- 列表：`gql.twitch.tv/gql` 的 `streams` 查询（匿名可用，需网页版
+  `Client-Id`，2026-08 实测），`first=30/页` + `after` 游标翻页；
+  条目带 `broadcaster.login` / `displayName` / `game.name` /
+  `previewImageURL`（`{width}x{height}` 需替换为实际尺寸）。
+- 播放：列表接口不带流地址（`usher` 需要签名 sig/token），m3u 统一写
+  `https://astar.cc.cd/twitch/<login>`，Worker 点播时实时解析。
+- `keep_stale=False`（只留此刻在播）
+
+### tiktok（浏览器批量抓取 /live 广场；纯 HTTP 拿不到列表）
+- TikTok `/live` 为纯客户端渲染：SSR 空壳、接口需 msToken/X-Bogus 签名，
+  纯 HTTP 无法匿名拿列表；用 `tools/browser_fetch_tiktok.mjs`
+  （Patchright + 系统 Chrome）打开广场页滚动加载，**拦截站点自身发出的
+  api-live 签名请求**批量收集房间（不逐房间请求），拦不到时退 DOM 链接
+  收集 `@<uniqueId>/live`。
+- 房间号取 `uniqueId`（用户稳定 ID，跨场次有效，与快手 author.id 同思路）；
+  播放地址统一写 `https://astar.cc.cd/tiktok/<uniqueId>`。
+- 注意：依赖浏览器（Action 已装 patchright + 系统 Chrome）；TikTok 按地区
+  运营，部分地区返回停服页（如香港），那些地区抓不到房间。
+- `keep_stale=False`
 
 ## 调试技巧
 

@@ -6,7 +6,7 @@
 
 - 用户侧产物：`output/multilive.m3u`（全聚合）+ `output/<平台>_live.m3u`（单平台），订阅地址见 README（走 `gh-proxy.org` 代理前缀）
 - 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每小时自动跑 `python3 multilive.py` 并提交
-- 播放地址形态：**抖音/快手写列表接口自带的 CDN 直链**（抖音 HLS、快手 FLV，均批量返回，不逐房间取流）；yy/bilibili/douyu/huya 不写直链，m3u 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析（看哪个解析哪个）
+- 播放地址形态：**抖音/快手写列表接口自带的 CDN 直链**（抖音 HLS、快手 FLV，均批量返回，不逐房间取流）；yy/bilibili/douyu/huya/twitch/tiktok 不写直链，m3u 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析（看哪个解析哪个）
 
 ## 快速开始
 
@@ -39,7 +39,7 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 | `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
 | `multilive/platforms/base.py` | `Platform` 基类（统一契约）+ 平台公共小工具 |
 | `multilive/platforms/<平台>/` | 各平台实现（每个平台一个文件夹，契约见 PLATFORMS.md / `_template.py`） |
-| `tools/*.mjs` | 浏览器兜底脚本（Patchright，仅 douyin 取参兜底用） |
+| `tools/*.mjs` | 浏览器兜底脚本（Patchright：douyin 取参兜底、tiktok /live 列表抓取） |
 
 平台契约（统一方式）：每个平台一个文件夹 `multilive/platforms/<平台>/`，在
 `__init__.py` 里继承 `Platform` 基类、实现 `parse(line)->[Source]` 与
@@ -52,7 +52,7 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 1. **绝不逐房间调 API 获取信息或播放地址**（批量请求会触发风控）。只能：
    - 列表/信息：批量接口、SSR 页面内嵌数据（如 B站 `getRoomBaseInfo?uids=…` 50个/请求）；
    - 播放地址：抖音/快手直接用列表接口自带的 CDN 直链（批量返回，不逐房间取流）；
-     其余平台统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时解析；
+     yy/bilibili/douyu/huya/twitch/tiktok 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时解析；
    - **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、虎牙逐房间页均已废弃不用）。
 2. 平台暂时下线：改 `multilive/cli.py` 顶部 `DISABLED = set()`（当前无平台下线），把平台名加进集合（不抓取 + 每轮清空该平台输出），**不要删平台文件夹**；恢复 = 移出集合 + `sources.txt` 取消注释。
 3. 增量合并规则（`m3u.merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keep_stale=False` 的平台本轮运行后丢弃下播房间。

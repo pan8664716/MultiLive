@@ -55,3 +55,9 @@ douyu:https://www.douyu.com/directory/all:10
 yy:https://www.yy.com/dancing
 yy:https://www.yy.com/pretty/
 yy:https://www.yy.com/music/
+
+# ---- Twitch（匿名 GQL 批量列表；播放地址走 astar.cc.cd 动态解析）----
+twitch:ALL:20
+
+# ---- TikTok（浏览器批量抓取 /live 广场；播放地址走 astar.cc.cd 动态解析）----
+tiktok:https://www.tiktok.com/live
