@@ -39,10 +39,10 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
 ## 特性
 
 - **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 列表纯 HTTP（仅 Python 3.9+
-  标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级。YY/B站/斗鱼
+  标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级。抖音/快手
+  直接写列表接口自带的 CDN 直链（抖音 HLS / 快手 FLV），YY/B站/斗鱼/虎牙
   播放地址**不逐个取流**，m3u 直接写 `https://astar.cc.cd/<平台>/<房间号>`，
-  全部平台统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker/代理点播时
-  实时解析最高画质流（看哪个解析哪个，零风控风险）。
+  由 Worker/代理点播时实时解析最高画质流（看哪个解析哪个，零风控风险）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
   统一继承 `Platform` 基类、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**

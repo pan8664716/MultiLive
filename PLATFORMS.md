@@ -61,13 +61,14 @@
 - 房间接口：`live.douyin.com/webcast/room/web/enter/`（需 ttwid Cookie）
 - 页面兜底：解析 HTML 内嵌 RSC 数据（`self.__pace_f.push`）
 - 浏览器兜底：`tools/browser_fetch_douyin.mjs`（Patchright，可选）
-- `keep_stale=True`：历史房间回退 `https://douyin-m3u8.pages.dev/room/<rid>`
+- 本轮在播房间优先写 `stream_url` 里的 CDN 直链（hls 优先，其次 flv，转 https）；
+  `keep_stale=True`：历史房间原样保留，本轮无直链时回退 `https://astar.cc.cd/douyin/<rid>`
 
 ### kuaishou（纯 HTTP）
 - `live.kuaishou.com/live_api/hot/list?type=HOT&filterType=0&page=N&pageSize=24`
 - 免登录免签名，每页 50 房间
-- 房间号取 `author.id`（`live.kuaishou.com/u/<id>` 短 ID，跨场次有效）；
-  播放地址统一写 `https://astar.cc.cd/kuaishou/<房间号>`，不逐房间取 CDN 直链
+- 房间号取 `author.id`（`live.kuaishou.com/u/<id>` 短 ID，跨场次有效）
+- 播放地址用列表自带 `playUrls` 里最高档 FLV 直链（批量返回，不逐房间取流）
 - `keep_stale=False`：只保留此刻在播
 
 ### bilibili（纯 HTTP，整站列表 + 单房间）
