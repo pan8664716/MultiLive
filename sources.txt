@@ -57,7 +57,7 @@ yy:https://www.yy.com/pretty/
 yy:https://www.yy.com/music/
 
 # ---- Twitch（匿名 GQL 批量列表；播放地址走 astar.cc.cd 动态解析）----
-twitch:ALL:20
+twitch:ALL:40
 
 # ---- TikTok（浏览器批量抓取 /live 广场；播放地址走 astar.cc.cd 动态解析）----
 tiktok:https://www.tiktok.com/live

@@ -20,10 +20,12 @@ keep_stale = False
 GQL_URL = 'https://gql.twitch.tv/gql'
 CLIENT_ID = 'b31o4btkqth5bzbvr9ub2ovr79umhh'  # Twitch 网页版匿名 Client-ID（2026-08 实测）
 PLAYER_BASE = 'https://astar.cc.cd/twitch/{}'
-PAGE_SIZE = 30
-DEFAULT_PAGES = 20          # 30/页 ≈ 600 房间
-MAX_PAGES = 40              # ≈ 1200 房间
-PAGE_SLEEP = 0.4            # 翻页节流，避免触发风控
+PAGE_SIZE = 30              # 服务端硬上限：first 只允许 1~30/页
+DEFAULT_PAGES = 40          # 30/页 ≈ 1200 房间
+MAX_PAGES = 120             # ≈ 3600 房间（再多靠翻页数控制）
+PAGE_SLEEP = 0.5            # 翻页间隔（GQL 批量接口，但连续翻页会被限速）
+REQUEST_TIMEOUT = 45        # 握手/响应超时调大，避免突发限速误判
+RETRY_SLEEP = (2.0, 6.0)    # 单页失败重试退避
 MAX_WORKERS = 3
 
 QUERY = '''query Streams($first: Int, $after: Cursor) {
@@ -37,10 +39,19 @@ QUERY = '''query Streams($first: Int, $after: Cursor) {
 def fetch_page(sess, after):
     payload = {'query': QUERY,
                'variables': {'first': PAGE_SIZE, 'after': after}}
-    _st, j, _ = sess.post_json(
-        GQL_URL, payload, headers={'Client-Id': CLIENT_ID},
-        referer='https://www.twitch.tv/directory')
-    return ((j.get('data') or {}).get('streams') or {})
+    last = None
+    for attempt in range(3):
+        try:
+            _st, j, _ = sess.post_json(
+                GQL_URL, payload, headers={'Client-Id': CLIENT_ID},
+                referer='https://www.twitch.tv/directory',
+                timeout=REQUEST_TIMEOUT)
+            return ((j.get('data') or {}).get('streams') or {})
+        except Exception as e:
+            last = e
+            if attempt < 2:
+                time.sleep(RETRY_SLEEP[attempt])
+    raise last
 
 def fetch_list(sources, ctx):
     """顺序翻页抓在播流（30/页），返回 {login: Room 元数据}。"""
@@ -74,6 +85,8 @@ def fetch_list(sources, ctx):
         if not edges or not (data.get('pageInfo') or {}).get('hasNextPage'):
             break
         after = (data.get('pageInfo') or {}).get('endCursor')
+        log().info('  [列表] 第%d页: %d 个, 累计 %d', page, len(edges),
+                   len(rooms))
         time.sleep(PAGE_SLEEP)
     log().info('  [列表] %d页共 %d 个不重复直播间', pages, len(rooms))
     return rooms
