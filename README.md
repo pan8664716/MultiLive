@@ -33,6 +33,7 @@ YY: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/
 Twitch: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/twitch_live.m3u
 TikTok: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/tiktok_live.m3u
 咪咕: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/migu_live.m3u
+4gtv: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/4gtv_live.m3u
 ```
 
 > 提示：`multilive.m3u` 为全平台聚合；单独列表便于只想订阅某平台时使用。
@@ -49,6 +50,9 @@ TikTok: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiL
 - **咪咕 IPTV**：官方频道列表接口 `program-sc.miguvideo.com/live/v2/tv-data/`
   批量拉全量频道（央视/卫视/地方/体育等 11 类，约 125 个）；播放地址需逐频道
   签名（MD5 盐值），m3u 统一写 `https://astar.cc.cd/migu/<pID>` 由 Worker 解析。
+- **4gtv 台湾直播**：官方接口需台湾 IP 且逐频道签名，列表采用内置静态清单
+  （`multilive/platforms/4gtv/channels.tsv`，约 56 个频道），m3u 统一写
+  `https://astar.cc.cd/4gtv/<频道ID>` 由 Worker 解析（参考 4gtv 解析脚本）。
 - **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
   统一继承 `Platform` 基类、自动注册；
   **不同平台并行拉取，每个平台内部固定 5 并发**
@@ -108,7 +112,7 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 第
 ## 输出文件
 
 - `output/multilive.m3u` — 聚合列表（本轮置顶 + 增量去重）
-- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` / `output/huya_live.m3u` / `output/twitch_live.m3u` / `output/tiktok_live.m3u` / `output/migu_live.m3u` — 每个平台单独一份
+- `output/douyin_live.m3u` / `output/kuaishou_live.m3u` / `output/bilibili_live.m3u` / `output/douyu_live.m3u` / `output/yy_live.m3u` / `output/huya_live.m3u` / `output/twitch_live.m3u` / `output/tiktok_live.m3u` / `output/migu_live.m3u` / `output/4gtv_live.m3u` — 每个平台单独一份
 - `output/status.json` — 机器可读运行摘要（入库）
 - `output/run.log` — 滚动日志（保留 3 份，不入库）
 - `output/douyu_warm.json` — 旧的斗鱼取参缓存（已不再生成，可忽略）

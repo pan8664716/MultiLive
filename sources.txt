@@ -64,3 +64,6 @@ tiktok:https://www.tiktok.com/live
 
 # ---- 咪咕视频 IPTV（官方频道列表接口；播放地址走 astar.cc.cd 动态解析）----
 migu:ALL
+
+# ---- 4gtv 台湾直播（内置频道清单；播放地址走 astar.cc.cd 动态解析）----
+4gtv:ALL

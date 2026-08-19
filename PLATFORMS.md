@@ -160,6 +160,19 @@
   m3u 统一写 `https://astar.cc.cd/migu/<pID>`，Worker 点播时实时解析。
 - `keep_stale=True`（IPTV 频道稳定，接口波动时保留历史条目）
 
+### 4gtv（台湾直播；内置静态频道清单，播放走 Worker 动态解析）
+- 4gtv 官方接口 `api2.4gtv.tv/App/GetChannelUrl2` 需要**台湾 IP** 且逐频道
+  请求：`4gtv_auth`（Base64→XOR(20241010-20241012)→二次Base64→AES-256-CBC→
+  拼 today(YYYYMMDD)→SHA-512→hex→base64，日级有效）+ 随机 `fsenc_key` +
+  `okhttp/3.12.11` UA，取流后还要 1080p 级联探测回退；CI/数据中心无法直连、
+  也不符合「不逐房间取流」铁律，因此播放地址统一写
+  `https://astar.cc.cd/4gtv/<频道ID>`，Worker 点播时按上述逻辑实时解析
+  （需台湾出口）。
+- 列表：官方列表接口同样需台湾 IP，采用**内置静态清单**
+  `multilive/platforms/4gtv/channels.tsv`（56 个频道，id/名称/分组；
+  来自公开 4gtv 频道表整理，新增频道直接往该文件加行即可）。
+- `keep_stale=True`（IPTV 频道稳定，保留历史条目）
+
 ## 调试技巧
 
 1. 先 `python3 multilive.py --platform <新平台> --dry-run`。
