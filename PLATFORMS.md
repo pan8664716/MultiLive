@@ -150,6 +150,16 @@
   运营，部分地区返回停服页（如香港），那些地区抓不到房间。
 - `keep_stale=False`
 
+### migu（咪咕视频 IPTV，官方频道列表接口，纯 HTTP）
+- 列表：`program-sc.miguvideo.com/live/v2/tv-data/1ff892f2b5ab4a79be6e25b69d2f5d05`
+  返回分类（`liveList`：央视/卫视/地方/体育/影视/新闻/教育/熊猫/综艺…，含「热门」
+  重复分类需过滤）+ 央视频道（`dataList`）；其余分类按各自 `vomsID` 再拉
+  `tv-data/<vomsID>` 拿 `dataList`，频道带 `pID` / `name` / `pics`（台标）。
+- 播放：`play.miguvideo.com/playurl/v1/play/playurl` 需要逐频道 MD5 盐值签名
+  （`md5(timestamp+pID+appVersion)` + 固定 salt`1230024`/后缀），**不逐频道取流**，
+  m3u 统一写 `https://astar.cc.cd/migu/<pID>`，Worker 点播时实时解析。
+- `keep_stale=True`（IPTV 频道稳定，接口波动时保留历史条目）
+
 ## 调试技巧
 
 1. 先 `python3 multilive.py --platform <新平台> --dry-run`。
