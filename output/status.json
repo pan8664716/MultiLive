@@ -1,26 +1,26 @@
 {
   "version": "2.0.0",
-  "time": "2026-08-21 02:26:04",
-  "elapsed_sec": 133.8,
+  "time": "2026-08-21 03:31:02",
+  "elapsed_sec": 107.0,
   "platform_rooms": {
     "4gtv": 56,
-    "bilibili": 1125,
-    "douyin": 2281,
+    "bilibili": 1149,
+    "douyin": 2408,
     "douyu": 1200,
-    "huya": 1178,
-    "kuaishou": 2128,
+    "huya": 1194,
+    "kuaishou": 2123,
     "migu": 125,
     "tiktok": 0,
-    "twitch": 1155,
-    "yy": 436
+    "twitch": 1140,
+    "yy": 509
   },
   "merge": {
-    "added": 3980,
-    "refreshed": 5461,
-    "dropped_stale": 3144,
-    "kept_stale": 60961,
+    "added": 3115,
+    "refreshed": 6520,
+    "dropped_stale": 2573,
+    "kept_stale": 61309,
     "deduped": 0
   },
-  "total": 70402,
+  "total": 70944,
   "sources_file": "/home/runner/work/MultiLive/MultiLive/sources.txt"
 }
