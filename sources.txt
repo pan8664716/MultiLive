@@ -60,7 +60,10 @@ yy:https://www.yy.com/music/
 twitch:ALL:40
 
 # ---- TikTok（浏览器批量抓取 /live 广场；播放地址走 astar.cc.cd 动态解析）----
-tiktok:https://www.tiktok.com/live
+tiktok:https://www.tiktok.com/live/category/action/Esports
+tiktok:https://www.tiktok.com/live/category/lifestyle/chatting
+tiktok:https://www.tiktok.com/live/category/lifestyle/outdoor
+tiktok:https://www.tiktok.com/live/category/gaming/Honor_of_Kings
 
 # ---- 咪咕视频 IPTV（官方频道列表接口；播放地址走 astar.cc.cd 动态解析）----
 migu:ALL

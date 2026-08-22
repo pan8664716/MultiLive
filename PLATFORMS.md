@@ -1,5 +1,4 @@
 # 平台接入指南（PLATFORMS）
-
 ## 通用铁律（所有平台一致，务必遵守）
 
 1. **绝不逐房间调 API 获取信息/播放地址**（批量会触发风控）。列表与信息只用
@@ -123,6 +122,23 @@
   看哪个解析哪个。列表抓取全程零风险纯 HTTP。
 - `keep_stale=False`
 
+### tiktok（浏览器签名 + 纯 HTTP 批量获取；不逐房间请求）
+- TikTok `/live/category/*` feed 接口需 webmssdk SDK 签名（X-Gnarly/X-Dynosaur），
+  纯 HTTP 无法自行生成签名。
+- 混合方案：浏览器只负责「签名」，数据获取走纯 HTTP：
+  1. `tools/browser_fetch_tiktok.mjs` 打开一个 Patchright 会话，依次导航
+     所有分类页让 SDK 自然发出签名请求；
+  2. 在 route 层拦截含 X-Gnarly 的 feed URL 并 abort（不让浏览器真正发请求）；
+  3. 同时导出 ttwid/msToken 等 cookies；
+  4. Python 用 `Session.get_json()` 携带 cookies 重放每个签名 URL 获取数据。
+- 首次直接打开某分类可能返回空列表；在同一会话内先跳到 /live 再回来可触发。
+- 房间号取 `owner.display_id`（即用户 uniqueId）；播放地址统一写
+  `https://astar.cc.cd/tiktok/<uniqueId>`。
+- 注意：依赖浏览器（Action 已装 patchright + Chrome）+ Node；签名有时效性
+  （每次运行重新获取）。TikTok 按地区运营，部分地区返回停服页。
+- `keep_stale=False`
+
+
 ## 调研结论（后续平台的现成接口情报）
 
 以下结论来自 2026-08 实机抓包验证，新平台实现时可直接采用。
@@ -136,19 +152,6 @@
   `https://astar.cc.cd/twitch/<login>`，Worker 点播时实时解析。
 - `keep_stale=False`（只留此刻在播）
 
-### tiktok（浏览器批量抓取 /live 广场；纯 HTTP 拿不到列表）
-- TikTok `/live` 为纯客户端渲染：SSR 空壳、接口需 msToken/X-Bogus 签名，
-  纯 HTTP 无法匿名拿列表；用 `tools/browser_fetch_tiktok.mjs`
-  （Patchright + 系统 Chrome）打开广场页滚动加载，抓取顺序：
-  ① 页面 SSR 内嵌数据（`__UNIVERSAL_DATA_FOR_REHYDRATION__`/`SIGI_STATE`，
-  部分区域可用）→ ② **拦截站点自身发出的 api-live 签名请求**（能绕过 IP
-  风控/签名校验）→ ③ 退 DOM 链接收集 `@<uniqueId>/live`。
-  全程批量，不逐房间请求。
-- 房间号取 `uniqueId`（用户稳定 ID，跨场次有效，与快手 author.id 同思路）；
-  播放地址统一写 `https://astar.cc.cd/tiktok/<uniqueId>`。
-- 注意：依赖浏览器（Action 已装 patchright + 系统 Chrome）；TikTok 按地区
-  运营，部分地区返回停服页（如香港），那些地区抓不到房间。
-- `keep_stale=False`
 
 ### migu（咪咕视频 IPTV，官方频道列表接口，纯 HTTP）
 - 列表：`program-sc.miguvideo.com/live/v2/tv-data/1ff892f2b5ab4a79be6e25b69d2f5d05`
