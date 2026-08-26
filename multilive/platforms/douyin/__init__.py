@@ -7,7 +7,7 @@
      接口被 IP 风控时滚动加载+拦截签名接口
   ③ HTTP 页面解析：内嵌 RSC 数据（self.__pace_f.push），约 15 个置顶房间
 
-m3u 语义：keep_stale=True——旧房间保留历史条目原样存在；
+m3u 语义：keep_stale=False——每轮只保留此刻在播的房间；
 本轮在播房间优先写 stream_url 里的 CDN 直链（hls 优先，其次 flv）
 并置顶，取不到直链时回退 https://astar.cc.cd/douyin/<房间号>。
 """
@@ -25,7 +25,7 @@ from multilive.core import Room, Session, Source, fmt_exc, log
 from multilive.platforms.base import Platform
 
 NAME = 'douyin'
-keep_stale = True
+keep_stale = False
 
 PLAYER_BASE = 'https://astar.cc.cd/douyin/{}'
 
