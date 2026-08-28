@@ -4,7 +4,7 @@
 每页 50 个在播房间 + 4 档清晰度 CDN 直链（FLV，签名有效期内可直接
 播）。房间号取 author.id（live.kuaishou.com/u/<id> 短 ID，跨场次
 有效），不是场次 id（一场直播一个、下播即失效）。
-m3u 语义：keep_stale=False——只保留「此刻在播」列表，下播即失效。
+m3u 语义：keep_stale=True——增量更新，历史在播房间保留。
 """
 import re
 import time
@@ -15,7 +15,8 @@ from multilive.core import Room, Session, Source, fmt_exc, log
 from multilive.platforms.base import Platform
 
 NAME = 'kuaishou'
-keep_stale = False
+PLAYER_BASE = 'https://astar.cc.cd/kuaishou/{}'
+keep_stale = True
 
 HOT_API = 'https://live.kuaishou.com/live_api/hot/list'
 DEFAULT_PAGES = 50
@@ -125,11 +126,14 @@ class KuaishouPlatform(Platform):
             out.append(Room(platform=self.name, rid=str(rid),
                             title=(room.get('caption') or '').strip(),
                             nickname=(author.get('name') or '').strip(),
-                            url=url.replace('http://', 'https://'),
+                            url=PLAYER_BASE.format(str(rid)),
                             group=game,
                             avatar=(room.get('cover') or '')))
         log().info('[kuaishou] 完成: %d 房间（无直链/无 author.id 已跳过）', len(out))
         return out
+
+    def fallback_url(self, room):
+        return PLAYER_BASE.format(room.rid)
 
 
 platform = KuaishouPlatform()
