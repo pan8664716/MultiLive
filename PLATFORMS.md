@@ -8,7 +8,7 @@
    实时解析（看哪个解析哪个）。
 2. **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、
    虎牙逐房间页均已废弃不用），一律写 Worker/代理解析地址。
-3. 平台下线用 `multilive.py` 的 `DISABLED` 集合，不删模块。
+3. 平台下线用 `cmd/multilive/main.go` 的 `Disabled` 集合，不删平台包。
 4. 播放地址拿不到的房间直接跳过；单来源失败打印日志后继续，不整体崩溃。
 
 ## 调研新平台的方法论（接口情报怎么来）
@@ -23,33 +23,31 @@
 
 ## 一个平台 = 一个文件夹（统一契约）
 
-在 `multilive/platforms/` 下新建 `<平台名>/` 文件夹，在 `__init__.py` 里
-继承 `Platform` 基类并导出 `platform` 实例，注册表（`multilive/registry.py`）
-就会自动发现：
+在 `internal/platforms/` 下新建 `<平台名>/` 包，实现 `platform.Platform` 接口，
+再到 `internal/registry/registry.go` 的 `All()` 里加一行注册：
 
 | 类属性 / 方法 | 说明 |
 |---|---|
-| `name` | 平台名（用于 sources.txt 前缀、tvg-id、日志） |
-| `parse(line) -> [Source]` | 认领一行来源配置；不认领返回 `[]` |
-| `fetch(sources, ctx) -> [Room]` | 抓取并返回统一模型 `Room` |
-| `keep_stale`（可选） | `True` 保留下播历史（有兜底地址时），`False` 只留此刻在播 |
-| `fallback_url(room)`（可选） | 历史条目兜底播放地址（douyin 用 pages.dev） |
-| `max_workers`（可选） | `self.parallel_map` 默认并发数，默认 3 |
+| `Name()` | 平台名（用于 sources.txt 前缀、tvg-id、日志） |
+| `Parse(line) -> [Source]` | 认领一行来源配置；不认领返回空 |
+| `Fetch(sources, ctx) -> [Room]` | 抓取并返回统一模型 `Room` |
+| `KeepStale()`（可选） | `true` 保留下播历史（有兜底地址时），`false` 只留此刻在播 |
+| `FallbackURL(room)`（可选） | 历史条目兜底播放地址（douyin/kuaishou 用 astar.cc.cd） |
+| 平台内并发（可选） | 用 `core.Parallel(workers, items, fn)`，每个任务独立 `Client` |
 
-模板见 `multilive/platforms/_template.py`。要点：
+要点（旧 Python 版 `multilive/platforms/_template.py` 仅作语义参考）：
 
-- 平台文件变大后可继续在文件夹内拆分 `api.py` / `stream.py` 等子模块，
-  `__init__.py` 只保留「类 + platform 实例」作为稳定契约出口。
-- `Room(platform, rid, title, nickname, url, group, avatar)`，无播放地址的房间直接跳过。
-- 纯 HTTP 用 `from multilive.core import Session`（自带 CookieJar/UA/超时），
-  数据模型 `Room`/`Source` 也在 `multilive.core`。
-  所有平台零第三方依赖（标准库）。
-- `ctx.project_root`（读 tools/ 里的辅助脚本）、`ctx.pages_cap`（`--pages` 上限）。
+- 平台包变大后可在包内继续拆分 `api.go` / `stream.go` 等子文件，对外只保留 `Platform` 结构体作为稳定契约出口。
+- `core.Room{Platform, RID, Title, Nickname, URL, Group, Avatar}`，无播放地址的房间直接跳过。
+- 纯 HTTP 用 `core.NewClient`（标准库 `net/http` + CookieJar/UA/超时），
+  数据模型 `Room`/`Source`/`Ctx` 也在 `internal/core`。
+  纯标准库，零第三方依赖。
+- `ctx.ProjectRoot`（读 tools/ 里的辅助脚本）、`ctx.PagesCap`（`--pages` 上限）。
 - 单来源失败不要整体崩溃：日志提示后继续其他来源；并发优先用
-  `self.parallel_map(fn, items)`（内部 ThreadPoolExecutor，每个任务独立 `Session`）。
+  `core.Parallel(workers, items, fn)`（每个 goroutine 独立 `Client`）。
 - 平台缩略名要能被用户一眼看懂：`douyin/kuaishou/bilibili/douyu/huya/twitch`。
 
-`Source(platform, kind, target, meta=0)` 的 `kind/target` 语义平台自定，
+`core.Source{Platform, Kind, Target, Meta}` 的 `Kind/Target` 语义平台自定，
 `meta` 可存翻页数等整数配置（参考 kuaishou 的 `HOT:50`）。
 
 ## 已内置平台
@@ -130,7 +128,7 @@
      所有分类页让 SDK 自然发出签名请求；
   2. 在 route 层拦截含 X-Gnarly 的 feed URL 并 abort（不让浏览器真正发请求）；
   3. 同时导出 ttwid/msToken 等 cookies；
-  4. Python 用 `Session.get_json()` 携带 cookies 重放每个签名 URL 获取数据。
+  4. Go 用 `core.NewClient` 携带 cookies 重放每个签名 URL 获取数据（`Client.GetJSON`）。
 - 首次直接打开某分类可能返回空列表；在同一会话内先跳到 /live 再回来可触发。
 - 房间号取 `owner.display_id`（即用户 uniqueId）；播放地址统一写
   `https://astar.cc.cd/tiktok/<uniqueId>`。
@@ -172,14 +170,14 @@
   `https://astar.cc.cd/4gtv/<频道ID>`，Worker 点播时按上述逻辑实时解析
   （需台湾出口）。
 - 列表：官方列表接口同样需台湾 IP，采用**内置静态清单**
-  `multilive/platforms/4gtv/channels.tsv`（56 个频道，id/名称/分组；
+  `internal/platforms/fourgtv/channels.tsv`（内嵌 `go:embed`，56 个频道，id/名称/分组；
   来自公开 4gtv 频道表整理，新增频道直接往该文件加行即可）。
 - `keep_stale=True`（IPTV 频道稳定，保留历史条目）
 
 ## 调试技巧
 
-1. 先 `python3 multilive.py --platform <新平台> --dry-run`。
+1. 先 `go run ./cmd/multilive --platform <新平台> --dry-run`（或先 `go build -o multilive ./cmd/multilive`）。
 2. `--verbose` 看 DEBUG 日志；`output/run.log` 保留近 3 轮日志（不入库）。
 3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
-5. 并发规则：平台之间并行；平台内部并发数在各自文件顶部常量（多为 3~5）。
+5. 并发规则：平台之间 goroutine 并行；平台内部分页并发数在各自包顶部常量（多为 3~5）。

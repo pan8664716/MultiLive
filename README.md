@@ -4,13 +4,13 @@
 聚合到一份 `output/multilive.m3u`，并为**每个平台单独生成一份 m3u**，供 PotPlayer /
 VLC / mpv / IINA 直接导入播放。
 
-本仓库是 douyin-actions 与 kuaishou 两个方案的合并重构：统一了配置格式、
-抓取框架、m3u 增量合并与定时更新，**新增平台只需新建一个文件夹**，
-不碰公共代码。
+Go 实现（`go.mod`，纯标准库零第三方依赖）：平台级 goroutine 并行 +
+平台内分页并发，编译成单二进制运行。旧 Python 版（`multilive/` 目录）已废弃保留，
+仅作接口情报参考，不再参与构建与 CI。
 
 ## 订阅方式（直接导入播放器）
 
-仓库每小时自动刷新一次，m3u 文件直接入库。支持 m3u 订阅的播放器
+仓库每半小时自动刷新一次，m3u 文件直接入库。支持 m3u 订阅的播放器
 （PotPlayer / VLC / mpv / IINA / 电视盒子等）填入下面任一地址即可自动更新。
 以下为国内可直接访问的代理地址（`gh-proxy.org` + raw 地址），
 也可去掉代理前缀使用 GitHub 原始地址。
@@ -39,8 +39,8 @@ Twitch: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiL
 
 ## 特性
 
-- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 / Twitch 列表纯 HTTP（仅
-  Python 3.9+ 标准库）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级，
+- **纯 HTTP 优先**：快手 / B站 / 斗鱼 / YY / 虎牙 / Twitch 列表纯 HTTP（Go 标准库
+  `net/http` + CookieJar）；douyin 保留「接口 → 浏览器(可选) → 页面」三级降级，
   抖音/快手直接写列表接口自带的
   CDN 直链（抖音 HLS / 快手 FLV），YY/B站/斗鱼/虎牙/Twitch
   播放地址**不逐个取流**，m3u 直接写 `https://astar.cc.cd/<平台>/<房间号>`，
@@ -48,32 +48,35 @@ Twitch: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiL
 - **咪咕 IPTV**：官方频道列表接口 `program-sc.miguvideo.com/live/v2/tv-data/`
   批量拉全量频道（央视/卫视/地方/体育等 11 类，约 125 个）；播放地址需逐频道
   签名（MD5 盐值），m3u 统一写 `https://astar.cc.cd/migu/<pID>` 由 Worker 解析。
-- **平台插件化 + 并行**：`multilive/platforms/<平台>/` 每个平台一个文件夹、
-  统一继承 `Platform` 基类、自动注册；
-  **不同平台并行拉取，每个平台内部固定 5 并发**
-  （B站特殊：播放地址无批量接口、必须逐房间请求，为防触发风控降为
-    3 并发 + 每请求 0.15s 节流 + 412/403 退避重试；信息类数据全部走
+- **平台插件化 + 并行**：`internal/platforms/<平台>/` 每个平台一个包、
+  统一实现 `platform.Platform` 接口、在 `internal/registry` 集中注册；
+  **不同平台 goroutine 并行拉取，平台内部分页并发**
+  （B站 412/403 退避重试；信息类数据全部走
     批量接口/页面内嵌数据，绝不逐房间调 API 取信息）。
 - **增量合并**：先按「平台:房间号」删除重复，再将本轮更新的条目全部新增到最前面
   （douyin 保留历史并用兜底解析地址，其余平台只留此刻在播）。
 - **便于排查**：每次运行输出 `output/status.json`（房间数/耗时/合并统计，入库）
-  与 `output/run.log`（滚动日志，不入库），并保留各平台独立 m3u。
-- **定时更新**：内置 GitHub Actions，每小时（北京时间整点）自动刷新并提交。
+  与 `output/run.log`（滚动日志，超 1MB 轮转保留 3 份，不入库），并保留各平台独立 m3u。
+- **定时更新**：内置 GitHub Actions，每半小时自动刷新并提交。
 
 ## 快速开始
 
 ```bash
+# 构建一次（也可用 go run ./cmd/multilive 直接跑）
+go build -o multilive ./cmd/multilive
+
 # 试跑（只打印统计，不写文件）
-python3 multilive.py --dry-run
+./multilive --dry-run
 
 # 只跑单个平台（调试用）
-python3 multilive.py --platform douyin --pages 2 --dry-run
+./multilive --platform douyin --pages 2 --dry-run
 
 # 正式更新（写入 output/multilive.m3u 与各平台 m3u）
-python3 multilive.py
+./multilive
 ```
 
 把生成的 `output/multilive.m3u`（或多平台各自的文件）拖进 PotPlayer / VLC 即可。
+需要 Go 1.23+；`tools/*.mjs` 浏览器兜底另需 Node 24 + `npm ci`（patchright）。
 
 ## 配置来源（sources.txt）
 
@@ -116,27 +119,27 @@ yy:https://www.yy.com/music/                            # YY 频道页（SSR 第
 
 1. 新建仓库并推送本目录（本仓库远端：`git@github.com:pan8664716/MultiLive.git`）。
 2. 仓库页 → **Actions** → **多平台直播 m3u 更新** → **Run workflow** 手动触发一次。
-3. 之后每小时自动运行；更新后的 m3u 会直接提交回仓库。
+3. 之后每半小时自动运行；更新后的 m3u 会直接提交回仓库。
 
-> CI 内置 Node（仅用于斗鱼浏览器取参兜底，主链路纯 HTTP 不需要），无需
-> 安装浏览器；douyin 浏览器兜底不启用，接口被风控时自动落到「页面解析」兜底。
+> CI 安装 Go（构建）+ Node（抖音/TikTok 浏览器兜底脚本用）+ `npm ci`（patchright）；
+> 主链路纯 HTTP 不需要浏览器，douyin 接口被风控时自动落到「页面解析」兜底。
 
 ## 架构总览
 
 ```
-sources.txt ──► config.load_sources() ──► registry（自动发现 Platform 实例）
+sources.txt ──► config.LoadSources() ──► registry（集中注册 Platform 实现）
                     │
                     ▼
-           平台级并行（各平台一个线程）
+           平台级并行（各平台一个 goroutine）
    ┌──────────┬───────────┬──────────┬──────────┐
    ▼          ▼           ▼          ▼          ▼
  douyin/   kuaishou/   bilibili/   douyu/     yy/   huya/   twitch/
-   │          │           │          │          │        （平台文件夹，见 PLATFORMS.md）
+   │          │           │          │          │        （平台包，见 PLATFORMS.md）
    └──────────┴───────────┴────┬─────┴──────────┘
                              ▼
                  Room / Source 统一模型（core）
                              ▼
-                 m3u.merge() 增量合并（置顶/去重/保留策略）
+                 m3u.Merge() 增量合并（置顶/去重/保留策略）
                              ▼
    output/multilive.m3u + 各平台 *_live.m3u + output/status.json + output/run.log
 ```
@@ -145,16 +148,15 @@ sources.txt ──► config.load_sources() ──► registry（自动发现 Pl
 
 | 文件 | 职责 |
 |---|---|
-| `multilive.py` | 薄入口（转调 `multilive/cli.py`） |
-| `multilive/cli.py` | CLI 参数、平台并发调度、日志初始化、`DISABLED` |
-| `multilive/config.py` | sources.txt 解析 |
-| `multilive/registry.py` | 平台注册表（自动发现） |
-| `multilive/core.py` | 公共库：`Room`/`Source` 模型、`Session`（CookieJar）、日志 |
-| `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
-| `multilive/platforms/base.py` | `Platform` 基类（统一契约）与公共小工具 |
-| `multilive/platforms/<平台>/` | 各平台实现（见 PLATFORMS.md） |
+| `cmd/multilive/main.go` | 入口：CLI 参数、平台并发调度、`Disabled`（平台下线集合） |
+| `internal/config/` | sources.txt 解析 |
+| `internal/registry/` | 平台注册表（集中注册） |
+| `internal/core/` | 公共库：`Room`/`Source`/`Ctx` 模型、`Client`（标准库 HTTP 会话）、日志 |
+| `internal/m3u/` | m3u 读写、增量合并、status 输出 |
+| `internal/platform/` | `Platform` 接口（统一契约） |
+| `internal/platforms/<平台>/` | 各平台实现（见 PLATFORMS.md） |
 | `tools/browser_fetch_douyin.mjs` | douyin 浏览器兜底（可选，Patchright） |
-| `tools/douyu_warm.mjs` | 斗鱼浏览器取参兜底（Patchright，可选） |
+| `tools/browser_fetch_tiktok.mjs` | tiktok 浏览器签名（Patchright） |
 
 ## 维护者 / AI 接管指引
 
@@ -162,7 +164,8 @@ sources.txt ──► config.load_sources() ──► registry（自动发现 Pl
 
 ## 接入新平台（30 秒版）
 
-在 `multilive/platforms/` 新建 `example/` 文件夹（照抄 `_template.py`），
-继承 `Platform`、实现 `parse / fetch` 并导出 `platform` 实例即可，
-框架会自动发现并参与并行抓取、合并与定时任务。完整约定与各平台的
+在 `internal/platforms/` 新建 `example/` 包实现 `platform.Platform` 接口
+（`Name`/`Parse`/`Fetch`，`KeepStale`/`FallbackURL` 可选），再到
+`internal/registry/registry.go` 的 `All()` 里加一行注册即可，
+框架会自动参与并行抓取、合并与定时任务。完整约定与各平台的
 接口调研结论见 **PLATFORMS.md**。

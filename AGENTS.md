@@ -5,25 +5,27 @@
 多平台直播 m3u 聚合器：每小时把各平台「在播直播间」抓成 m3u 并推回 GitHub，供 PotPlayer/VLC/mpv 等直接订阅播放。
 
 - 用户侧产物：`output/multilive.m3u`（全聚合）+ `output/<平台>_live.m3u`（单平台），订阅地址见 README（走 `gh-proxy.org` 代理前缀）
-- 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每小时自动跑 `python3 multilive.py` 并提交
+- 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每半小时自动跑 `./multilive` 并提交
 - 播放地址形态：所有平台 m3u 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析签名直链
+- 实现语言：Go（`go.mod` module `multilive`，纯标准库，零第三方依赖）；旧 Python 版（`multilive/`）已废弃保留，仅作接口情报参考
 
 ## 快速开始
 
 ```bash
-python3 multilive.py --dry-run              # 只打印统计，不写文件
-python3 multilive.py --platform yy          # 只刷某个平台（排查用）
-python3 multilive.py --verbose              # 全量 + DEBUG 日志
-python3 multilive.py --pages 2              # 限制翻页数
+go build -o multilive ./cmd/multilive
+./multilive --dry-run              # 只打印统计，不写文件
+./multilive --platform yy          # 只刷某个平台（排查用）
+./multilive --verbose              # 全量 + DEBUG 日志
+./multilive --pages 2              # 限制翻页数
 ```
 
 ## 架构与数据流
 
 ```
-sources.txt → config.load_sources()（经 registry 自动发现平台）
-  → 平台级并行（每个平台一个线程）
-  → 各平台 fetch(sources, ctx) 返回 [Room]
-  → m3u.merge() 增量合并（去重/置顶/保留策略）
+sources.txt → config.LoadSources()（经 registry 集中注册平台）
+  → 平台级并行（每个平台一个 goroutine）
+  → 各平台 Fetch(sources, ctx) 返回 [Room]
+  → m3u.Merge() 增量合并（去重/置顶/保留策略）
   → output/multilive.m3u + output/<平台>_live.m3u + output/status.json
 ```
 
@@ -31,21 +33,19 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 | 文件 | 职责 |
 |---|---|
-| `multilive.py` | 薄入口（转调 `multilive/cli.py`，保持 `python3 multilive.py` 用法不变） |
-| `multilive/cli.py` | CLI 参数、平台并行调度、`DISABLED`（平台下线集合）、日志 |
-| `multilive/config.py` | sources.txt 解析 |
-| `multilive/registry.py` | 平台注册表：自动发现 `platforms/` 下的 Platform 实例 |
-| `multilive/core.py` | 公共库：`Room`/`Source` 模型、`Session`（纯标准库 HTTP）、`log`/`fmt_exc` |
-| `multilive/m3u.py` | m3u 读写、增量合并、status 输出 |
-| `multilive/platforms/base.py` | `Platform` 基类（统一契约）+ 平台公共小工具 |
-| `multilive/platforms/<平台>/` | 各平台实现（每个平台一个文件夹，契约见 PLATFORMS.md / `_template.py`） |
+| `cmd/multilive/main.go` | 入口：CLI 参数、平台并行调度、`Disabled`（平台下线集合）、日志 |
+| `internal/config/` | sources.txt 解析 |
+| `internal/registry/` | 平台注册表：集中注册 `internal/platforms/` 下的 Platform 实现 |
+| `internal/core/` | 公共库：`Room`/`Source`/`Ctx` 模型、`Client`（标准库 HTTP 会话）、`log`、`Limiter` |
+| `internal/m3u/` | m3u 读写、增量合并、status 输出 |
+| `internal/platform/` | `Platform` 接口（统一契约） |
+| `internal/platforms/<平台>/` | 各平台实现（每个平台一个包，`Platform` 结构体 + `Parse`/`Fetch` 方法） |
 | `tools/*.mjs` | 浏览器兜底脚本（Patchright：douyin 取参兜底、tiktok /live 列表抓取） |
 
-平台契约（统一方式）：每个平台一个文件夹 `multilive/platforms/<平台>/`，在
-`__init__.py` 里继承 `Platform` 基类、实现 `parse(line)->[Source]` 与
-`fetch(sources,ctx)->[Room]`，并导出 `platform` 实例，注册表即自动发现；
-`keep_stale`/`fallback_url` 为可选钩子。新增平台照抄
-`multilive/platforms/_template.py`。
+平台契约：每个平台一个包 `internal/platforms/<平台>/`，实现 `platform.Platform`
+接口（`Name`/`Parse`/`Fetch`，`KeepStale`/`FallbackURL` 可选），并在
+`internal/registry/registry.go` 的 `All()` 里加一行完成注册。
+`4gtv` 的频道清单用 `go:embed` 内嵌（`internal/platforms/fourgtv/channels.tsv`）。
 
 ## 铁律（改代码前必读）
 
@@ -54,15 +54,15 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
    - 播放地址：抖音/快手直接用列表接口自带的 CDN 直链（批量返回，不逐房间取流）；
      yy/bilibili/douyu/huya/twitch/tiktok/migu/4gtv 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时解析；
    - **不逐房间取播放地址**（bilibili `Room/playUrl`、斗鱼 `getH5PlayV1`、虎牙逐房间页均已废弃不用）。
-2. 平台暂时下线：改 `multilive/cli.py` 顶部 `DISABLED = set()`（当前无平台下线），把平台名加进集合（不抓取 + 每轮清空该平台输出），**不要删平台文件夹**；恢复 = 移出集合 + `sources.txt` 取消注释。
-3. 增量合并规则（`m3u.merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keep_stale=False` 的平台本轮运行后丢弃下播房间。
+2. 平台暂时下线：改 `cmd/multilive/main.go` 顶部 `Disabled`（当前无平台下线），把平台名加进集合（不抓取 + 每轮清空该平台输出），**不要删平台包**；恢复 = 移出集合 + `sources.txt` 取消注释。
+3. 增量合并规则（`m3u.Merge`）：先按「平台:房间号」删重复；本轮条目全部置顶；未运行平台的历史原样保留；`keepStale=false` 的平台本轮运行后丢弃下播房间。
 4. `output/*.m3u` 与 `output/status.json` **入库**（订阅靠它们）。改了抓取逻辑必须本地跑通再提交，别只改代码不产出。
-5. HTTP 只用标准库 `Session`（`get/get_text/get_json/post_json`，自带 CookieJar/UA）；文档里旧写的 `core.http_json` 不存在，别用。
-6. 单来源失败不整体崩溃：打印日志继续；并发用 `ThreadPoolExecutor`，每个线程独立 `Session`。
+5. HTTP 只用标准库 `Client`（`Do/GetText/GetJSON/PostJSON`，自带 CookieJar/UA）；旧文档里写的 `core.http_json` 是 Python 版遗留，别用。
+6. 单来源失败不整体崩溃：打印日志继续；平台级用 goroutine 并发，平台内用 `core.Parallel`，每个 goroutine 独立 `Client`。
 
 ## 排障速查
 
-- 先 `python3 multilive.py --platform <x> --dry-run --verbose`；`output/run.log` 滚动保留 3 份，`output/status.json` 每轮房间数可对比是否被风控/接口变动。
+- 先 `./multilive --platform <x> --dry-run --verbose`；`output/run.log` 滚动保留 3 份（超 1MB 轮转），`output/status.json` 每轮房间数可对比是否被风控/接口变动。
 - 常见风控码：B站 `-412`（数据中心 IP）/ `-352`；douyin ttwid/滑块；YY SDK `result:2`；斗鱼 websec 加密。
 - B站播放地址同样走 Worker（`astar.cc.cd/bilibili/<房间号>`）点播解析，MultiLive 内不再逐房间调 `Room/playUrl`。
 - 平台数量异常少：多半是分页没抓全（YY 教训：SSR 只有第一页，需页面 `pageInfo` 的 `totalCount/moduleId/biz` 走 `/more/page.action` 补齐）。
@@ -70,7 +70,7 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 ## GitHub Action 注意
 
-- `.github/workflows/update-m3u.yml`：每小时 cron（UTC 整点）+ 手动触发；安装 Node 24 + `npm ci`（patchright 依赖），**不要删 `package-lock.json`**。
+- `.github/workflows/update-m3u.yml`：每半小时 cron + 手动触发；安装 Go 1.23（`go build -o multilive ./cmd/multilive`）+ Node 24 + `npm ci`（patchright 依赖），**不要删 `package-lock.json`**。
 - Action 只提交 `output/` 下文件；本地 push 前若远端领先（Action 刚提交过），先 `git fetch` + rebase；输出文件冲突时以「最新数据优先」解决（取远端做基底，重跑目标平台合并，参考 git 历史里的同类提交）。
 - 订阅 URL 用 `https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/<file>`（国内可直连）。
 
@@ -78,4 +78,4 @@ sources.txt → config.load_sources()（经 registry 自动发现平台）
 
 - **Cloudflare Pages Worker**（YY/B站/抖音/斗鱼等点播解析，域名 `astar.cc.cd`）：`/Users/star/Downloads/douyin/douyin-m3u8-cf`，单文件 `_worker.js`。注意：该仓库本地**无 git remote** 且有未提交改动，涉及它时不要直接 push，先与用户确认。
 - **统一动态解析**：`https://astar.cc.cd/<平台>/<房间号>`，点播时实时解析各平台完整签名直链。
-- douyin-actions / kuaishou：本项目前身，合并后已废弃，仅作接口情报参考。
+- douyin-actions / kuaishou / Python 版 multilive：本项目前身，均已废弃，仅作接口情报参考。

@@ -3,6 +3,7 @@ __pycache__/
 .DS_Store
 node_modules/
 .venv/
+/multilive
 output/run.log
 output/run.log.1
 output/run.log.2
