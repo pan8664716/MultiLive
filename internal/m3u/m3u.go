@@ -22,12 +22,18 @@ type Entry struct {
 
 // Stats 增量合并统计。
 type Stats struct {
-	Added        int `json:"added"`
-	Refreshed    int `json:"refreshed"`
-	Deduped      int `json:"deduped"`
-	KeptStale    int `json:"kept_stale"`
-	DroppedStale int `json:"dropped_stale"`
+	Added         int `json:"added"`
+	Refreshed     int `json:"refreshed"`
+	Deduped       int `json:"deduped"`
+	KeptStale     int `json:"kept_stale"`
+	DroppedStale  int `json:"dropped_stale"`
+	DroppedCap    int `json:"dropped_cap"`
 }
+
+// MaxPerPlatform 单平台条目上限：超出时从尾部丢弃。
+// 合并顺序是「本轮新条目置顶在前、历史在后」，所以砍尾等价于
+// 优先丢弃最旧的历史条目（LRU），新鲜在播的不受影响。
+const MaxPerPlatform = 10000
 
 func cleanTitle(s string) string {
 	s = strings.ReplaceAll(s, "\"", "")
@@ -159,6 +165,41 @@ func Merge(existing []Entry, rooms []core.Room, keepStale map[string]bool, fallb
 		} else {
 			st.DroppedStale++
 		}
+	}
+	// 单平台条目上限：合并顺序是「本轮在前、历史在后」，从尾部丢弃
+	// 等价于优先丢最旧的历史条目，新鲜在播的不受影响。
+	counts := map[string]int{}
+	for _, e := range out {
+		counts[e.Platform]++
+	}
+	over := map[string]int{}
+	for p, n := range counts {
+		if n > MaxPerPlatform {
+			over[p] = n - MaxPerPlatform
+		}
+	}
+	if len(over) > 0 {
+		// 注意：必须新分配切片，不能复用 out 的底层数组（边读边写会错乱）。
+		kept := make([]Entry, 0, len(out))
+		// 从尾往前数每个平台要丢的个数，保证丢的是最旧的历史条目。
+		drop := map[string]int{}
+		for p, n := range over {
+			drop[p] = n
+		}
+		for i := len(out) - 1; i >= 0; i-- {
+			if drop[out[i].Platform] > 0 {
+				drop[out[i].Platform]--
+				st.DroppedCap++
+				st.KeptStale--
+				continue
+			}
+			kept = append(kept, out[i])
+		}
+		// 倒序恢复原顺序
+		for i, j := 0, len(kept)-1; i < j; i, j = i+1, j-1 {
+			kept[i], kept[j] = kept[j], kept[i]
+		}
+		out = kept
 	}
 	return out, st
 }
