@@ -63,16 +63,16 @@ Twitch: https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiL
 
 ```bash
 # 构建一次（也可用 go run ./cmd/multilive 直接跑）
-go build -o multilive ./cmd/multilive
+go build -o multilive-bin ./cmd/multilive
 
 # 试跑（只打印统计，不写文件）
-./multilive --dry-run
+./multilive-bin --dry-run
 
 # 只跑单个平台（调试用）
-./multilive --platform douyin --pages 2 --dry-run
+./multilive-bin --platform douyin --pages 2 --dry-run
 
 # 正式更新（写入 output/multilive.m3u 与各平台 m3u）
-./multilive
+./multilive-bin
 ```
 
 把生成的 `output/multilive.m3u`（或多平台各自的文件）拖进 PotPlayer / VLC 即可。

@@ -5,18 +5,18 @@
 多平台直播 m3u 聚合器：每小时把各平台「在播直播间」抓成 m3u 并推回 GitHub，供 PotPlayer/VLC/mpv 等直接订阅播放。
 
 - 用户侧产物：`output/multilive.m3u`（全聚合）+ `output/<平台>_live.m3u`（单平台），订阅地址见 README（走 `gh-proxy.org` 代理前缀）
-- 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每半小时自动跑 `./multilive` 并提交
+- 远端：`git@github.com:pan8664716/MultiLive.git`，GitHub Action 每半小时自动跑 `./multilive-bin` 并提交
 - 播放地址形态：所有平台 m3u 统一写 `https://astar.cc.cd/<平台>/<房间号>`，由 Worker 点播时实时解析签名直链
 - 实现语言：Go（`go.mod` module `multilive`，纯标准库，零第三方依赖）；旧 Python 版（`multilive/`）已废弃保留，仅作接口情报参考
 
 ## 快速开始
 
 ```bash
-go build -o multilive ./cmd/multilive
-./multilive --dry-run              # 只打印统计，不写文件
-./multilive --platform yy          # 只刷某个平台（排查用）
-./multilive --verbose              # 全量 + DEBUG 日志
-./multilive --pages 2              # 限制翻页数
+go build -o multilive-bin ./cmd/multilive
+./multilive-bin --dry-run              # 只打印统计，不写文件
+./multilive-bin --platform yy          # 只刷某个平台（排查用）
+./multilive-bin --verbose              # 全量 + DEBUG 日志
+./multilive-bin --pages 2              # 限制翻页数
 ```
 
 ## 架构与数据流
@@ -62,7 +62,7 @@ sources.txt → config.LoadSources()（经 registry 集中注册平台）
 
 ## 排障速查
 
-- 先 `./multilive --platform <x> --dry-run --verbose`；`output/run.log` 滚动保留 3 份（超 1MB 轮转），`output/status.json` 每轮房间数可对比是否被风控/接口变动。
+- 先 `./multilive-bin --platform <x> --dry-run --verbose`；`output/run.log` 滚动保留 3 份（超 1MB 轮转），`output/status.json` 每轮房间数可对比是否被风控/接口变动。
 - 常见风控码：B站 `-412`（数据中心 IP）/ `-352`；douyin ttwid/滑块；YY SDK `result:2`；斗鱼 websec 加密。
 - B站播放地址同样走 Worker（`astar.cc.cd/bilibili/<房间号>`）点播解析，MultiLive 内不再逐房间调 `Room/playUrl`。
 - 平台数量异常少：多半是分页没抓全（YY 教训：SSR 只有第一页，需页面 `pageInfo` 的 `totalCount/moduleId/biz` 走 `/more/page.action` 补齐）。
@@ -70,7 +70,7 @@ sources.txt → config.LoadSources()（经 registry 集中注册平台）
 
 ## GitHub Action 注意
 
-- `.github/workflows/update-m3u.yml`：每半小时 cron + 手动触发；安装 Go 1.23（`go build -o multilive ./cmd/multilive`）+ Node 24 + `npm ci`（patchright 依赖），**不要删 `package-lock.json`**。
+- `.github/workflows/update-m3u.yml`：每半小时 cron + 手动触发；安装 Go 1.23（`go build -o multilive-bin ./cmd/multilive`）+ Node 24 + `npm ci`（patchright 依赖），**不要删 `package-lock.json`**。
 - Action 只提交 `output/` 下文件；本地 push 前若远端领先（Action 刚提交过），先 `git fetch` + rebase；输出文件冲突时以「最新数据优先」解决（取远端做基底，重跑目标平台合并，参考 git 历史里的同类提交）。
 - 订阅 URL 用 `https://gh-proxy.org/https://raw.githubusercontent.com/pan8664716/MultiLive/main/output/<file>`（国内可直连）。
 

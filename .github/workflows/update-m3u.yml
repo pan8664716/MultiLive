@@ -41,10 +41,10 @@ jobs:
         run: npm ci
 
       - name: 构建 multilive
-        run: go build -o multilive ./cmd/multilive
+        run: go build -o multilive-bin ./cmd/multilive
 
       - name: 生成 m3u（平台并行，纯 HTTP 优先）
-        run: ./multilive
+        run: ./multilive-bin
 
       - name: 提交并推送更新
         run: |

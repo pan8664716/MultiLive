@@ -176,7 +176,7 @@
 
 ## 调试技巧
 
-1. 先 `go run ./cmd/multilive --platform <新平台> --dry-run`（或先 `go build -o multilive ./cmd/multilive`）。
+1. 先 `go run ./cmd/multilive --platform <新平台> --dry-run`（或先 `go build -o multilive-bin ./cmd/multilive`）。
 2. `--verbose` 看 DEBUG 日志；`output/run.log` 保留近 3 轮日志（不入库）。
 3. `output/status.json` 对比每轮房间数变化，判断是否被风控/接口变动。
 4. 单平台单独验证 OK 后再放回 `sources.txt` 全量跑。
